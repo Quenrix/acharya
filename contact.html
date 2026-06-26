@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us | Acharya Coding School</title>
+<meta name="description" content="Get in touch with Acharya Coding School. Visit us at KPHB or Ameerpet, Hyderabad. Call +91 94910 79357 or email us for course enquiries.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+/* =========================================================
+   CONTACT PAGE — Premium Styles
+   ========================================================= */
+
+/* ===== Contact Hero ===== */
+.contact-hero {
+  background: radial-gradient(ellipse at 70% 0%,rgba(46,196,182,.14),transparent 55%),
+              radial-gradient(ellipse at 5% 90%,rgba(242,183,5,.09),transparent 50%),
+              var(--navy-950);
+  color:#fff;
+  padding:72px 0 88px;
+  position:relative;overflow:hidden;
+}
+.contact-hero__bg-dots {
+  position:absolute;inset:0;
+  background-image:radial-gradient(rgba(255,255,255,.06) 1px,transparent 1px);
+  background-size:32px 32px;pointer-events:none;
+}
+.contact-hero__inner {position:relative;z-index:1;max-width:720px;}
+.contact-eyebrow {
+  color:var(--teal-400);font-weight:700;letter-spacing:.14em;
+  font-size:.78rem;text-transform:uppercase;margin-bottom:16px;display:block;
+}
+.contact-hero__title {
+  font-size:clamp(2rem,4.5vw,3.2rem);color:#fff;line-height:1.12;
+  margin-bottom:18px;letter-spacing:-.02em;
+}
+.contact-hero__sub {
+  color:#C9D2E8;font-size:1.02rem;line-height:1.7;max-width:620px;
+}
+@media(max-width:600px){
+  .contact-hero{padding:52px 0 64px;}
+  .contact-hero__title{font-size:clamp(1.75rem,6vw,2.6rem);}
+}
+
+/* ===== Quick Info Strip ===== */
+.contact-strip {
+  background:var(--white);
+  border-bottom:1px solid var(--paper-100);
+  padding:0;
+}
+.contact-strip__grid {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+}
+.cstrip-item {
+  display:flex;align-items:center;gap:16px;
+  padding:28px 24px;
+  border-right:1px solid var(--paper-100);
+  transition:background .2s;
+}
+.cstrip-item:last-child{border-right:none;}
+.cstrip-item:hover{background:var(--paper-50);}
+.cstrip-icon {
+  width:48px;height:48px;border-radius:14px;
+  display:grid;place-items:center;flex-shrink:0;
+}
+.cstrip-icon svg{width:22px;height:22px;}
+.cstrip-item h4{font-size:.88rem;color:var(--navy-950);margin:0 0 4px;font-family:var(--font-display);}
+.cstrip-item p{font-size:.82rem;color:var(--ink-600);margin:0;line-height:1.5;}
+.cstrip-item a{color:var(--teal-400);font-weight:700;font-size:.84rem;text-decoration:none;}
+.cstrip-item a:hover{color:var(--navy-950);}
+@media(max-width:768px){
+  .contact-strip__grid{grid-template-columns:1fr;}
+  .cstrip-item{border-right:none;border-bottom:1px solid var(--paper-100);padding:22px 20px;}
+  .cstrip-item:last-child{border-bottom:none;}
+}
+
+/* ===== Main Content Grid ===== */
+.contact-main {
+  padding:72px 0 88px;
+  background:var(--paper-50);
+}
+.contact-main__grid {
+  display:grid;
+  grid-template-columns:1fr 440px;
+  gap:40px;
+  align-items:start;
+}
+@media(max-width:1024px){.contact-main__grid{grid-template-columns:1fr;}}
+
+/* ===== Left: Locations + Map ===== */
+.contact-left {}
+.contact-left__head {margin-bottom:32px;}
+.contact-left__head h2 {
+  font-size:clamp(1.5rem,3vw,2.1rem);margin-bottom:8px;
+}
+.contact-left__head p {font-size:.93rem;color:var(--ink-600);}
+
+/* Location Cards */
+.locations-grid {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:18px;
+  margin-bottom:32px;
+}
+@media(max-width:640px){.locations-grid{grid-template-columns:1fr;}}
+
+.loc-card {
+  background:var(--white);
+  border:1.5px solid var(--paper-100);
+  border-radius:var(--radius-md);
+  padding:24px 22px;
+  transition:box-shadow .22s,border-color .22s,transform .22s;
+  position:relative;
+  overflow:hidden;
+}
+.loc-card::before {
+  content:"";
+  position:absolute;top:0;left:0;right:0;height:3px;
+  background:linear-gradient(90deg,var(--teal-400),var(--gold-500));
+  border-radius:3px 3px 0 0;
+  opacity:0;transition:opacity .22s;
+}
+.loc-card:hover {
+  transform:translateY(-4px);
+  box-shadow:var(--shadow-md);
+  border-color:rgba(46,196,182,.25);
+}
+.loc-card:hover::before{opacity:1;}
+
+.loc-card__badge {
+  display:inline-flex;align-items:center;gap:6px;
+  font-size:.72rem;font-weight:700;letter-spacing:.06em;
+  text-transform:uppercase;color:var(--teal-400);
+  background:rgba(46,196,182,.1);border:1px solid rgba(46,196,182,.2);
+  padding:4px 10px;border-radius:999px;margin-bottom:14px;
+}
+.loc-card h3 {
+  font-size:1rem;color:var(--navy-950);margin-bottom:10px;
+}
+.loc-card__addr {
+  display:flex;align-items:flex-start;gap:8px;
+  font-size:.84rem;color:var(--ink-600);line-height:1.6;margin-bottom:12px;
+}
+.loc-card__addr svg{width:14px;height:14px;fill:var(--teal-400);flex-shrink:0;margin-top:3px;}
+
+.loc-card__map-btn {
+  display:inline-flex;align-items:center;gap:6px;
+  font-size:.8rem;font-weight:700;color:var(--teal-400);
+  border:1.5px solid rgba(46,196,182,.3);background:rgba(46,196,182,.06);
+  padding:7px 14px;border-radius:999px;
+  text-decoration:none;
+  transition:background .18s,border-color .18s;
+}
+.loc-card__map-btn:hover{background:rgba(46,196,182,.14);border-color:var(--teal-400);}
+.loc-card__map-btn svg{width:13px;height:13px;fill:var(--teal-400);}
+
+/* Map Embed */
+.map-wrap {
+  border-radius:var(--radius-md);
+  overflow:hidden;
+  border:1.5px solid var(--paper-100);
+  box-shadow:var(--shadow-sm);
+  height:340px;
+  position:relative;
+}
+.map-wrap iframe {
+  width:100%;height:100%;border:none;display:block;
+}
+.map-tabs {
+  display:flex;gap:0;
+  background:var(--white);
+  border:1.5px solid var(--paper-100);
+  border-radius:var(--radius-sm);
+  overflow:hidden;
+  margin-bottom:12px;
+  width:fit-content;
+}
+.map-tab {
+  padding:10px 20px;
+  font-size:.82rem;font-weight:700;
+  background:none;border:none;cursor:pointer;
+  color:var(--ink-600);font-family:var(--font-body);
+  transition:background .18s,color .18s;
+}
+.map-tab.active{background:var(--teal-400);color:#fff;}
+.map-tab:not(.active):hover{background:var(--paper-50);}
+
+/* ===== Right: Contact Form ===== */
+.contact-form-card {
+  background:var(--white);
+  border:1.5px solid var(--paper-100);
+  border-radius:var(--radius-lg);
+  overflow:hidden;
+  box-shadow:var(--shadow-md);
+  position:sticky;
+  top:90px;
+}
+.contact-form-card__head {
+  background:linear-gradient(135deg,var(--navy-800) 0%,var(--navy-950) 100%);
+  padding:28px 28px 24px;
+}
+.contact-form-card__head h3 {
+  color:#fff;font-size:1.2rem;margin-bottom:6px;
+}
+.contact-form-card__head p {
+  color:#C9D2E8;font-size:.84rem;margin:0;
+}
+.contact-form-card__body {
+  padding:28px;
+}
+
+/* Form fields */
+.cf-field {
+  margin-bottom:16px;
+}
+.cf-label {
+  display:block;font-size:.76rem;font-weight:700;
+  text-transform:uppercase;letter-spacing:.07em;
+  color:var(--ink-600);margin-bottom:6px;
+}
+.cf-input {
+  width:100%;padding:12px 16px;
+  border:1.5px solid var(--paper-100);
+  border-radius:var(--radius-sm);
+  font-family:var(--font-body);font-size:.9rem;
+  color:var(--ink-900);background:var(--paper-50);
+  outline:none;
+  transition:border-color .18s,background .18s;
+  box-sizing:border-box;
+}
+.cf-input:focus{border-color:var(--teal-400);background:#fff;}
+.cf-input::placeholder{color:var(--ink-400);}
+textarea.cf-input{resize:vertical;min-height:110px;}
+
+/* Course select grid */
+.course-select-grid {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:8px;
+  margin-bottom:16px;
+}
+.course-chip-btn {
+  padding:9px 12px;
+  border:1.5px solid var(--paper-100);
+  border-radius:var(--radius-sm);
+  background:var(--paper-50);
+  font-family:var(--font-body);font-size:.78rem;font-weight:600;
+  color:var(--ink-600);cursor:pointer;
+  text-align:left;
+  transition:border-color .18s,background .18s,color .18s;
+}
+.course-chip-btn:hover{border-color:rgba(46,196,182,.4);background:rgba(46,196,182,.05);}
+.course-chip-btn.selected{
+  border-color:var(--teal-400);
+  background:rgba(46,196,182,.1);
+  color:var(--navy-950);
+}
+
+.cf-submit {
+  width:100%;padding:15px;
+  background:var(--teal-400);color:#fff;
+  border:none;border-radius:999px;
+  font-family:var(--font-display);font-size:.97rem;font-weight:700;
+  cursor:pointer;
+  display:flex;align-items:center;justify-content:center;gap:8px;
+  transition:background .18s,transform .15s,box-shadow .15s;
+  box-shadow:0 6px 24px rgba(46,196,182,.3);
+}
+.cf-submit:hover{background:#26AFA4;transform:translateY(-2px);box-shadow:0 10px 32px rgba(46,196,196,.35);}
+.cf-note{font-size:.72rem;color:var(--ink-400);text-align:center;margin-top:10px;}
+
+/* form success */
+.cf-success {
+  display:none;flex-direction:column;align-items:center;
+  text-align:center;gap:12px;padding:40px 20px;
+}
+.cf-success.is-shown{display:flex;}
+.cf-success__icon{font-size:3rem;line-height:1;}
+.cf-success h4{color:var(--navy-950);font-size:1.2rem;margin:0;}
+.cf-success p{color:var(--ink-600);font-size:.88rem;margin:0;}
+
+/* ===== WhatsApp CTA Band ===== */
+.contact-wa-band {
+  background:linear-gradient(135deg,#1a3a2a 0%,#0d2b1a 100%);
+  padding:52px 0;
+}
+.contact-wa-band__inner {
+  display:flex;justify-content:space-between;align-items:center;
+  gap:24px;flex-wrap:wrap;
+}
+.contact-wa-band h2 {
+  color:#fff;font-size:clamp(1.3rem,2.5vw,1.9rem);margin-bottom:8px;
+}
+.contact-wa-band p {color:rgba(255,255,255,.65);font-size:.93rem;margin:0;}
+.wa-big-btn {
+  display:inline-flex;align-items:center;gap:12px;
+  background:#25D366;color:#fff;
+  padding:16px 28px;border-radius:999px;
+  font-weight:700;font-size:1rem;
+  box-shadow:0 8px 28px rgba(37,211,102,.35);
+  transition:background .18s,transform .15s,box-shadow .15s;
+  flex-shrink:0;
+  text-decoration:none;
+}
+.wa-big-btn:hover{background:#1ebe59;transform:translateY(-2px);box-shadow:0 12px 36px rgba(37,211,102,.45);}
+.wa-big-btn svg{width:24px;height:24px;fill:#fff;flex-shrink:0;}
+@media(max-width:640px){
+  .contact-wa-band__inner{flex-direction:column;align-items:flex-start;}
+  .wa-big-btn{width:100%;justify-content:center;}
+}
+
+/* ===== Reveal ===== */
+[data-reveal]{opacity:0;transform:translateY(20px);transition:opacity .65s ease,transform .65s ease;}
+[data-reveal].is-visible{opacity:1;transform:none;}
+</style>
+</head>
+<body>
+
+<!-- ===== Top utility bar ===== -->
+<div class="topbar">
+  <div class="container topbar__inner">
+    <div class="topbar__contact">
+      <a href="tel:+919491079357"><svg class="icon" viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.2.5 2.5.8 3.8.8.6 0 1 .4 1 1v3.4c0 .6-.4 1-1 1C10.6 21.2 2.8 13.4 2.8 3.8c0-.6.4-1 1-1H7.2c.6 0 1 .4 1 1 0 1.3.3 2.6.8 3.8.2.3.1.7-.2 1l-2.2 2.2z"/></svg><span>+91 94910 79357</span></a>
+      <a href="mailto:acharyacodingschool1@gmail.com" class="hide-sm"><svg class="icon" viewBox="0 0 24 24"><path d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1zm1.8 2 6.7 5.2a1 1 0 0 0 1 0L19.2 7H4.8zM21 8.4l-7.1 5.5a3 3 0 0 1-3.6 0L3 8.4V18h18V8.4z"/></svg><span>acharyacodingschool1@gmail.com</span></a>
+      <span class="hide-sm"><svg class="icon" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5.3 6.1 11.7 6.4 12a1 1 0 0 0 1.2 0c.3-.3 6.4-6.7 6.4-12a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>Hyderabad, India</span>
+    </div>
+    <div class="topbar__social">
+      <a href="https://www.linkedin.com/company/acharya-coding-school/" aria-label="LinkedIn"><svg class="icon" viewBox="0 0 24 24"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3V9zm7 0h3.8v1.7h.1c.5-1 1.8-2 3.7-2 4 0 4.4 2.6 4.4 6V21h-4v-5.6c0-1.3 0-3-1.8-3s-2.1 1.4-2.1 2.9V21h-4V9z"/></svg></a>
+      <a href="https://www.instagram.com/acharyacodingschool/" aria-label="Instagram"><svg class="icon" viewBox="0 0 24 24"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7zm5 3.5a4.5 4.5 0 1 1 0 9 4.5 4.5 0 0 1 0-9zm0 2a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zm5.2-3.5a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/></svg></a>
+      <a href="https://wa.me/919491079357" target="_blank" rel="noopener" aria-label="WhatsApp" class="topbar__social-wa">
+        <svg class="icon icon--wa" viewBox="0 0 24 24" fill="none"><path fill="#25D366" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path fill="#25D366" d="M12 0C5.373 0 0 5.373 0 12c0 2.136.564 4.14 1.543 5.877L.057 23.882l6.21-1.63A11.94 11.94 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 0 1-5.006-1.37l-.36-.214-3.686.968.984-3.595-.235-.369A9.818 9.818 0 1 1 12 21.818z"/></svg>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Header / Nav ===== -->
+<header class="site-header" id="siteHeader">
+  <div class="container header__inner">
+    <a href="index.html" class="brand">
+      <img src="acharya.jpeg" alt="Acharya Coding School logo" class="brand__mark">
+      <span class="brand__name">Acharya<small>Coding School</small></span>
+    </a>
+    <nav class="nav" id="primaryNav">
+      <a href="index.html" class="nav__link">Home</a>
+      <a href="about.html" class="nav__link">About</a>
+      <a href="program.html" class="nav__link">Programs</a>
+      <a href="codelab.html" class="nav__link nav__link--lab">Code Lab</a>
+      <a href="index.html#placements" class="nav__link">Placements</a>
+      <a href="contact.html" class="nav__link active">Contact</a>
+    </nav>
+    <div class="header__cta">
+      <button class="btn btn--primary" data-open-modal>Register Now <span aria-hidden="true">→</span></button>
+    </div>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="primaryNav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="nav-backdrop" id="navBackdrop"></div>
+</header>
+
+<main>
+
+  <!-- ===== Hero ===== -->
+  <section class="contact-hero">
+    <div class="contact-hero__bg-dots"></div>
+    <div class="container contact-hero__inner">
+      <p class="contact-eyebrow">GET IN TOUCH</p>
+      <h1 class="contact-hero__title">We'd Love To<br><span class="text-accent">Hear From You.</span></h1>
+      <p class="contact-hero__sub">Have a question about a course, placement, or just want to explore your options? Our counsellors are ready — reach out and we'll get back within one business day.</p>
+    </div>
+  </section>
+
+  <!-- ===== Quick Info Strip ===== -->
+  <section class="contact-strip">
+    <div class="container">
+      <div class="contact-strip__grid">
+
+        <div class="cstrip-item">
+          <div class="cstrip-icon" style="background:rgba(46,196,182,.1);">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#2EC4B6" stroke-width="2" stroke-linecap="round"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.2.5 2.5.8 3.8.8.6 0 1 .4 1 1v3.4c0 .6-.4 1-1 1C10.6 21.2 2.8 13.4 2.8 3.8c0-.6.4-1 1-1H7.2c.6 0 1 .4 1 1 0 1.3.3 2.6.8 3.8.2.3.1.7-.2 1l-2.2 2.2z"/></svg>
+          </div>
+          <div>
+            <h4>Call / WhatsApp</h4>
+            <p><a href="tel:+919491079357">+91 94910 79357</a></p>
+          </div>
+        </div>
+
+        <div class="cstrip-item">
+          <div class="cstrip-icon" style="background:rgba(242,183,5,.1);">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#F2B705" stroke-width="2" stroke-linecap="round"><path d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1zm1.8 2 6.7 5.2a1 1 0 0 0 1 0L19.2 7H4.8z"/></svg>
+          </div>
+          <div>
+            <h4>Email Us</h4>
+            <p><a href="mailto:acharyacodingschool1@gmail.com">acharyacodingschool1@gmail.com</a></p>
+          </div>
+        </div>
+
+        <div class="cstrip-item">
+          <div class="cstrip-icon" style="background:rgba(59,130,246,.1);">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#3B82F6" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="11" r="3"/><path d="M12 2a9 9 0 0 1 9 9c0 6-9 13-9 13S3 17 3 11a9 9 0 0 1 9-9z"/></svg>
+          </div>
+          <div>
+            <h4>Two Locations</h4>
+            <p>KPHB &amp; Ameerpet, Hyderabad</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Main Content ===== -->
+  <section class="contact-main">
+    <div class="container">
+      <div class="contact-main__grid">
+
+        <!-- LEFT -->
+        <div class="contact-left">
+          <div class="contact-left__head" data-reveal>
+            <p class="section-label">OUR OFFICES</p>
+            <h2>Visit Us at Either Location</h2>
+            <p>Both branches offer the same premium training experience. Walk in for a free counselling session — no appointment needed.</p>
+          </div>
+
+          <!-- Location Cards -->
+          <div class="locations-grid">
+
+            <div class="loc-card" data-reveal>
+              <span class="loc-card__badge">
+                <svg viewBox="0 0 24 24" width="11" height="11" fill="currentColor"><path d="M12 2a7 7 0 0 0-7 7c0 5.3 6.1 11.7 6.4 12a1 1 0 0 0 1.2 0c.3-.3 6.4-6.7 6.4-12a7 7 0 0 0-7-7z"/></svg>
+                KPHB Branch
+              </span>
+              <h3>Vanijya Towers, KPHB</h3>
+              <div class="loc-card__addr">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a7 7 0 0 0-7 7c0 5.3 6.1 11.7 6.4 12a1 1 0 0 0 1.2 0c.3-.3 6.4-6.7 6.4-12a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>
+                #303, 3rd Floor, Vanijya Towers,<br>Beside VRK Skills, KPHB — 500 085
+              </div>
+              <a class="loc-card__map-btn" href="https://maps.google.com/?q=Vanijya+Towers+KPHB+Hyderabad" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a7 7 0 0 0-7 7c0 5.3 6.1 11.7 6.4 12a1 1 0 0 0 1.2 0c.3-.3 6.4-6.7 6.4-12a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>
+                Open in Google Maps
+              </a>
+            </div>
+
+            <div class="loc-card" data-reveal>
+              <span class="loc-card__badge">
+                <svg viewBox="0 0 24 24" width="11" height="11" fill="currentColor"><path d="M12 2a7 7 0 0 0-7 7c0 5.3 6.1 11.7 6.4 12a1 1 0 0 0 1.2 0c.3-.3 6.4-6.7 6.4-12a7 7 0 0 0-7-7z"/></svg>
+                Ameerpet Branch
+              </span>
+              <h3>Annapurna Block, Ameerpet</h3>
+              <div class="loc-card__addr">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a7 7 0 0 0-7 7c0 5.3 6.1 11.7 6.4 12a1 1 0 0 0 1.2 0c.3-.3 6.4-6.7 6.4-12a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>
+                #101, 1st Floor, Annapurna Block,<br>Ameerpet, Hyderabad — 500 038
+              </div>
+              <a class="loc-card__map-btn" href="https://maps.google.com/?q=Annapurna+Block+Ameerpet+Hyderabad" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a7 7 0 0 0-7 7c0 5.3 6.1 11.7 6.4 12a1 1 0 0 0 1.2 0c.3-.3 6.4-6.7 6.4-12a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>
+                Open in Google Maps
+              </a>
+            </div>
+
+          </div><!-- /locations-grid -->
+
+          <!-- Map Tabs + Embed -->
+          <div data-reveal>
+            <div class="map-tabs">
+              <button class="map-tab active" data-map="kphb">📍 KPHB</button>
+              <button class="map-tab" data-map="ameerpet">📍 Ameerpet</button>
+            </div>
+            <div class="map-wrap">
+              <!-- KPHB map -->
+              <iframe
+                id="mapKphb"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3805.4177!2d78.3920!3d17.4937!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb91d30a7d0b4f%3A0xc5f6e10be3f4c6fa!2sVanijya%20Towers%2C%20KPHB%2C%20Hyderabad!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+                allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                title="KPHB Branch Location">
+              </iframe>
+              <!-- Ameerpet map (hidden by default) -->
+              <iframe
+                id="mapAmeerpet"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.2!2d78.4483!3d17.4372!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb97c06a68f6f7%3A0xb98c3fa3a49f7b2c!2sAmeerpet%2C%20Hyderabad!5e0!3m2!1sen!2sin!4v1700000000001!5m2!1sen!2sin"
+                allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                title="Ameerpet Branch Location"
+                style="display:none">
+              </iframe>
+            </div>
+          </div>
+
+          <!-- Additional Contact Details -->
+          <div style="margin-top:32px;display:grid;grid-template-columns:1fr 1fr;gap:18px;" data-reveal>
+
+            <div style="background:var(--white);border:1.5px solid var(--paper-100);border-radius:var(--radius-md);padding:22px 20px;">
+              <div style="width:40px;height:40px;border-radius:12px;background:rgba(46,196,182,.1);display:grid;place-items:center;margin-bottom:14px;">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#2EC4B6" stroke-width="2" stroke-linecap="round" width="20" height="20"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.2.5 2.5.8 3.8.8.6 0 1 .4 1 1v3.4c0 .6-.4 1-1 1C10.6 21.2 2.8 13.4 2.8 3.8c0-.6.4-1 1-1H7.2c.6 0 1 .4 1 1 0 1.3.3 2.6.8 3.8.2.3.1.7-.2 1l-2.2 2.2z"/></svg>
+              </div>
+              <p style="font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--teal-400);margin:0 0 6px;">Call / WhatsApp</p>
+              <a href="tel:+919491079357" style="display:block;font-family:var(--font-display);font-size:1.05rem;font-weight:700;color:var(--navy-950);margin-bottom:4px;">+91 94910 79357</a>
+              <p style="font-size:.8rem;color:var(--ink-400);margin:0;">Mon – Sat, 9 AM – 7 PM</p>
+            </div>
+
+            <div style="background:var(--white);border:1.5px solid var(--paper-100);border-radius:var(--radius-md);padding:22px 20px;">
+              <div style="width:40px;height:40px;border-radius:12px;background:rgba(242,183,5,.1);display:grid;place-items:center;margin-bottom:14px;">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#F2B705" stroke-width="2" stroke-linecap="round" width="20" height="20"><path d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1zm1.8 2 6.7 5.2a1 1 0 0 0 1 0L19.2 7H4.8z"/></svg>
+              </div>
+              <p style="font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:#B07D00;margin:0 0 6px;">Email Us</p>
+              <a href="mailto:acharyacodingschool1@gmail.com" style="display:block;font-family:var(--font-display);font-size:.88rem;font-weight:700;color:var(--navy-950);margin-bottom:4px;word-break:break-all;">acharyacodingschool1@gmail.com</a>
+              <p style="font-size:.8rem;color:var(--ink-400);margin:0;">Reply within 24 hours</p>
+            </div>
+
+          </div>
+
+        </div><!-- /contact-left -->
+
+        <!-- RIGHT: Form -->
+        <div class="contact-form-card" data-reveal>
+          <div class="contact-form-card__head">
+            <h3>Send Us a Message</h3>
+            <p>Fill in the form and our team will reach out within one business day.</p>
+          </div>
+          <div class="contact-form-card__body">
+
+            <div id="cfFormWrap">
+              <div class="cf-field">
+                <label class="cf-label">Your Name *</label>
+                <input type="text" id="cfName" class="cf-input" placeholder="Enter your full name">
+              </div>
+              <div class="cf-field">
+                <label class="cf-label">Phone Number *</label>
+                <input type="tel" id="cfPhone" class="cf-input" placeholder="10-digit mobile number">
+              </div>
+              <div class="cf-field">
+                <label class="cf-label">Email Address *</label>
+                <input type="email" id="cfEmail" class="cf-input" placeholder="you@example.com">
+              </div>
+
+              <div class="cf-field">
+                <label class="cf-label" style="margin-bottom:10px;">Course Interested In</label>
+                <div class="course-select-grid" id="courseGrid">
+                  <button class="course-chip-btn" data-course="Java Full Stack">Java Full Stack</button>
+                  <button class="course-chip-btn" data-course="Python Full Stack">Python Full Stack</button>
+                  <button class="course-chip-btn" data-course="Data Science">Data Science</button>
+                  <button class="course-chip-btn" data-course="Cybersecurity">Cybersecurity</button>
+                  <button class="course-chip-btn" data-course="ServiceNow">ServiceNow</button>
+                  <button class="course-chip-btn" data-course="Dot Net">Dot Net</button>
+                  <button class="course-chip-btn" data-course="Mulesoft">Mulesoft</button>
+                  <button class="course-chip-btn" data-course="Power BI">Power BI</button>
+                </div>
+              </div>
+
+              <div class="cf-field">
+                <label class="cf-label">Your Message</label>
+                <textarea id="cfMessage" class="cf-input" placeholder="Tell us about your background, goals, or any questions you have…"></textarea>
+              </div>
+
+              <button class="cf-submit" id="cfSubmit" type="button">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M22 2L11 13"/><path d="M22 2L15 22 11 13 2 9l20-7z"/></svg>
+                Send Message
+              </button>
+              <p class="cf-note">Demo form — no data is stored or sent.</p>
+            </div>
+
+            <div class="cf-success" id="cfSuccess">
+              <div class="cf-success__icon">🎉</div>
+              <h4>Message Received!</h4>
+              <p>Our counsellor will reach out within one business day. Meanwhile, feel free to WhatsApp us for a faster response.</p>
+              <a href="https://wa.me/919491079357" target="_blank" rel="noopener" class="btn btn--primary" style="margin-top:8px;border-radius:999px;">
+                Chat on WhatsApp →
+              </a>
+            </div>
+
+          </div>
+        </div><!-- /form card -->
+
+      </div><!-- /grid -->
+    </div><!-- /container -->
+  </section>
+
+  <!-- ===== WhatsApp CTA ===== -->
+  <section class="contact-wa-band">
+    <div class="container contact-wa-band__inner">
+      <div>
+        <h2>Prefer a Quick Chat?</h2>
+        <p>WhatsApp us directly and get answers to your queries in minutes — not days.</p>
+      </div>
+      <a href="https://wa.me/919491079357" target="_blank" rel="noopener" class="wa-big-btn">
+        <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.136.564 4.14 1.543 5.877L.057 23.882l6.21-1.63A11.94 11.94 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 0 1-5.006-1.37l-.36-.214-3.686.968.984-3.595-.235-.369A9.818 9.818 0 1 1 12 21.818z"/></svg>
+        WhatsApp +91 94910 79357
+      </a>
+    </div>
+  </section>
+
+</main>
+
+<!-- ===== Footer ===== -->
+<footer class="footer" id="footer">
+  <div class="container footer__grid">
+    <div class="footer__brand">
+      <a href="index.html" class="brand">
+        <img src="acharya.jpeg" alt="Acharya Coding School logo" class="brand__mark">
+        <span class="brand__name">Acharya<small>Coding School</small></span>
+      </a>
+      <p>Practical, placement-oriented IT &amp; Non-IT training for freshers, career switchers and working professionals.</p>
+      <div class="footer__socials">
+        <a href="https://www.linkedin.com/company/acharya-coding-school/" aria-label="LinkedIn" class="footer__social-link">
+          <svg viewBox="0 0 24 24"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3V9zm7 0h3.8v1.7h.1c.5-1 1.8-2 3.7-2 4 0 4.4 2.6 4.4 6V21h-4v-5.6c0-1.3 0-3-1.8-3s-2.1 1.4-2.1 2.9V21h-4V9z"/></svg>
+        </a>
+        <a href="https://www.instagram.com/acharyacodingschool/" aria-label="Instagram" class="footer__social-link">
+          <svg viewBox="0 0 24 24"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7zm5 3.5a4.5 4.5 0 1 1 0 9 4.5 4.5 0 0 1 0-9zm0 2a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zm5.2-3.5a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/></svg>
+        </a>
+        <a href="https://wa.me/919491079357" aria-label="WhatsApp" class="footer__social-link footer__social-link--wa">
+          <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.136.564 4.14 1.543 5.877L.057 23.882l6.21-1.63A11.94 11.94 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 0 1-5.006-1.37l-.36-.214-3.686.968.984-3.595-.235-.369A9.818 9.818 0 1 1 12 21.818z"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="footer__col">
+      <h4>Quick Links</h4>
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="program.html">Programs</a>
+      <a href="codelab.html">Code Lab</a>
+      <a href="index.html#placements">Placements</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="footer__col">
+      <h4>Top Programs</h4>
+      <a href="program.html">Java Full Stack with DSA</a>
+      <a href="program.html">Python Full Stack with DSA</a>
+      <a href="program.html">Data Science</a>
+      <a href="program.html">Cybersecurity</a>
+      <a href="program.html">ServiceNow</a>
+      <a href="program.html">Power BI</a>
+    </div>
+    <div class="footer__col">
+      <h4>Contact Us</h4>
+      <a href="tel:+919491079357" class="footer__contact-item">
+        <svg class="footer__contact-icon" viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.2.5 2.5.8 3.8.8.6 0 1 .4 1 1v3.4c0 .6-.4 1-1 1C10.6 21.2 2.8 13.4 2.8 3.8c0-.6.4-1 1-1H7.2c.6 0 1 .4 1 1 0 1.3.3 2.6.8 3.8.2.3.1.7-.2 1l-2.2 2.2z"/></svg>
+        +91 94910 79357
+      </a>
+      <a href="mailto:acharyacodingschool1@gmail.com" class="footer__contact-item">
+        <svg class="footer__contact-icon" viewBox="0 0 24 24"><path d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1zm1.8 2 6.7 5.2a1 1 0 0 0 1 0L19.2 7H4.8zM21 8.4l-7.1 5.5a3 3 0 0 1-3.6 0L3 8.4V18h18V8.4z"/></svg>
+        acharyacodingschool1@gmail.com
+      </a>
+      <div class="footer__contact-item footer__contact-item--addr">
+        <svg class="footer__contact-icon" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5.3 6.1 11.7 6.4 12a1 1 0 0 0 1.2 0c.3-.3 6.4-6.7 6.4-12a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>
+        <span>KPHB &amp; Ameerpet,<br>Hyderabad, Telangana</span>
+      </div>
+    </div>
+  </div>
+  <div class="footer__bottom-wrap">
+    <div class="container footer__bottom">
+      <p>© <span id="year"></span> Acharya Coding School. All rights reserved.</p>
+      <div class="footer__bottom-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Use</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Floating WhatsApp -->
+<a href="https://wa.me/919491079357" target="_blank" rel="noopener" class="fab fab--whatsapp" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24" width="28" height="28"><path fill="#fff" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path fill="#fff" d="M12 0C5.373 0 0 5.373 0 12c0 2.136.564 4.14 1.543 5.877L.057 23.882l6.21-1.63A11.94 11.94 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 0 1-5.006-1.37l-.36-.214-3.686.968.984-3.595-.235-.369A9.818 9.818 0 1 1 12 21.818z"/></svg>
+</a>
+<button class="fab fab--top" id="backToTop" aria-label="Back to top">↑</button>
+
+<!-- Modal -->
+<div class="modal" id="registerModal" aria-hidden="true">
+  <div class="modal__overlay" data-close-modal></div>
+  <div class="modal__panel" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <button class="modal__close" data-close-modal aria-label="Close">✕</button>
+    <div id="modalFormView">
+      <h3 id="modalTitle">Book Your Free Demo Class</h3>
+      <p class="modal__sub">Fill this in and our counsellor will reach out within one business day.</p>
+      <form id="registerForm" novalidate>
+        <label>Full Name<input type="text" name="name" required placeholder="Your full name"></label>
+        <label>Phone Number<input type="tel" name="phone" required placeholder="10-digit mobile number" pattern="[0-9]{10}"></label>
+        <label>Email<input type="email" name="email" required placeholder="you@example.com"></label>
+        <label>Program Interested In
+          <select name="program" required>
+            <option value="" disabled selected>Select a program</option>
+            <option>Java Full Stack with DSA</option>
+            <option>Python Full Stack with DSA</option>
+            <option>Data Science</option>
+            <option>Cybersecurity</option>
+            <option>ServiceNow</option>
+            <option>Dot Net</option>
+            <option>Mulesoft</option>
+            <option>Power BI</option>
+          </select>
+        </label>
+        <button type="submit" class="btn btn--primary btn--block">Submit Request</button>
+        <p class="modal__note">Demo form only — no data is sent anywhere.</p>
+      </form>
+    </div>
+    <div id="modalSuccessView" class="modal__success" hidden>
+      <span class="modal__success-icon">🎉</span>
+      <h3>Thanks — you're on the list!</h3>
+      <p>Our counsellor will reach out within one business day.</p>
+      <button class="btn btn--primary" data-close-modal>Close</button>
+    </div>
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  /* year */
+  const yr = document.getElementById('year');
+  if (yr) yr.textContent = new Date().getFullYear();
+
+  /* sticky header */
+  const header = document.getElementById('siteHeader');
+  const backToTop = document.getElementById('backToTop');
+  const onScroll = () => {
+    if (header) header.classList.toggle('is-scrolled', window.scrollY > 10);
+    if (backToTop) backToTop.classList.toggle('is-visible', window.scrollY > 500);
+  };
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  /* mobile nav */
+  const navToggle = document.getElementById('navToggle');
+  const primaryNav = document.getElementById('primaryNav');
+  const navBackdrop = document.getElementById('navBackdrop');
+  const openNav = () => { primaryNav.classList.add('is-open'); navToggle.classList.add('is-open'); navToggle.setAttribute('aria-expanded',true); document.body.classList.add('nav-open'); };
+  const closeNav = () => { primaryNav.classList.remove('is-open'); navToggle.classList.remove('is-open'); navToggle.setAttribute('aria-expanded',false); document.body.classList.remove('nav-open'); };
+  if (navToggle) navToggle.addEventListener('click', () => primaryNav.classList.contains('is-open') ? closeNav() : openNav());
+  if (navBackdrop) navBackdrop.addEventListener('click', closeNav);
+  primaryNav?.querySelectorAll('.nav__link').forEach(l => l.addEventListener('click', closeNav));
+  document.addEventListener('keydown', e => { if (e.key==='Escape' && primaryNav?.classList.contains('is-open')) closeNav(); });
+
+  /* back to top */
+  backToTop?.addEventListener('click', () => window.scrollTo({ top:0, behavior:'smooth' }));
+
+  /* scroll reveal */
+  const revEls = document.querySelectorAll('[data-reveal]');
+  const revObs = new IntersectionObserver((entries, obs) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('is-visible'); obs.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  revEls.forEach(el => revObs.observe(el));
+
+  /* map tabs */
+  const mapTabs = document.querySelectorAll('.map-tab');
+  const mapKphb = document.getElementById('mapKphb');
+  const mapAmeerpet = document.getElementById('mapAmeerpet');
+  mapTabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      mapTabs.forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+      if (tab.dataset.map === 'kphb') {
+        mapKphb.style.display = 'block';
+        mapAmeerpet.style.display = 'none';
+      } else {
+        mapKphb.style.display = 'none';
+        mapAmeerpet.style.display = 'block';
+      }
+    });
+  });
+
+  /* course chip selection */
+  const courseChips = document.querySelectorAll('.course-chip-btn');
+  courseChips.forEach(btn => {
+    btn.addEventListener('click', () => {
+      btn.classList.toggle('selected');
+    });
+  });
+
+  /* contact form submit */
+  document.getElementById('cfSubmit').addEventListener('click', () => {
+    const name = document.getElementById('cfName').value.trim();
+    const phone = document.getElementById('cfPhone').value.trim();
+    const email = document.getElementById('cfEmail').value.trim();
+    if (!name || !phone || !email) { alert('Please fill in Name, Phone and Email.'); return; }
+    document.getElementById('cfFormWrap').style.display = 'none';
+    document.getElementById('cfSuccess').classList.add('is-shown');
+  });
+
+  /* modal */
+  const modal = document.getElementById('registerModal');
+  const openTriggers = document.querySelectorAll('[data-open-modal]');
+  const closeTriggers = document.querySelectorAll('[data-close-modal]');
+  const formView = document.getElementById('modalFormView');
+  const successView = document.getElementById('modalSuccessView');
+  const form = document.getElementById('registerForm');
+  let lastFocused = null;
+  const openModal = () => { lastFocused=document.activeElement; modal.classList.add('is-open'); modal.setAttribute('aria-hidden','false'); document.body.style.overflow='hidden'; if(formView) formView.hidden=false; if(successView) successView.hidden=true; form?.reset(); setTimeout(()=>modal.querySelector('input,button')?.focus(),50); };
+  const closeModal = () => { modal.classList.remove('is-open'); modal.setAttribute('aria-hidden','true'); document.body.style.overflow=''; lastFocused?.focus(); };
+  openTriggers.forEach(btn => btn.addEventListener('click', openModal));
+  closeTriggers.forEach(btn => btn.addEventListener('click', closeModal));
+  document.addEventListener('keydown', e => { if(e.key==='Escape' && modal?.classList.contains('is-open')) closeModal(); });
+  form?.addEventListener('submit', e => { e.preventDefault(); if(!form.checkValidity()){form.reportValidity();return;} if(formView) formView.hidden=true; if(successView) successView.hidden=false; });
+});
+</script>
+</body>
+</html>
