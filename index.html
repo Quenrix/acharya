@@ -1,569 +1,758 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Acharya Coding School | Build Your Tech Career</title>
-<meta name="description" content="Industry-aligned IT &amp; Non-IT training with real-time projects, expert mentors and hands-on placement support.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Acharya Coding School | Build Your Tech Career</title>
+  <meta name="description"
+    content="Industry-aligned IT &amp; Non-IT training with real-time projects, expert mentors and hands-on placement support.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="chatbot.css">
 </head>
+
 <body>
 
-<!--
-  NOTE TO DEVELOPER (read before deploying):
-  This is an ORIGINAL template built to match the LAYOUT, SECTION FLOW and
-  INTERACTIONS of an IT-training/placement landing page. All copy, names,
-  company names, numbers and testimonials below are placeholder/fictional
-  examples — swap them for your own real, rights-cleared content (logos,
-  verified testimonials with consent, your actual contact details, etc.)
-  before publishing.
--->
 
-<!-- ===== Top utility bar ===== -->
-<div class="topbar">
-  <div class="container topbar__inner">
-    <div class="topbar__contact">
-      <a href="tel:+919876543210"><svg class="icon" viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.2.5 2.5.8 3.8.8.6 0 1 .4 1 1v3.4c0 .6-.4 1-1 1C10.6 21.2 2.8 13.4 2.8 3.8c0-.6.4-1 1-1H7.2c.6 0 1 .4 1 1 0 1.3.3 2.6.8 3.8.2.3.1.7-.2 1l-2.2 2.2z"/></svg><span>+91 98765 43210</span></a>
-      <a href="mailto:hello@yourdomain.com" class="hide-sm"><svg class="icon" viewBox="0 0 24 24"><path d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1zm1.8 2 6.7 5.2a1 1 0 0 0 1 0L19.2 7H4.8zM21 8.4l-7.1 5.5a3 3 0 0 1-3.6 0L3 8.4V18h18V8.4z"/></svg><span>hello@yourdomain.com</span></a>
-      <span class="hide-sm"><svg class="icon" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5.3 6.1 11.7 6.4 12a1 1 0 0 0 1.2 0c.3-.3 6.4-6.7 6.4-12a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>Hyderabad &amp; Bangalore, India</span>
-    </div>
-    <div class="topbar__social">
-      <a href="https://www.linkedin.com/company/acharya-coding-school/" aria-label="LinkedIn"><svg class="icon" viewBox="0 0 24 24"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3V9zm7 0h3.8v1.7h.1c.5-1 1.8-2 3.7-2 4 0 4.4 2.6 4.4 6V21h-4v-5.6c0-1.3 0-3-1.8-3s-2.1 1.4-2.1 2.9V21h-4V9z"/></svg></a>
-      <a href="https://www.instagram.com/acharyacodingschool/" aria-label="Instagram"><svg class="icon" viewBox="0 0 24 24"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7zm5 3.5a4.5 4.5 0 1 1 0 9 4.5 4.5 0 0 1 0-9zm0 2a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zm5.2-3.5a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/></svg></a>
-      <a href="https://wa.me/919133734688" target="_blank" rel="noopener" aria-label="WhatsApp" class="topbar__social-wa">
-        <svg class="icon icon--wa" viewBox="0 0 24 24" fill="none"><path fill="#25D366" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path fill="#25D366" d="M12 0C5.373 0 0 5.373 0 12c0 2.136.564 4.14 1.543 5.877L.057 23.882l6.21-1.63A11.94 11.94 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 0 1-5.006-1.37l-.36-.214-3.686.968.984-3.595-.235-.369A9.818 9.818 0 1 1 12 21.818z"/></svg>
-      </a>
-    </div>
-  </div>
-</div>
 
-<!-- ===== Header / Nav ===== -->
-<header class="site-header" id="siteHeader">
-  <div class="container header__inner">
-    <a href="#home" class="brand">
-      <img src="acharya.jpeg" alt="Acharya Coding School logo" class="brand__mark">
-      <span class="brand__name">Acharya<small>Coding School</small></span>
-    </a>
-
-    <nav class="nav" id="primaryNav">
-      <a href="#home" class="nav__link active">Home</a>
-      <a href="about.html" class="nav__link">About</a>
-      <a href="program.html" class="nav__link">Programs</a>
-      <a href="codelab.html" class="nav__link nav__link--lab">Code Lab</a>
-      <a href="placement.html" class="nav__link">Placements</a>
-      <a href="contact.html" class="nav__link">Contact</a>
-    </nav>
-
-    <div class="header__cta">
-      <button class="btn btn--primary" data-open-modal>Register Now <span aria-hidden="true">→</span></button>
-    </div>
-
-    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="primaryNav">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-  <div class="nav-backdrop" id="navBackdrop" data-close-nav></div>
-</header>
-
-<main id="home">
-
-  <!-- ===== Hero ===== -->
-  <section class="hero">
-    <div class="container hero__inner">
-      <div class="hero__copy">
-        <p class="eyebrow">Achieving <span aria-hidden="true">•</span> Excellence <span aria-hidden="true">•</span> Together</p>
-        <h1>From Classroom Code <span class="text-accent">To Dream Job</span> — We Build The Bridge.</h1>
-        <p class="hero__sub">Practical IT &amp; Non-IT training with live projects, dedicated mentors and end-to-end placement support — built for freshers, career switchers and working professionals.</p>
-
-        <ul class="badge-row">
-          <li>🎯 Free Demo Class</li>
-          <li>📝 Resume Building</li>
-          <li>🎤 Mock Interviews</li>
-          <li>🤝 Placement Support</li>
-        </ul>
-
-        <div class="hero__actions">
-          <a href="#programs" class="btn btn--primary">Explore Programs <span aria-hidden="true">→</span></a>
-          <button class="btn btn--ghost" data-open-modal>Book a Free Demo</button>
-        </div>
+  <!-- ===== Top utility bar ===== -->
+  <div class="topbar">
+    <div class="container topbar__inner">
+      <div class="topbar__contact">
+        <a href="tel:+91 91337 34688"><svg class="icon" viewBox="0 0 24 24">
+            <path
+              d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.2.5 2.5.8 3.8.8.6 0 1 .4 1 1v3.4c0 .6-.4 1-1 1C10.6 21.2 2.8 13.4 2.8 3.8c0-.6.4-1 1-1H7.2c.6 0 1 .4 1 1 0 1.3.3 2.6.8 3.8.2.3.1.7-.2 1l-2.2 2.2z" />
+          </svg><span>+91 98765 43210</span></a>
+        <a href="mailto:hello@yourdomain.com" class="hide-sm"><svg class="icon" viewBox="0 0 24 24">
+            <path
+              d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1zm1.8 2 6.7 5.2a1 1 0 0 0 1 0L19.2 7H4.8zM21 8.4l-7.1 5.5a3 3 0 0 1-3.6 0L3 8.4V18h18V8.4z" />
+          </svg><span>hello@yourdomain.com</span></a>
+        <span class="hide-sm"><svg class="icon" viewBox="0 0 24 24">
+            <path
+              d="M12 2a7 7 0 0 0-7 7c0 5.3 6.1 11.7 6.4 12a1 1 0 0 0 1.2 0c.3-.3 6.4-6.7 6.4-12a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z" />
+          </svg>Hyderabad &amp; Bangalore, India</span>
       </div>
-
-      <!-- Signature element: animated "offer letter" card stack -->
-      <div class="hero__visual">
-        <div class="card-stack" id="cardStack">
-
-          <article class="offer-card" data-index="0">
-            <div class="offer-card__top">
-              <div class="offer-card__company">
-                <span class="company-chip">NB</span>
-                <div>
-                  <strong>NorthBridge Systems</strong>
-                  <small>Software Engineer</small>
-                </div>
-              </div>
-              <span class="offer-card__tag">Offer Letter</span>
-            </div>
-            <p class="offer-card__greeting">Dear Aarav Sharma,<br>We are pleased to offer you the position below.</p>
-            <div class="offer-card__ctc">
-              <span>Annual CTC Offered</span>
-              <strong>₹ 18,00,000</strong>
-              <small>18 LPA · Effective Jan 2026</small>
-            </div>
-            <div class="offer-card__footer">
-              <span class="grad-chip">✓ Acharya Graduate</span>
-              <span>🎉</span>
-            </div>
-          </article>
-
-          <article class="offer-card" data-index="1">
-            <div class="offer-card__top">
-              <div class="offer-card__company">
-                <span class="company-chip">VC</span>
-                <div>
-                  <strong>Vertex Cloud</strong>
-                  <small>Cloud Support Associate</small>
-                </div>
-              </div>
-              <span class="offer-card__tag">Offer Letter</span>
-            </div>
-            <p class="offer-card__greeting">Dear Sneha Patil,<br>We are pleased to offer you the position below.</p>
-            <div class="offer-card__ctc">
-              <span>Annual CTC Offered</span>
-              <strong>₹ 6,00,000</strong>
-              <small>6 LPA · Effective Feb 2026</small>
-            </div>
-            <div class="offer-card__footer">
-              <span class="grad-chip">✓ Acharya Graduate</span>
-              <span>🎉</span>
-            </div>
-          </article>
-
-          <article class="offer-card" data-index="2">
-            <div class="offer-card__top">
-              <div class="offer-card__company">
-                <span class="company-chip">HA</span>
-                <div>
-                  <strong>Helios Analytics</strong>
-                  <small>Data Analyst</small>
-                </div>
-              </div>
-              <span class="offer-card__tag">Offer Letter</span>
-            </div>
-            <p class="offer-card__greeting">Dear Rohit Nair,<br>We are pleased to offer you the position below.</p>
-            <div class="offer-card__ctc">
-              <span>Annual CTC Offered</span>
-              <strong>₹ 12,00,000</strong>
-              <small>12 LPA · Effective Mar 2026</small>
-            </div>
-            <div class="offer-card__footer">
-              <span class="grad-chip">✓ Acharya Graduate</span>
-              <span>🎉</span>
-            </div>
-          </article>
-
-          <article class="offer-card" data-index="3">
-            <div class="offer-card__top">
-              <div class="offer-card__company">
-                <span class="company-chip">QL</span>
-                <div>
-                  <strong>Quanta Labs</strong>
-                  <small>QA Automation Engineer</small>
-                </div>
-              </div>
-              <span class="offer-card__tag">Offer Letter</span>
-            </div>
-            <p class="offer-card__greeting">Dear Divya Menon,<br>We are pleased to offer you the position below.</p>
-            <div class="offer-card__ctc">
-              <span>Annual CTC Offered</span>
-              <strong>₹ 9,00,000</strong>
-              <small>9 LPA · Effective Apr 2026</small>
-            </div>
-            <div class="offer-card__footer">
-              <span class="grad-chip">✓ Acharya Graduate</span>
-              <span>🎉</span>
-            </div>
-          </article>
-
-        </div>
-        <p class="hero__visual-note">*Sample outcomes shown for illustration.</p>
-
-        <div class="floating-stat floating-stat--top">🏆 18 LPA <small>Highest Package</small></div>
-        <div class="floating-stat floating-stat--bottom">500+ Placed <small>in the last year</small></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== Hiring partners marquee ===== -->
-  <section class="partners" aria-label="Hiring partners">
-    <div class="container">
-      <p class="section-label center">Our Students Work At</p>
-    </div>
-    <div class="marquee">
-      <div class="marquee__track">
-        <!-- Set 1 -->
-        <div class="partner-card"><img src="https://logo.clearbit.com/accenture.com" alt="Accenture"><span>Accenture</span></div>
-        <div class="partner-card"><img src="https://logo.clearbit.com/capgemini.com" alt="Capgemini"><span>Capgemini</span></div>
-        <div class="partner-card"><img src="https://logo.clearbit.com/ibm.com" alt="IBM"><span>IBM</span></div>
-        <div class="partner-card"><img src="https://logo.clearbit.com/microsoft.com" alt="Microsoft"><span>Microsoft</span></div>
-        <div class="partner-card"><img src="https://logo.clearbit.com/deloitte.com" alt="Deloitte"><span>Deloitte</span></div>
-        <div class="partner-card"><img src="https://logo.clearbit.com/ey.com" alt="EY"><span>EY</span></div>
-        <div class="partner-card"><img src="https://logo.clearbit.com/kpmg.com" alt="KPMG"><span>KPMG</span></div>
-        <div class="partner-card"><img src="https://logo.clearbit.com/tcs.com" alt="TCS"><span>TCS</span></div>
-        <div class="partner-card"><img src="https://logo.clearbit.com/infosys.com" alt="Infosys"><span>Infosys</span></div>
-        <div class="partner-card"><img src="https://logo.clearbit.com/wipro.com" alt="Wipro"><span>Wipro</span></div>
-        <div class="partner-card"><img src="https://logo.clearbit.com/cognizant.com" alt="Cognizant"><span>Cognizant</span></div>
-        <div class="partner-card"><img src="https://logo.clearbit.com/hcltech.com" alt="HCL"><span>HCL Tech</span></div>
-        <!-- Set 2 (duplicate for seamless loop) -->
-        <div class="partner-card"><img src="https://logo.clearbit.com/accenture.com" alt="Accenture"><span>Accenture</span></div>
-        <div class="partner-card"><img src="https://logo.clearbit.com/capgemini.com" alt="Capgemini"><span>Capgemini</span></div>
-        <div class="partner-card"><img src="https://logo.clearbit.com/ibm.com" alt="IBM"><span>IBM</span></div>
-        <div class="partner-card"><img src="https://logo.clearbit.com/microsoft.com" alt="Microsoft"><span>Microsoft</span></div>
-        <div class="partner-card"><img src="https://logo.clearbit.com/deloitte.com" alt="Deloitte"><span>Deloitte</span></div>
-        <div class="partner-card"><img src="https://logo.clearbit.com/ey.com" alt="EY"><span>EY</span></div>
-        <div class="partner-card"><img src="https://logo.clearbit.com/kpmg.com" alt="KPMG"><span>KPMG</span></div>
-        <div class="partner-card"><img src="https://logo.clearbit.com/tcs.com" alt="TCS"><span>TCS</span></div>
-        <div class="partner-card"><img src="https://logo.clearbit.com/infosys.com" alt="Infosys"><span>Infosys</span></div>
-        <div class="partner-card"><img src="https://logo.clearbit.com/wipro.com" alt="Wipro"><span>Wipro</span></div>
-        <div class="partner-card"><img src="https://logo.clearbit.com/cognizant.com" alt="Cognizant"><span>Cognizant</span></div>
-        <div class="partner-card"><img src="https://logo.clearbit.com/hcltech.com" alt="HCL"><span>HCL Tech</span></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== Journey / process ===== -->
-  <section class="journey" id="about">
-    <div class="container">
-      <p class="section-label center">Your Journey</p>
-      <h2 class="center">From Zero to Placed</h2>
-
-      <div class="journey__grid">
-        <div class="journey__step">
-          <div class="journey__icon-wrap">
-            <span class="journey__badge">01</span>
-            <div class="journey__icon-box">🎯</div>
-          </div>
-          <h3>Choose Your Track</h3>
-          <p>Pick from 30+ IT &amp; Non-IT programs aligned to current industry hiring trends.</p>
-        </div>
-        <div class="journey__step">
-          <div class="journey__icon-wrap">
-            <span class="journey__badge">02</span>
-            <div class="journey__icon-box">🧪</div>
-          </div>
-          <h3>Train on Live Projects</h3>
-          <p>Work on real-world projects with industry mentors — not just slides and theory.</p>
-        </div>
-        <div class="journey__step">
-          <div class="journey__icon-wrap">
-            <span class="journey__badge">03</span>
-            <div class="journey__icon-box">🧠</div>
-          </div>
-          <h3>Crack the Interviews</h3>
-          <p>Weekly mock interviews, resume building, and aptitude sessions keep you prep-ready.</p>
-        </div>
-        <div class="journey__step">
-          <div class="journey__icon-wrap">
-            <span class="journey__badge">04</span>
-            <div class="journey__icon-box">🚀</div>
-          </div>
-          <h3>Get Placed</h3>
-          <p>Our placement team connects you directly with 100+ hiring partners across India.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== Stats band ===== -->
-  <section class="stats" id="placements">
-    <div class="container stats__grid">
-      <div class="stat" data-suffix="★" data-decimal="1" data-target="4.8">
-        <span class="stat__num">4.8★</span>
-        <p>Student Reviews</p>
-      </div>
-      <div class="stat" data-suffix=" LPA" data-target="47">
-        <span class="stat__num">47 LPA</span>
-        <p>Highest Package</p>
-      </div>
-      <div class="stat" data-suffix="+" data-target="100">
-        <span class="stat__num">100+</span>
-        <p>Hiring Partners</p>
-      </div>
-      <div class="stat" data-suffix="+" data-target="1500">
-        <span class="stat__num">1500+</span>
-        <p>Students Placed</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== The Acharya Edge (why-us) ===== -->
-  <section class="edge" id="programs">
-    <div class="container">
-      <p class="section-label">The Acharya Edge</p>
-      <h2>Not Just Training — A Career Transformation System</h2>
-      <p class="center edge__lede">Mentors, live projects, mock interviews and placement support are not separate add‑ons here — they're stitched into every single track, built around one outcome: you, hired.</p>
-
-      <div class="edge__grid">
-
-        <article class="edge-card edge-card--feature">
-          <a class="edge-card__video-wrap" href="https://youtu.be/ZfFbx5_RxnI?si=XpRgc4giteJCnF6r" target="_blank" rel="noopener" aria-label="Watch on YouTube">
-            <img
-              src="https://i.ytimg.com/vi/ZfFbx5_RxnI/hqdefault.jpg"
-              alt="Acharya Coding School – AWS DevOps Training"
-              loading="lazy"
-            >
-            <div class="edge-card__video-overlay"></div>
-            <div class="edge-card__video-play">
-              <svg viewBox="0 0 24 24" fill="white" width="36" height="36"><path d="M8 5v14l11-7z"/></svg>
-            </div>
-            <div class="edge-card__video-badge">▶ Watch on YouTube</div>
-          </a>
-          <div class="edge-card__feature-body">
-            <div class="edge-card__icon-wrap">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="8 17 4 12 8 7"/><polyline points="16 7 20 12 16 17"/></svg>
-            </div>
-            <h3>100% Live-Project Learning</h3>
-            <p>No filler theory. Every module ends with a real, deployable build — so by graduation you're not carrying notes, you're carrying a portfolio.</p>
-          </div>
-          <div class="edge-card__stats">
-            <div><strong>30+</strong><span>Guided Projects</span></div>
-            <div><strong>0</strong><span>Theory-only Weeks</span></div>
-            <div><strong>100%</strong><span>Live Classes</span></div>
-          </div>
-        </article>
-
-        <article class="edge-card">
-          <div class="edge-card__icon-wrap" style="--card-color:#8B5CF6">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 9 12 4 2 9l10 5 10-5z"/><path d="M6 11v5c0 1.4 2.7 2.5 6 2.5s6-1.1 6-2.5v-5"/></svg>
-          </div>
-          <h3>Mentors From Top MNCs</h3>
-          <p>Taught by engineers and analysts currently working at firms like IBM, TCS and Deloitte — not full-time trainers reading slides.</p>
-        </article>
-
-        <article class="edge-card">
-          <div class="edge-card__icon-wrap" style="--card-color:#3B82F6">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="9" cy="7" r="4"/><path d="M2 21v-2a4 4 0 0 1 4-4h6a4 4 0 0 1 4 4v2"/><circle cx="17.5" cy="7.5" r="3"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/></svg>
-          </div>
-          <h3>Small Batches, Real Attention</h3>
-          <p>Capped batch sizes mean doubts get answered in class — not lost in a queue.</p>
-        </article>
-
-        <article class="edge-card">
-          <div class="edge-card__icon-wrap" style="--card-color:#10B981">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.5 2.5L16 9"/></svg>
-          </div>
-          <h3>Dedicated Placement Cell</h3>
-          <p>A placement team that keeps working for you after the course — 100+ active hiring partners.</p>
-        </article>
-
-        <article class="edge-card">
-          <div class="edge-card__icon-wrap" style="--card-color:#F59E0B">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 8h6M9 12h6M9 16h3"/></svg>
-          </div>
-          <h3>Interview &amp; Resume Lab</h3>
-          <p>Weekly mock interviews, resume audits and aptitude prep, built into every single track.</p>
-        </article>
-
-        <article class="edge-card">
-          <div class="edge-card__icon-wrap" style="--card-color:#EC4899">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="5"/><path d="M8.5 12.5 7 21l5-3 5 3-1.5-8.5"/></svg>
-          </div>
-          <h3>Certification + Portfolio</h3>
-          <p>Walk out with an industry-recognised certificate and a portfolio that speaks before you do.</p>
-        </article>
-
-      </div>
-
-
-    </div>
-  </section>
-
-  <!-- ===== Testimonials ===== -->
-  <section class="testimonials">
-    <div class="container">
-      <p class="section-label center">Real Stories</p>
-      <h2 class="center">Real Journeys. Real Placements.</h2>
-      <p class="center testimonials__lede">We don't just teach technology - we bridge the gap between learning and getting hired. Read how our freshers, experienced and non-IT graduates cracked top MNC jobs.</p>
-    </div>
-
-    <div class="t-marquee-wrap">
-      <div class="t-marquee__track">
-        <article class="t-card"><div class="t-card__stars">★★★★★</div><p>"Strict timings and lot of assignments, which is actually good. If you are lazy, this place is not for you. If you really want a job, just follow their roadmap. Thanks to the whole team for the continuous support."</p><footer><strong>Syed H.</strong><span>Java Full Stack with DSA</span></footer></article>
-        <article class="t-card"><div class="t-card__stars">★★★★☆</div><p>"Very practical approach. I had a 2-year career gap and was losing confidence. The resume-building session and live Selenium projects helped me explain my skills properly. Got placed in a mid-level MNC."</p><footer><strong>Anjali T.</strong><span>Software Testing (Manual + Automation)</span></footer></article>
-        <article class="t-card"><div class="t-card__stars">★★★★★</div><p>"The portfolio building phase was incredible. Interviewers didn't even look at my degree — they looked at the Figma projects I built here. Genuine institute with very helpful mentors."</p><footer><strong>Neha Sharma</strong><span>UI/UX Design</span></footer></article>
-        <article class="t-card"><div class="t-card__stars">★★★★★</div><p>"Small batch size is so helpful — my doubts actually got answered every class. Mock interviews were tough but they matched what the company really asked. Worth every rupee spent."</p><footer><strong>Sahil Kapoor</strong><span>Data Science &amp; Python</span></footer></article>
-        <article class="t-card"><div class="t-card__stars">★★★★★</div><p>"I came from a commerce background and was scared of coding. Building a small project in week one instead of sitting through theory changed how I learned everything after that."</p><footer><strong>Meera Iyer</strong><span>Full Stack Development</span></footer></article>
-        <article class="t-card"><div class="t-card__stars">★★★★★</div><p>"Cleared my cloud admin certification on the first attempt. The real-world scenarios mattered more than memorising the syllabus — that's what showed up in my interview too."</p><footer><strong>Arjun Verma</strong><span>Cloud Administration</span></footer></article>
-        <article class="t-card"><div class="t-card__stars">★★★★☆</div><p>"I had a two-year career gap and very little confidence left. The resume session plus a hands-on automation project gave me something solid to talk about in interviews."</p><footer><strong>Tanya Bose</strong><span>Software Testing</span></footer></article>
-        <article class="t-card"><div class="t-card__stars">★★★★★</div><p>"Daily problem-solving on arrays and strings rebuilt my logic from scratch. Pairing that with an actual backend project gave me real talking points in technical rounds."</p><footer><strong>Karan Mehta</strong><span>Full Stack with DSA</span></footer></article>
-        <!-- Duplicates for seamless loop -->
-        <article class="t-card"><div class="t-card__stars">★★★★★</div><p>"Strict timings and lot of assignments, which is actually good. If you are lazy, this place is not for you. If you really want a job, just follow their roadmap. Thanks to the whole team for the continuous support."</p><footer><strong>Syed H.</strong><span>Java Full Stack with DSA</span></footer></article>
-        <article class="t-card"><div class="t-card__stars">★★★★☆</div><p>"Very practical approach. I had a 2-year career gap and was losing confidence. The resume-building session and live Selenium projects helped me explain my skills properly. Got placed in a mid-level MNC."</p><footer><strong>Anjali T.</strong><span>Software Testing (Manual + Automation)</span></footer></article>
-        <article class="t-card"><div class="t-card__stars">★★★★★</div><p>"The portfolio building phase was incredible. Interviewers didn't even look at my degree — they looked at the Figma projects I built here. Genuine institute with very helpful mentors."</p><footer><strong>Neha Sharma</strong><span>UI/UX Design</span></footer></article>
-        <article class="t-card"><div class="t-card__stars">★★★★★</div><p>"Small batch size is so helpful — my doubts actually got answered every class. Mock interviews were tough but they matched what the company really asked. Worth every rupee spent."</p><footer><strong>Sahil Kapoor</strong><span>Data Science &amp; Python</span></footer></article>
-      </div>
-    </div>
-  </section>
-
-</main>
-
-<!-- ===== Footer ===== -->
-<footer class="footer" id="contact">
-
-  <!-- Top CTA strip -->
-  <div class="footer__cta-strip">
-    <div class="container footer__cta-inner">
-      <div class="footer__cta-text">
-        <h3>Ready to launch your tech career?</h3>
-        <p>Join 1200+ students who got placed through Acharya Coding School.</p>
-      </div>
-      <div class="footer__cta-btns">
-        <button class="btn btn--primary btn--lg" data-open-modal>Book Free Demo →</button>
-        <a class="btn footer__wa-btn" href="https://wa.me/919133734688" target="_blank" rel="noopener">
-          <svg viewBox="0 0 24 24" class="wa-icon"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.136.564 4.14 1.543 5.877L.057 23.882l6.21-1.63A11.94 11.94 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 0 1-5.006-1.37l-.36-.214-3.686.968.984-3.595-.235-.369A9.818 9.818 0 1 1 12 21.818z"/></svg>
-          WhatsApp Us
+      <div class="topbar__social">
+        <a href="https://www.linkedin.com/company/acharya-coding-school/" aria-label="LinkedIn"><svg class="icon"
+            viewBox="0 0 24 24">
+            <path
+              d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3V9zm7 0h3.8v1.7h.1c.5-1 1.8-2 3.7-2 4 0 4.4 2.6 4.4 6V21h-4v-5.6c0-1.3 0-3-1.8-3s-2.1 1.4-2.1 2.9V21h-4V9z" />
+          </svg></a>
+        <a href="https://www.instagram.com/acharyacodingschool/" aria-label="Instagram"><svg class="icon"
+            viewBox="0 0 24 24">
+            <path
+              d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7zm5 3.5a4.5 4.5 0 1 1 0 9 4.5 4.5 0 0 1 0-9zm0 2a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zm5.2-3.5a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
+          </svg></a>
+        <a href="https://wa.me/919133734688" target="_blank" rel="noopener" aria-label="WhatsApp"
+          class="topbar__social-wa">
+          <svg class="icon icon--wa" viewBox="0 0 24 24" fill="none">
+            <path fill="#25D366"
+              d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
+            <path fill="#25D366"
+              d="M12 0C5.373 0 0 5.373 0 12c0 2.136.564 4.14 1.543 5.877L.057 23.882l6.21-1.63A11.94 11.94 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 0 1-5.006-1.37l-.36-.214-3.686.968.984-3.595-.235-.369A9.818 9.818 0 1 1 12 21.818z" />
+          </svg>
         </a>
       </div>
     </div>
   </div>
 
-  <!-- Main footer grid -->
-  <div class="container footer__grid">
-
-    <!-- Brand col -->
-    <div class="footer__brand">
+  <!-- ===== Header / Nav ===== -->
+  <header class="site-header" id="siteHeader">
+    <div class="container header__inner">
       <a href="#home" class="brand">
         <img src="acharya.jpeg" alt="Acharya Coding School logo" class="brand__mark">
         <span class="brand__name">Acharya<small>Coding School</small></span>
       </a>
-      <p>Practical, placement-oriented IT &amp; Non-IT training for freshers, career switchers and working professionals.</p>
-      <div class="footer__socials">
-        <a href="https://www.linkedin.com/company/acharya-coding-school/" aria-label="LinkedIn" class="footer__social-link">
-          <svg viewBox="0 0 24 24"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3V9zm7 0h3.8v1.7h.1c.5-1 1.8-2 3.7-2 4 0 4.4 2.6 4.4 6V21h-4v-5.6c0-1.3 0-3-1.8-3s-2.1 1.4-2.1 2.9V21h-4V9z"/></svg>
-        </a>
-        <a href="https://www.instagram.com/acharyacodingschool/" aria-label="Instagram" class="footer__social-link">
-          <svg viewBox="0 0 24 24"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7zm5 3.5a4.5 4.5 0 1 1 0 9 4.5 4.5 0 0 1 0-9zm0 2a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zm5.2-3.5a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/></svg>
-        </a>
-        <a href="https://wa.me/919133734688" aria-label="WhatsApp" class="footer__social-link footer__social-link--wa">
-          <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.136.564 4.14 1.543 5.877L.057 23.882l6.21-1.63A11.94 11.94 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 0 1-5.006-1.37l-.36-.214-3.686.968.984-3.595-.235-.369A9.818 9.818 0 1 1 12 21.818z"/></svg>
-        </a>
+
+      <nav class="nav" id="primaryNav">
+        <a href="#home" class="nav__link active">Home</a>
+        <a href="about.html" class="nav__link">About</a>
+        <a href="program.html" class="nav__link">Programs</a>
+        <a href="codelab.html" class="nav__link nav__link--lab">Code Lab</a>
+        <a href="placement.html" class="nav__link">Placements</a>
+        <a href="contact.html" class="nav__link">Contact</a>
+      </nav>
+
+      <div class="header__cta">
+        <button class="btn btn--primary" data-open-modal>Register Now <span aria-hidden="true">→</span></button>
+      </div>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false"
+        aria-controls="primaryNav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="nav-backdrop" id="navBackdrop" data-close-nav></div>
+  </header>
+
+  <main id="home">
+
+    <!-- ===== Hero ===== -->
+    <section class="hero">
+      <div class="container hero__inner">
+        <div class="hero__copy">
+          <p class="eyebrow">Achieving <span aria-hidden="true">•</span> Excellence <span aria-hidden="true">•</span>
+            Together</p>
+          <h1>From Classroom Code <span class="text-accent">To Dream Job</span> — We Build The Bridge.</h1>
+          <p class="hero__sub">Practical IT &amp; Non-IT training with live projects, dedicated mentors and end-to-end
+            placement support — built for freshers, career switchers and working professionals.</p>
+
+          <ul class="badge-row">
+            <li>🎯 Free Demo Class</li>
+            <li>📝 Resume Building</li>
+            <li>🎤 Mock Interviews</li>
+            <li>🤝 Placement Support</li>
+          </ul>
+
+          <div class="hero__actions">
+            <a href="#programs" class="btn btn--primary">Explore Programs <span aria-hidden="true">→</span></a>
+            <button class="btn btn--ghost" data-open-modal>Book a Free Demo</button>
+          </div>
+        </div>
+
+        <!-- Signature element: animated "offer letter" card stack -->
+        <div class="hero__visual">
+          <div class="card-stack" id="cardStack">
+
+            <article class="offer-card" data-index="0">
+              <div class="offer-card__top">
+                <div class="offer-card__company">
+                  <span class="company-chip">NB</span>
+                  <div>
+                    <strong>NorthBridge Systems</strong>
+                    <small>Software Engineer</small>
+                  </div>
+                </div>
+                <span class="offer-card__tag">Offer Letter</span>
+              </div>
+              <p class="offer-card__greeting">Dear Aarav Sharma,<br>We are pleased to offer you the position below.</p>
+              <div class="offer-card__ctc">
+                <span>Annual CTC Offered</span>
+                <strong>₹ 18,00,000</strong>
+                <small>18 LPA · Effective Jan 2026</small>
+              </div>
+              <div class="offer-card__footer">
+                <span class="grad-chip">✓ Acharya Graduate</span>
+                <span>🎉</span>
+              </div>
+            </article>
+
+            <article class="offer-card" data-index="1">
+              <div class="offer-card__top">
+                <div class="offer-card__company">
+                  <span class="company-chip">VC</span>
+                  <div>
+                    <strong>Vertex Cloud</strong>
+                    <small>Cloud Support Associate</small>
+                  </div>
+                </div>
+                <span class="offer-card__tag">Offer Letter</span>
+              </div>
+              <p class="offer-card__greeting">Dear Sneha Patil,<br>We are pleased to offer you the position below.</p>
+              <div class="offer-card__ctc">
+                <span>Annual CTC Offered</span>
+                <strong>₹ 6,00,000</strong>
+                <small>6 LPA · Effective Feb 2026</small>
+              </div>
+              <div class="offer-card__footer">
+                <span class="grad-chip">✓ Acharya Graduate</span>
+                <span>🎉</span>
+              </div>
+            </article>
+
+            <article class="offer-card" data-index="2">
+              <div class="offer-card__top">
+                <div class="offer-card__company">
+                  <span class="company-chip">HA</span>
+                  <div>
+                    <strong>Helios Analytics</strong>
+                    <small>Data Analyst</small>
+                  </div>
+                </div>
+                <span class="offer-card__tag">Offer Letter</span>
+              </div>
+              <p class="offer-card__greeting">Dear Rohit Nair,<br>We are pleased to offer you the position below.</p>
+              <div class="offer-card__ctc">
+                <span>Annual CTC Offered</span>
+                <strong>₹ 12,00,000</strong>
+                <small>12 LPA · Effective Mar 2026</small>
+              </div>
+              <div class="offer-card__footer">
+                <span class="grad-chip">✓ Acharya Graduate</span>
+                <span>🎉</span>
+              </div>
+            </article>
+
+            <article class="offer-card" data-index="3">
+              <div class="offer-card__top">
+                <div class="offer-card__company">
+                  <span class="company-chip">QL</span>
+                  <div>
+                    <strong>Quanta Labs</strong>
+                    <small>QA Automation Engineer</small>
+                  </div>
+                </div>
+                <span class="offer-card__tag">Offer Letter</span>
+              </div>
+              <p class="offer-card__greeting">Dear Divya Menon,<br>We are pleased to offer you the position below.</p>
+              <div class="offer-card__ctc">
+                <span>Annual CTC Offered</span>
+                <strong>₹ 9,00,000</strong>
+                <small>9 LPA · Effective Apr 2026</small>
+              </div>
+              <div class="offer-card__footer">
+                <span class="grad-chip">✓ Acharya Graduate</span>
+                <span>🎉</span>
+              </div>
+            </article>
+
+          </div>
+          <p class="hero__visual-note">*Sample outcomes shown for illustration.</p>
+
+          <div class="floating-stat floating-stat--top">🏆 18 LPA <small>Highest Package</small></div>
+          <div class="floating-stat floating-stat--bottom">500+ Placed <small>in the last year</small></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Hiring partners marquee ===== -->
+    <section class="partners" aria-label="Hiring partners">
+      <div class="container">
+        <p class="section-label center">Our Students Work At</p>
+      </div>
+      <div class="marquee">
+        <div class="marquee__track">
+          <!-- Set 1 -->
+          <div class="partner-card"><img src="https://logo.clearbit.com/accenture.com"
+              alt="Accenture"><span>Accenture</span></div>
+          <div class="partner-card"><img src="https://logo.clearbit.com/capgemini.com"
+              alt="Capgemini"><span>Capgemini</span></div>
+          <div class="partner-card"><img src="https://logo.clearbit.com/ibm.com" alt="IBM"><span>IBM</span></div>
+          <div class="partner-card"><img src="https://logo.clearbit.com/microsoft.com"
+              alt="Microsoft"><span>Microsoft</span></div>
+          <div class="partner-card"><img src="https://logo.clearbit.com/deloitte.com"
+              alt="Deloitte"><span>Deloitte</span></div>
+          <div class="partner-card"><img src="https://logo.clearbit.com/ey.com" alt="EY"><span>EY</span></div>
+          <div class="partner-card"><img src="https://logo.clearbit.com/kpmg.com" alt="KPMG"><span>KPMG</span></div>
+          <div class="partner-card"><img src="https://logo.clearbit.com/tcs.com" alt="TCS"><span>TCS</span></div>
+          <div class="partner-card"><img src="https://logo.clearbit.com/infosys.com" alt="Infosys"><span>Infosys</span>
+          </div>
+          <div class="partner-card"><img src="https://logo.clearbit.com/wipro.com" alt="Wipro"><span>Wipro</span></div>
+          <div class="partner-card"><img src="https://logo.clearbit.com/cognizant.com"
+              alt="Cognizant"><span>Cognizant</span></div>
+          <div class="partner-card"><img src="https://logo.clearbit.com/hcltech.com" alt="HCL"><span>HCL Tech</span>
+          </div>
+          <!-- Set 2 (duplicate for seamless loop) -->
+          <div class="partner-card"><img src="https://logo.clearbit.com/accenture.com"
+              alt="Accenture"><span>Accenture</span></div>
+          <div class="partner-card"><img src="https://logo.clearbit.com/capgemini.com"
+              alt="Capgemini"><span>Capgemini</span></div>
+          <div class="partner-card"><img src="https://logo.clearbit.com/ibm.com" alt="IBM"><span>IBM</span></div>
+          <div class="partner-card"><img src="https://logo.clearbit.com/microsoft.com"
+              alt="Microsoft"><span>Microsoft</span></div>
+          <div class="partner-card"><img src="https://logo.clearbit.com/deloitte.com"
+              alt="Deloitte"><span>Deloitte</span></div>
+          <div class="partner-card"><img src="https://logo.clearbit.com/ey.com" alt="EY"><span>EY</span></div>
+          <div class="partner-card"><img src="https://logo.clearbit.com/kpmg.com" alt="KPMG"><span>KPMG</span></div>
+          <div class="partner-card"><img src="https://logo.clearbit.com/tcs.com" alt="TCS"><span>TCS</span></div>
+          <div class="partner-card"><img src="https://logo.clearbit.com/infosys.com" alt="Infosys"><span>Infosys</span>
+          </div>
+          <div class="partner-card"><img src="https://logo.clearbit.com/wipro.com" alt="Wipro"><span>Wipro</span></div>
+          <div class="partner-card"><img src="https://logo.clearbit.com/cognizant.com"
+              alt="Cognizant"><span>Cognizant</span></div>
+          <div class="partner-card"><img src="https://logo.clearbit.com/hcltech.com" alt="HCL"><span>HCL Tech</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Journey / process ===== -->
+    <section class="journey" id="about">
+      <div class="container">
+        <p class="section-label center">Your Journey</p>
+        <h2 class="center">From Zero to Placed</h2>
+
+        <div class="journey__grid">
+          <div class="journey__step">
+            <div class="journey__icon-wrap">
+              <span class="journey__badge">01</span>
+              <div class="journey__icon-box">🎯</div>
+            </div>
+            <h3>Choose Your Track</h3>
+            <p>Pick from 30+ IT &amp; Non-IT programs aligned to current industry hiring trends.</p>
+          </div>
+          <div class="journey__step">
+            <div class="journey__icon-wrap">
+              <span class="journey__badge">02</span>
+              <div class="journey__icon-box">🧪</div>
+            </div>
+            <h3>Train on Live Projects</h3>
+            <p>Work on real-world projects with industry mentors — not just slides and theory.</p>
+          </div>
+          <div class="journey__step">
+            <div class="journey__icon-wrap">
+              <span class="journey__badge">03</span>
+              <div class="journey__icon-box">🧠</div>
+            </div>
+            <h3>Crack the Interviews</h3>
+            <p>Weekly mock interviews, resume building, and aptitude sessions keep you prep-ready.</p>
+          </div>
+          <div class="journey__step">
+            <div class="journey__icon-wrap">
+              <span class="journey__badge">04</span>
+              <div class="journey__icon-box">🚀</div>
+            </div>
+            <h3>Get Placed</h3>
+            <p>Our placement team connects you directly with 100+ hiring partners across India.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Stats band ===== -->
+    <section class="stats" id="placements">
+      <div class="container stats__grid">
+        <div class="stat" data-suffix="★" data-decimal="1" data-target="4.8">
+          <span class="stat__num">4.8★</span>
+          <p>Student Reviews</p>
+        </div>
+        <div class="stat" data-suffix=" LPA" data-target="47">
+          <span class="stat__num">47 LPA</span>
+          <p>Highest Package</p>
+        </div>
+        <div class="stat" data-suffix="+" data-target="100">
+          <span class="stat__num">100+</span>
+          <p>Hiring Partners</p>
+        </div>
+        <div class="stat" data-suffix="+" data-target="1500">
+          <span class="stat__num">1500+</span>
+          <p>Students Placed</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== The Acharya Edge (why-us) ===== -->
+    <section class="edge" id="programs">
+      <div class="container">
+        <p class="section-label">The Acharya Edge</p>
+        <h2>Not Just Training — A Career Transformation System</h2>
+        <p class="center edge__lede">Mentors, live projects, mock interviews and placement support are not separate
+          add‑ons here — they're stitched into every single track, built around one outcome: you, hired.</p>
+
+        <div class="edge__grid">
+
+          <article class="edge-card edge-card--feature">
+            <a class="edge-card__video-wrap" href="https://youtu.be/ZfFbx5_RxnI?si=XpRgc4giteJCnF6r" target="_blank"
+              rel="noopener" aria-label="Watch on YouTube">
+              <img src="https://i.ytimg.com/vi/ZfFbx5_RxnI/hqdefault.jpg"
+                alt="Acharya Coding School – AWS DevOps Training" loading="lazy">
+              <div class="edge-card__video-overlay"></div>
+              <div class="edge-card__video-play">
+                <svg viewBox="0 0 24 24" fill="white" width="36" height="36">
+                  <path d="M8 5v14l11-7z" />
+                </svg>
+              </div>
+              <div class="edge-card__video-badge">▶ Watch on YouTube</div>
+            </a>
+            <div class="edge-card__feature-body">
+              <div class="edge-card__icon-wrap">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                  <polyline points="8 17 4 12 8 7" />
+                  <polyline points="16 7 20 12 16 17" />
+                </svg>
+              </div>
+              <h3>100% Live-Project Learning</h3>
+              <p>No filler theory. Every module ends with a real, deployable build — so by graduation you're not
+                carrying notes, you're carrying a portfolio.</p>
+            </div>
+            <div class="edge-card__stats">
+              <div><strong>30+</strong><span>Guided Projects</span></div>
+              <div><strong>0</strong><span>Theory-only Weeks</span></div>
+              <div><strong>100%</strong><span>Live Classes</span></div>
+            </div>
+          </article>
+
+          <article class="edge-card">
+            <div class="edge-card__icon-wrap" style="--card-color:#8B5CF6">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path d="M22 9 12 4 2 9l10 5 10-5z" />
+                <path d="M6 11v5c0 1.4 2.7 2.5 6 2.5s6-1.1 6-2.5v-5" />
+              </svg>
+            </div>
+            <h3>Mentors From Top MNCs</h3>
+            <p>Taught by engineers and analysts currently working at firms like IBM, TCS and Deloitte — not full-time
+              trainers reading slides.</p>
+          </article>
+
+          <article class="edge-card">
+            <div class="edge-card__icon-wrap" style="--card-color:#3B82F6">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <circle cx="9" cy="7" r="4" />
+                <path d="M2 21v-2a4 4 0 0 1 4-4h6a4 4 0 0 1 4 4v2" />
+                <circle cx="17.5" cy="7.5" r="3" />
+                <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+              </svg>
+            </div>
+            <h3>Small Batches, Real Attention</h3>
+            <p>Capped batch sizes mean doubts get answered in class — not lost in a queue.</p>
+          </article>
+
+          <article class="edge-card">
+            <div class="edge-card__icon-wrap" style="--card-color:#10B981">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <circle cx="12" cy="12" r="9" />
+                <path d="M8 12.5l2.5 2.5L16 9" />
+              </svg>
+            </div>
+            <h3>Dedicated Placement Cell</h3>
+            <p>A placement team that keeps working for you after the course — 100+ active hiring partners.</p>
+          </article>
+
+          <article class="edge-card">
+            <div class="edge-card__icon-wrap" style="--card-color:#F59E0B">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <rect x="5" y="3" width="14" height="18" rx="2" />
+                <path d="M9 8h6M9 12h6M9 16h3" />
+              </svg>
+            </div>
+            <h3>Interview &amp; Resume Lab</h3>
+            <p>Weekly mock interviews, resume audits and aptitude prep, built into every single track.</p>
+          </article>
+
+          <article class="edge-card">
+            <div class="edge-card__icon-wrap" style="--card-color:#EC4899">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <circle cx="12" cy="8" r="5" />
+                <path d="M8.5 12.5 7 21l5-3 5 3-1.5-8.5" />
+              </svg>
+            </div>
+            <h3>Certification + Portfolio</h3>
+            <p>Walk out with an industry-recognised certificate and a portfolio that speaks before you do.</p>
+          </article>
+
+        </div>
+
+
+      </div>
+    </section>
+
+    <!-- ===== Testimonials ===== -->
+    <section class="testimonials">
+      <div class="container">
+        <p class="section-label center">Real Stories</p>
+        <h2 class="center">Real Journeys. Real Placements.</h2>
+        <p class="center testimonials__lede">We don't just teach technology - we bridge the gap between learning and
+          getting hired. Read how our freshers, experienced and non-IT graduates cracked top MNC jobs.</p>
+      </div>
+
+      <div class="t-marquee-wrap">
+        <div class="t-marquee__track">
+          <article class="t-card">
+            <div class="t-card__stars">★★★★★</div>
+            <p>"Strict timings and lot of assignments, which is actually good. If you are lazy, this place is not for
+              you. If you really want a job, just follow their roadmap. Thanks to the whole team for the continuous
+              support."</p>
+            <footer><strong>Syed H.</strong><span>Java Full Stack with DSA</span></footer>
+          </article>
+          <article class="t-card">
+            <div class="t-card__stars">★★★★☆</div>
+            <p>"Very practical approach. I had a 2-year career gap and was losing confidence. The resume-building
+              session and live Selenium projects helped me explain my skills properly. Got placed in a mid-level MNC."
+            </p>
+            <footer><strong>Anjali T.</strong><span>Software Testing (Manual + Automation)</span></footer>
+          </article>
+          <article class="t-card">
+            <div class="t-card__stars">★★★★★</div>
+            <p>"The portfolio building phase was incredible. Interviewers didn't even look at my degree — they looked at
+              the Figma projects I built here. Genuine institute with very helpful mentors."</p>
+            <footer><strong>Neha Sharma</strong><span>UI/UX Design</span></footer>
+          </article>
+          <article class="t-card">
+            <div class="t-card__stars">★★★★★</div>
+            <p>"Small batch size is so helpful — my doubts actually got answered every class. Mock interviews were tough
+              but they matched what the company really asked. Worth every rupee spent."</p>
+            <footer><strong>Sahil Kapoor</strong><span>Data Science &amp; Python</span></footer>
+          </article>
+          <article class="t-card">
+            <div class="t-card__stars">★★★★★</div>
+            <p>"I came from a commerce background and was scared of coding. Building a small project in week one instead
+              of sitting through theory changed how I learned everything after that."</p>
+            <footer><strong>Meera Iyer</strong><span>Full Stack Development</span></footer>
+          </article>
+          <article class="t-card">
+            <div class="t-card__stars">★★★★★</div>
+            <p>"Cleared my cloud admin certification on the first attempt. The real-world scenarios mattered more than
+              memorising the syllabus — that's what showed up in my interview too."</p>
+            <footer><strong>Arjun Verma</strong><span>Cloud Administration</span></footer>
+          </article>
+          <article class="t-card">
+            <div class="t-card__stars">★★★★☆</div>
+            <p>"I had a two-year career gap and very little confidence left. The resume session plus a hands-on
+              automation project gave me something solid to talk about in interviews."</p>
+            <footer><strong>Tanya Bose</strong><span>Software Testing</span></footer>
+          </article>
+          <article class="t-card">
+            <div class="t-card__stars">★★★★★</div>
+            <p>"Daily problem-solving on arrays and strings rebuilt my logic from scratch. Pairing that with an actual
+              backend project gave me real talking points in technical rounds."</p>
+            <footer><strong>Karan Mehta</strong><span>Full Stack with DSA</span></footer>
+          </article>
+          <!-- Duplicates for seamless loop -->
+          <article class="t-card">
+            <div class="t-card__stars">★★★★★</div>
+            <p>"Strict timings and lot of assignments, which is actually good. If you are lazy, this place is not for
+              you. If you really want a job, just follow their roadmap. Thanks to the whole team for the continuous
+              support."</p>
+            <footer><strong>Syed H.</strong><span>Java Full Stack with DSA</span></footer>
+          </article>
+          <article class="t-card">
+            <div class="t-card__stars">★★★★☆</div>
+            <p>"Very practical approach. I had a 2-year career gap and was losing confidence. The resume-building
+              session and live Selenium projects helped me explain my skills properly. Got placed in a mid-level MNC."
+            </p>
+            <footer><strong>Anjali T.</strong><span>Software Testing (Manual + Automation)</span></footer>
+          </article>
+          <article class="t-card">
+            <div class="t-card__stars">★★★★★</div>
+            <p>"The portfolio building phase was incredible. Interviewers didn't even look at my degree — they looked at
+              the Figma projects I built here. Genuine institute with very helpful mentors."</p>
+            <footer><strong>Neha Sharma</strong><span>UI/UX Design</span></footer>
+          </article>
+          <article class="t-card">
+            <div class="t-card__stars">★★★★★</div>
+            <p>"Small batch size is so helpful — my doubts actually got answered every class. Mock interviews were tough
+              but they matched what the company really asked. Worth every rupee spent."</p>
+            <footer><strong>Sahil Kapoor</strong><span>Data Science &amp; Python</span></footer>
+          </article>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer class="footer" id="contact">
+
+    <!-- Top CTA strip -->
+    <div class="footer__cta-strip">
+      <div class="container footer__cta-inner">
+        <div class="footer__cta-text">
+          <h3>Ready to launch your tech career?</h3>
+          <p>Join 1200+ students who got placed through Acharya Coding School.</p>
+        </div>
+        <div class="footer__cta-btns">
+          <button class="btn btn--primary btn--lg" data-open-modal>Book Free Demo →</button>
+          <a class="btn footer__wa-btn" href="https://wa.me/919133734688" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" class="wa-icon">
+              <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
+              <path
+                d="M12 0C5.373 0 0 5.373 0 12c0 2.136.564 4.14 1.543 5.877L.057 23.882l6.21-1.63A11.94 11.94 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 0 1-5.006-1.37l-.36-.214-3.686.968.984-3.595-.235-.369A9.818 9.818 0 1 1 12 21.818z" />
+            </svg>
+            WhatsApp Us
+          </a>
+        </div>
       </div>
     </div>
 
-    <!-- Quick Links -->
-    <div class="footer__col">
-      <h4>Quick Links</h4>
-      <a href="#home">Home</a>
-      <a href="#about">About Us</a>
-      <a href="#programs">Programs</a>
-      <a href="codelab.html">Code Lab</a>
-      <a href="placement.html">Placements</a>
-      <a href="contact.html">Contact</a>
+    <!-- Main footer grid -->
+    <div class="container footer__grid">
+
+      <!-- Brand col -->
+      <div class="footer__brand">
+        <a href="#home" class="brand">
+          <img src="acharya.jpeg" alt="Acharya Coding School logo" class="brand__mark">
+          <span class="brand__name">Acharya<small>Coding School</small></span>
+        </a>
+        <p>Practical, placement-oriented IT &amp; Non-IT training for freshers, career switchers and working
+          professionals.</p>
+        <div class="footer__socials">
+          <a href="https://www.linkedin.com/company/acharya-coding-school/" aria-label="LinkedIn"
+            class="footer__social-link">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3V9zm7 0h3.8v1.7h.1c.5-1 1.8-2 3.7-2 4 0 4.4 2.6 4.4 6V21h-4v-5.6c0-1.3 0-3-1.8-3s-2.1 1.4-2.1 2.9V21h-4V9z" />
+            </svg>
+          </a>
+          <a href="https://www.instagram.com/acharyacodingschool/" aria-label="Instagram" class="footer__social-link">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7zm5 3.5a4.5 4.5 0 1 1 0 9 4.5 4.5 0 0 1 0-9zm0 2a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zm5.2-3.5a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
+            </svg>
+          </a>
+          <a href="https://wa.me/919133734688" aria-label="WhatsApp"
+            class="footer__social-link footer__social-link--wa">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
+              <path
+                d="M12 0C5.373 0 0 5.373 0 12c0 2.136.564 4.14 1.543 5.877L.057 23.882l6.21-1.63A11.94 11.94 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 0 1-5.006-1.37l-.36-.214-3.686.968.984-3.595-.235-.369A9.818 9.818 0 1 1 12 21.818z" />
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="footer__col">
+        <h4>Quick Links</h4>
+        <a href="#home">Home</a>
+        <a href="#about">About Us</a>
+        <a href="#programs">Programs</a>
+        <a href="codelab.html">Code Lab</a>
+        <a href="placement.html">Placements</a>
+        <a href="contact.html">Contact</a>
+      </div>
+
+      <!-- Programs -->
+      <div class="footer__col">
+        <h4>Top Programs</h4>
+        <a href="#programs">Full Stack Development</a>
+        <a href="#programs">Data Science with Python</a>
+        <a href="#programs">DevOps &amp; Cloud</a>
+        <a href="#programs">Software Testing</a>
+        <a href="#programs">SAP (FICO / SD / ABAP)</a>
+        <a href="#programs">UI/UX Design</a>
+      </div>
+
+      <!-- Contact -->
+      <div class="footer__col">
+        <h4>Contact Us</h4>
+        <a href="tel:+919876543210" class="footer__contact-item">
+          <svg class="footer__contact-icon" viewBox="0 0 24 24">
+            <path
+              d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.2.5 2.5.8 3.8.8.6 0 1 .4 1 1v3.4c0 .6-.4 1-1 1C10.6 21.2 2.8 13.4 2.8 3.8c0-.6.4-1 1-1H7.2c.6 0 1 .4 1 1 0 1.3.3 2.6.8 3.8.2.3.1.7-.2 1l-2.2 2.2z" />
+          </svg>
+          +91 98765 43210
+        </a>
+        <a href="mailto:hello@yourdomain.com" class="footer__contact-item">
+          <svg class="footer__contact-icon" viewBox="0 0 24 24">
+            <path
+              d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1zm1.8 2 6.7 5.2a1 1 0 0 0 1 0L19.2 7H4.8zM21 8.4l-7.1 5.5a3 3 0 0 1-3.6 0L3 8.4V18h18V8.4z" />
+          </svg>
+          hello@yourdomain.com
+        </a>
+        <div class="footer__contact-item footer__contact-item--addr">
+          <svg class="footer__contact-icon" viewBox="0 0 24 24">
+            <path
+              d="M12 2a7 7 0 0 0-7 7c0 5.3 6.1 11.7 6.4 12a1 1 0 0 0 1.2 0c.3-.3 6.4-6.7 6.4-12a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z" />
+          </svg>
+          <span>Hyderabad &amp; Bangalore,<br>India</span>
+        </div>
+      </div>
+
     </div>
 
-    <!-- Programs -->
-    <div class="footer__col">
-      <h4>Top Programs</h4>
-      <a href="#programs">Full Stack Development</a>
-      <a href="#programs">Data Science with Python</a>
-      <a href="#programs">DevOps &amp; Cloud</a>
-      <a href="#programs">Software Testing</a>
-      <a href="#programs">SAP (FICO / SD / ABAP)</a>
-      <a href="#programs">UI/UX Design</a>
-    </div>
-
-    <!-- Contact -->
-    <div class="footer__col">
-      <h4>Contact Us</h4>
-      <a href="tel:+919876543210" class="footer__contact-item">
-        <svg class="footer__contact-icon" viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.2.5 2.5.8 3.8.8.6 0 1 .4 1 1v3.4c0 .6-.4 1-1 1C10.6 21.2 2.8 13.4 2.8 3.8c0-.6.4-1 1-1H7.2c.6 0 1 .4 1 1 0 1.3.3 2.6.8 3.8.2.3.1.7-.2 1l-2.2 2.2z"/></svg>
-        +91 98765 43210
-      </a>
-      <a href="mailto:hello@yourdomain.com" class="footer__contact-item">
-        <svg class="footer__contact-icon" viewBox="0 0 24 24"><path d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1zm1.8 2 6.7 5.2a1 1 0 0 0 1 0L19.2 7H4.8zM21 8.4l-7.1 5.5a3 3 0 0 1-3.6 0L3 8.4V18h18V8.4z"/></svg>
-        hello@yourdomain.com
-      </a>
-      <div class="footer__contact-item footer__contact-item--addr">
-        <svg class="footer__contact-icon" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5.3 6.1 11.7 6.4 12a1 1 0 0 0 1.2 0c.3-.3 6.4-6.7 6.4-12a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>
-        <span>Hyderabad &amp; Bangalore,<br>India</span>
+    <!-- Divider + Bottom bar -->
+    <div class="footer__bottom-wrap">
+      <div class="container footer__bottom">
+        <p>© <span id="year"></span> Acharya Coding School. All rights reserved.</p>
+        <div class="footer__bottom-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Use</a>
+        </div>
       </div>
     </div>
 
+  </footer>
+
+  <!-- Back to top -->
+  <button class="fab fab--top" id="backToTop" aria-label="Back to top">↑</button>
+
+  <!-- ===== Chatbot FAB ===== -->
+  <button class="fab fab--chatbot" id="chatbotFab" aria-label="Chat with us" aria-expanded="false">
+    <img src="bot.png" alt="Course Advisor">
+    <span class="chatbot-online-dot"></span>
+  </button>
+
+  <!-- ===== Chatbot Window ===== -->
+  <div class="chatbot-window" id="chatbotWindow" role="dialog" aria-label="Chat with Acharya Coding School">
+    <div class="chatbot-header">
+      <img class="chatbot-header__avatar" src="bot.png" alt="Priya">
+      <div class="chatbot-header__info">
+        <div class="chatbot-header__name">Priya &mdash; Course Advisor</div>
+        <div class="chatbot-header__status">
+          <span class="dot"></span> Online &bull; Typically replies instantly
+        </div>
+      </div>
+      <div class="chatbot-header__actions">
+        <button class="chatbot-header__btn" id="chatbotReset" aria-label="Restart chat" title="Restart">&#8635;</button>
+        <button class="chatbot-header__btn" id="chatbotClose" aria-label="Close chat">&#10005;</button>
+      </div>
+    </div>
+    <div class="chatbot-messages" id="chatbotMessages"></div>
+    <div class="chatbot-input-area" id="chatbotInputArea" style="display:none;">
+      <div class="chatbot-flag">
+        <img src="https://flagcdn.com/w40/in.png" alt="India"> +91
+      </div>
+      <input class="chatbot-input" id="chatbotInput" type="text" placeholder="Type your name…" autocomplete="off">
+      <button class="chatbot-send" id="chatbotSend" aria-label="Send">
+        <svg viewBox="0 0 24 24">
+          <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z" />
+        </svg>
+      </button>
+    </div>
+    <a class="chatbot-banner" href="program.html">View Course Details &rarr;</a>
   </div>
 
-  <!-- Divider + Bottom bar -->
-  <div class="footer__bottom-wrap">
-    <div class="container footer__bottom">
-      <p>© <span id="year"></span> Acharya Coding School. All rights reserved.</p>
-      <div class="footer__bottom-links">
-        <a href="#">Privacy Policy</a>
-        <a href="#">Terms of Use</a>
+
+
+  <!-- ===== Register / Demo Modal ===== -->
+  <div class="modal" id="registerModal" aria-hidden="true">
+    <div class="modal__overlay" data-close-modal></div>
+    <div class="modal__panel" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="modal__close" data-close-modal aria-label="Close">✕</button>
+
+      <div id="modalFormView">
+        <h3 id="modalTitle">Book Your Free Demo Class</h3>
+        <p class="modal__sub">Fill this in and our counsellor will reach out within one business day.</p>
+        <form id="registerForm" novalidate>
+          <label>
+            Full Name
+            <input type="text" name="name" required placeholder="Your full name">
+          </label>
+          <label>
+            Phone Number
+            <input type="tel" name="phone" required placeholder="10-digit mobile number" pattern="[0-9]{10}">
+          </label>
+          <label>
+            Email
+            <input type="email" name="email" required placeholder="you@example.com">
+          </label>
+          <label>
+            Program Interested In
+            <select name="program" required>
+              <option value="" disabled selected>Select a program</option>
+              <option>Full Stack Development</option>
+              <option>Data Science with Python</option>
+              <option>DevOps &amp; Cloud</option>
+              <option>SAP (FICO / SD / ABAP)</option>
+              <option>Software Testing</option>
+              <option>UI/UX Design</option>
+              <option>Cloud Administration</option>
+              <option>Cybersecurity Fundamentals</option>
+            </select>
+          </label>
+          <button type="submit" class="btn btn--primary btn--block">Submit Request</button>
+          <p class="modal__note">Demo form only — no data is sent anywhere.</p>
+        </form>
+      </div>
+
+      <div id="modalSuccessView" class="modal__success" hidden>
+        <span class="modal__success-icon">🎉</span>
+        <h3>Thanks — you're on the list!</h3>
+        <p>This is a demo confirmation. Connect your own backend or form service to make this functional.</p>
+        <button class="btn btn--primary" data-close-modal>Close</button>
       </div>
     </div>
   </div>
 
-</footer>
-
-<!-- Floating WhatsApp button -->
-<a href="https://wa.me/919133734688" target="_blank" rel="noopener" class="fab fab--whatsapp" aria-label="Chat on WhatsApp">
-  <svg viewBox="0 0 24 24" width="28" height="28"><path fill="#fff" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path fill="#fff" d="M12 0C5.373 0 0 5.373 0 12c0 2.136.564 4.14 1.543 5.877L.057 23.882l6.21-1.63A11.94 11.94 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 0 1-5.006-1.37l-.36-.214-3.686.968.984-3.595-.235-.369A9.818 9.818 0 1 1 12 21.818z"/></svg>
-</a>
-
-<!-- Back to top -->
-<button class="fab fab--top" id="backToTop" aria-label="Back to top">↑</button>
-
-<!-- ===== Register / Demo Modal ===== -->
-<div class="modal" id="registerModal" aria-hidden="true">
-  <div class="modal__overlay" data-close-modal></div>
-  <div class="modal__panel" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-    <button class="modal__close" data-close-modal aria-label="Close">✕</button>
-
-    <div id="modalFormView">
-      <h3 id="modalTitle">Book Your Free Demo Class</h3>
-      <p class="modal__sub">Fill this in and our counsellor will reach out within one business day.</p>
-      <form id="registerForm" novalidate>
-        <label>
-          Full Name
-          <input type="text" name="name" required placeholder="Your full name">
-        </label>
-        <label>
-          Phone Number
-          <input type="tel" name="phone" required placeholder="10-digit mobile number" pattern="[0-9]{10}">
-        </label>
-        <label>
-          Email
-          <input type="email" name="email" required placeholder="you@example.com">
-        </label>
-        <label>
-          Program Interested In
-          <select name="program" required>
-            <option value="" disabled selected>Select a program</option>
-            <option>Full Stack Development</option>
-            <option>Data Science with Python</option>
-            <option>DevOps &amp; Cloud</option>
-            <option>SAP (FICO / SD / ABAP)</option>
-            <option>Software Testing</option>
-            <option>UI/UX Design</option>
-            <option>Cloud Administration</option>
-            <option>Cybersecurity Fundamentals</option>
-          </select>
-        </label>
-        <button type="submit" class="btn btn--primary btn--block">Submit Request</button>
-        <p class="modal__note">Demo form only — no data is sent anywhere.</p>
-      </form>
-    </div>
-
-    <div id="modalSuccessView" class="modal__success" hidden>
-      <span class="modal__success-icon">🎉</span>
-      <h3>Thanks — you're on the list!</h3>
-      <p>This is a demo confirmation. Connect your own backend or form service to make this functional.</p>
-      <button class="btn btn--primary" data-close-modal>Close</button>
-    </div>
-  </div>
-</div>
-
-<script src="script.js"></script>
+  <script src="script.js"></script>
+  <script src="chatbot.js"></script>
 </body>
+
 </html>

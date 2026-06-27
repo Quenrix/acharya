@@ -1,1000 +1,1462 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Programs | Acharya Coding School</title>
-<meta name="description" content="Explore 8 industry-aligned programs at Acharya Coding School — Java Full Stack, Python, Data Science, Cybersecurity, ServiceNow, Dot Net, Mulesoft and Power BI.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
-<style>
-/* =========================================================
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Programs | Acharya Coding School</title>
+  <meta name="description"
+    content="Explore 8 industry-aligned programs at Acharya Coding School — Java Full Stack, Python, Data Science, Cybersecurity, ServiceNow, Dot Net, Mulesoft and Power BI.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="chatbot.css">
+  <style>
+    /* =========================================================
    PROGRAMS PAGE — Premium Styles
    ========================================================= */
 
-/* ===== Programs Hero ===== */
-.prog-hero {
-  background: radial-gradient(ellipse at 75% 0%,rgba(46,196,182,.15),transparent 55%),
-              radial-gradient(ellipse at 10% 85%,rgba(242,183,5,.09),transparent 50%),
-              var(--navy-950);
-  color:#fff;
-  padding:80px 0 100px;
-  position:relative;
-  overflow:hidden;
-}
-.prog-hero__bg-dots {
-  position:absolute;inset:0;
-  background-image:radial-gradient(rgba(255,255,255,.06) 1px,transparent 1px);
-  background-size:32px 32px;
-  pointer-events:none;
-}
-.prog-hero__inner {
-  position:relative;z-index:1;max-width:780px;
-}
-.prog-eyebrow {
-  color:var(--teal-400);font-weight:700;letter-spacing:.14em;font-size:.78rem;
-  text-transform:uppercase;margin-bottom:16px;display:block;
-}
-.prog-hero__title {
-  font-size:clamp(2rem,4.5vw,3.3rem);color:#fff;line-height:1.12;
-  margin-bottom:20px;letter-spacing:-.02em;
-}
-.prog-hero__sub {
-  color:#C9D2E8;font-size:1.05rem;line-height:1.7;
-  max-width:680px;margin-bottom:32px;
-}
-.prog-hero__chips {
-  display:flex;flex-wrap:wrap;gap:10px;
-}
-.prog-hero__chips span {
-  background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);
-  padding:9px 16px;border-radius:999px;font-size:.84rem;font-weight:600;color:#E7EBF6;
-}
-@media (max-width:600px){
-  .prog-hero{padding:52px 0 64px;}
-  .prog-hero__title{font-size:clamp(1.7rem,6vw,2.6rem);}
-}
+    /* ===== Programs Hero ===== */
+    .prog-hero {
+      background: radial-gradient(ellipse at 75% 0%, rgba(46, 196, 182, .15), transparent 55%),
+        radial-gradient(ellipse at 10% 85%, rgba(242, 183, 5, .09), transparent 50%),
+        var(--navy-950);
+      color: #fff;
+      padding: 80px 0 100px;
+      position: relative;
+      overflow: hidden;
+    }
 
-/* ===== Programs Grid Section ===== */
-.programs-section {
-  padding:72px 0 88px;
-  background:var(--paper-50);
-}
-.programs-section__head {
-  text-align:center;
-  margin-bottom:52px;
-}
-.programs-section__head h2 {
-  font-size:clamp(1.6rem,3vw,2.4rem);
-  margin-top:6px;margin-bottom:12px;
-}
-.programs-section__head p {
-  color:var(--ink-600);max-width:580px;margin:0 auto;font-size:.97rem;
-}
+    .prog-hero__bg-dots {
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(rgba(255, 255, 255, .06) 1px, transparent 1px);
+      background-size: 32px 32px;
+      pointer-events: none;
+    }
 
-/* ===== Program Cards Grid ===== */
-.prog-grid {
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:22px;
-}
-@media (max-width:1100px){.prog-grid{grid-template-columns:repeat(3,1fr);}}
-@media (max-width:780px) {.prog-grid{grid-template-columns:repeat(2,1fr);}}
-@media (max-width:480px) {.prog-grid{grid-template-columns:1fr;}}
+    .prog-hero__inner {
+      position: relative;
+      z-index: 1;
+      max-width: 780px;
+    }
 
-.prog-card {
-  background:var(--white);
-  border:1.5px solid var(--paper-100);
-  border-radius:var(--radius-md);
-  padding:26px 22px 22px;
-  cursor:pointer;
-  transition:transform .22s ease,box-shadow .22s ease,border-color .22s;
-  position:relative;
-  display:flex;
-  flex-direction:column;
-  gap:12px;
-}
-.prog-card:hover,
-.prog-card.is-active {
-  transform:translateY(-5px);
-  box-shadow:0 8px 32px rgba(10,17,40,.12);
-  border-color:var(--teal-400);
-}
-.prog-card__head {
-  display:flex;align-items:flex-start;justify-content:space-between;
-}
-.prog-card__logo {
-  width:52px;height:52px;border-radius:14px;
-  background:var(--paper-50);border:1.5px solid var(--paper-100);
-  display:grid;place-items:center;flex-shrink:0;
-  overflow:hidden;
-}
-.prog-card__logo img {
-  width:36px;height:36px;object-fit:contain;
-}
-.prog-card__logo svg {
-  width:30px;height:30px;
-}
-.prog-card__badge {
-  font-size:.72rem;font-weight:700;letter-spacing:.04em;
-  padding:5px 11px;border-radius:999px;
-  background:rgba(242,183,5,.12);color:#B07D00;border:1px solid rgba(242,183,5,.25);
-  white-space:nowrap;
-}
-.prog-card h3 {
-  font-size:1.02rem;color:var(--navy-950);margin:0;line-height:1.3;
-}
-.prog-card p {
-  font-size:.855rem;color:var(--ink-600);line-height:1.6;margin:0;flex:1;
-}
-.prog-card__link {
-  display:inline-flex;align-items:center;gap:6px;
-  font-size:.85rem;font-weight:700;color:var(--teal-400);
-  margin-top:4px;
-  transition:gap .18s;
-}
-.prog-card:hover .prog-card__link,
-.prog-card.is-active .prog-card__link {gap:10px;}
+    .prog-eyebrow {
+      color: var(--teal-400);
+      font-weight: 700;
+      letter-spacing: .14em;
+      font-size: .78rem;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+      display: block;
+    }
 
-/* ===== Detail Panel ===== */
-.prog-detail-wrap {
-  margin-top:32px;
-  display:none;
-}
-.prog-detail-wrap.is-open {display:block;}
+    .prog-hero__title {
+      font-size: clamp(2rem, 4.5vw, 3.3rem);
+      color: #fff;
+      line-height: 1.12;
+      margin-bottom: 20px;
+      letter-spacing: -.02em;
+    }
 
-.prog-detail {
-  background:var(--white);
-  border:1.5px solid var(--paper-100);
-  border-radius:var(--radius-lg);
-  overflow:hidden;
-  display:grid;
-  grid-template-columns:1fr 420px;
-  box-shadow:var(--shadow-lg);
-}
-@media (max-width:960px){
-  .prog-detail{grid-template-columns:1fr;}
-}
+    .prog-hero__sub {
+      color: #C9D2E8;
+      font-size: 1.05rem;
+      line-height: 1.7;
+      max-width: 680px;
+      margin-bottom: 32px;
+    }
 
-/* Left: curriculum */
-.prog-detail__left {
-  padding:40px 40px 48px;
-  border-right:1.5px solid var(--paper-100);
-}
-@media (max-width:960px){.prog-detail__left{border-right:none;border-bottom:1.5px solid var(--paper-100);}}
-@media (max-width:600px){.prog-detail__left{padding:28px 20px 32px;}}
+    .prog-hero__chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
 
-.prog-detail__title-row {
-  display:flex;align-items:center;gap:16px;margin-bottom:8px;
-}
-.prog-detail__icon {
-  width:56px;height:56px;border-radius:16px;
-  background:var(--paper-50);border:1.5px solid var(--paper-100);
-  display:grid;place-items:center;flex-shrink:0;overflow:hidden;
-}
-.prog-detail__icon img {width:38px;height:38px;object-fit:contain;}
-.prog-detail__icon svg {width:32px;height:32px;}
-.prog-detail__name {
-  font-size:clamp(1.3rem,2.5vw,1.75rem);margin:0;color:var(--navy-950);
-}
-.prog-detail__tagline {
-  color:var(--ink-600);font-size:.93rem;margin-bottom:28px;line-height:1.6;
-}
+    .prog-hero__chips span {
+      background: rgba(255, 255, 255, .08);
+      border: 1px solid rgba(255, 255, 255, .14);
+      padding: 9px 16px;
+      border-radius: 999px;
+      font-size: .84rem;
+      font-weight: 600;
+      color: #E7EBF6;
+    }
 
-/* Highlights row */
-.prog-detail__highlights {
-  display:flex;flex-wrap:wrap;gap:10px;margin-bottom:32px;
-}
-.prog-detail__highlights span {
-  background:var(--paper-50);border:1.5px solid var(--paper-100);
-  padding:7px 14px;border-radius:999px;font-size:.8rem;font-weight:700;
-  color:var(--navy-950);display:flex;align-items:center;gap:6px;
-}
-.prog-detail__highlights span em {color:var(--teal-400);font-style:normal;}
+    @media (max-width:600px) {
+      .prog-hero {
+        padding: 52px 0 64px;
+      }
 
-/* Curriculum heading */
-.prog-detail__left h4 {
-  font-size:1rem;color:var(--navy-950);margin-bottom:16px;
-  font-family:var(--font-display);
-}
+      .prog-hero__title {
+        font-size: clamp(1.7rem, 6vw, 2.6rem);
+      }
+    }
 
-/* Accordion */
-.curriculum-list {
-  display:flex;flex-direction:column;gap:10px;
-}
-.acc-item {
-  border:1.5px solid var(--paper-100);
-  border-radius:var(--radius-sm);
-  overflow:hidden;
-  transition:border-color .2s;
-}
-.acc-item.is-open {border-color:rgba(46,196,182,.3);}
-.acc-trigger {
-  width:100%;background:none;border:none;
-  padding:16px 18px;
-  display:flex;align-items:center;justify-content:space-between;
-  font-family:var(--font-display);font-weight:600;font-size:.95rem;
-  color:var(--navy-950);cursor:pointer;
-  transition:background .18s;
-}
-.acc-trigger:hover{background:var(--paper-50);}
-.acc-item.is-open .acc-trigger{background:var(--paper-50);}
-.acc-trigger__icon {
-  width:22px;height:22px;border-radius:6px;
-  border:1.5px solid var(--paper-100);
-  display:grid;place-items:center;flex-shrink:0;
-  transition:background .18s,border-color .18s;
-  font-size:1rem;line-height:1;color:var(--teal-400);
-}
-.acc-item.is-open .acc-trigger__icon {
-  background:var(--teal-400);border-color:var(--teal-400);color:#fff;
-}
-.acc-body {
-  display:none;padding:0 18px 16px;
-}
-.acc-item.is-open .acc-body{display:block;}
-.acc-body ul {
-  list-style:none;margin:0;padding:0;
-  display:flex;flex-direction:column;gap:6px;
-}
-.acc-body ul li {
-  font-size:.86rem;color:var(--ink-600);
-  padding-left:20px;position:relative;
-  line-height:1.55;
-}
-.acc-body ul li::before {
-  content:"✓";
-  position:absolute;left:0;color:var(--teal-400);font-weight:700;font-size:.8rem;
-}
+    /* ===== Programs Grid Section ===== */
+    .programs-section {
+      padding: 72px 0 88px;
+      background: var(--paper-50);
+    }
 
-/* Right: sticky enquiry form */
-.prog-detail__right {
-  background:var(--navy-950);
-  padding:40px 32px 48px;
-  display:flex;
-  flex-direction:column;
-}
-@media (max-width:600px){.prog-detail__right{padding:28px 20px 32px;}}
+    .programs-section__head {
+      text-align: center;
+      margin-bottom: 52px;
+    }
 
-.prog-detail__right h3 {
-  color:#fff;font-size:1.25rem;margin-bottom:6px;
-}
-.prog-detail__right > p {
-  color:#C9D2E8;font-size:.87rem;margin-bottom:24px;
-}
-.enq-form {
-  display:flex;flex-direction:column;gap:14px;
-}
-.enq-label {
-  display:flex;flex-direction:column;gap:6px;
-  font-size:.75rem;font-weight:700;letter-spacing:.08em;
-  text-transform:uppercase;color:#8A9BC0;
-}
-.enq-label input,
-.enq-label select {
-  background:rgba(255,255,255,.07);
-  border:1.5px solid rgba(255,255,255,.12);
-  border-radius:10px;
-  padding:13px 16px;
-  font-family:var(--font-body);font-size:.9rem;
-  color:#fff;
-  outline:none;
-  transition:border-color .18s,background .18s;
-  appearance:none;
-  -webkit-appearance:none;
-}
-.enq-label input::placeholder{color:#5C6D8A;}
-.enq-label input:focus,
-.enq-label select:focus{
-  border-color:var(--teal-400);
-  background:rgba(255,255,255,.1);
-}
-.enq-label select option{background:var(--navy-950);color:#fff;}
+    .programs-section__head h2 {
+      font-size: clamp(1.6rem, 3vw, 2.4rem);
+      margin-top: 6px;
+      margin-bottom: 12px;
+    }
 
-/* Profile toggle */
-.profile-toggle {
-  display:grid;grid-template-columns:1fr 1fr;
-  background:rgba(255,255,255,.06);
-  border:1.5px solid rgba(255,255,255,.12);
-  border-radius:10px;overflow:hidden;
-}
-.profile-toggle button {
-  background:none;border:none;padding:12px;
-  font-family:var(--font-body);font-size:.88rem;font-weight:700;
-  color:#8A9BC0;cursor:pointer;transition:background .18s,color .18s;
-  display:flex;align-items:center;justify-content:center;gap:6px;
-}
-.profile-toggle button.active {
-  background:var(--teal-400);color:var(--white);
-}
+    .programs-section__head p {
+      color: var(--ink-600);
+      max-width: 580px;
+      margin: 0 auto;
+      font-size: .97rem;
+    }
 
-.enq-btn {
-  background:var(--teal-400);color:var(--white);
-  border:none;border-radius:999px;
-  padding:15px 26px;font-family:var(--font-display);
-  font-size:.97rem;font-weight:700;cursor:pointer;
-  display:flex;align-items:center;justify-content:center;gap:8px;
-  transition:background .18s,transform .15s,box-shadow .15s;
-  margin-top:4px;
-  box-shadow:0 6px 24px rgba(46,196,182,.3);
-}
-.enq-btn:hover{
-  background:#26AFA4;transform:translateY(-2px);
-  box-shadow:0 10px 32px rgba(46,196,182,.35);
-}
-.enq-note{
-  font-size:.74rem;color:#5C6D8A;text-align:center;margin-top:4px;
-}
+    /* ===== Program Cards Grid ===== */
+    .prog-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 22px;
+    }
 
-/* success */
-.enq-success {
-  text-align:center;padding:32px 16px;
-  display:none;flex-direction:column;align-items:center;gap:12px;
-}
-.enq-success.is-shown{display:flex;}
-.enq-success__icon{font-size:2.8rem;line-height:1;}
-.enq-success h4{color:#fff;font-size:1.2rem;margin:0;}
-.enq-success p{color:#C9D2E8;font-size:.88rem;margin:0;}
+    @media (max-width:1100px) {
+      .prog-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
 
-/* Course pill in form */
-.enq-course-pill {
-  background:rgba(46,196,182,.12);
-  border:1.5px solid rgba(46,196,182,.3);
-  border-radius:10px;
-  padding:12px 16px;
-  color:#fff;font-weight:700;font-size:.9rem;
-  display:flex;align-items:center;gap:8px;
-}
-.enq-course-pill span {font-size:.8rem;color:var(--teal-400);font-weight:600;}
+    @media (max-width:780px) {
+      .prog-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
 
-/* ===== Stats Band ===== */
-.prog-stats {
-  background:var(--white);
-  padding:52px 0;
-  border-bottom:1px solid var(--paper-100);
-}
-.prog-stats__grid {
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:20px;
-  text-align:center;
-}
-.pstat__num {
-  display:block;font-family:var(--font-display);font-weight:700;
-  font-size:clamp(1.8rem,3vw,2.6rem);color:var(--navy-950);
-  line-height:1;margin-bottom:8px;
-}
-.pstat:nth-child(1) .pstat__num{color:#E8650A;}
-.pstat:nth-child(2) .pstat__num{color:var(--teal-400);}
-.pstat p{color:var(--ink-600);margin:0;font-size:.88rem;font-weight:600;}
-@media (max-width:700px){.prog-stats__grid{grid-template-columns:repeat(2,1fr);gap:28px;}}
+    @media (max-width:480px) {
+      .prog-grid {
+        grid-template-columns: 1fr;
+      }
+    }
 
-/* ===== Reveal on scroll ===== */
-[data-reveal]{
-  opacity:0;transform:translateY(22px);
-  transition:opacity .65s ease,transform .65s ease;
-}
-[data-reveal].is-visible{opacity:1;transform:none;}
+    .prog-card {
+      background: var(--white);
+      border: 1.5px solid var(--paper-100);
+      border-radius: var(--radius-md);
+      padding: 26px 22px 22px;
+      cursor: pointer;
+      transition: transform .22s ease, box-shadow .22s ease, border-color .22s;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
 
-/* ===== Breadcrumb ===== */
-.breadcrumb {
-  padding:14px 0;
-  font-size:.82rem;color:var(--ink-400);
-  display:flex;align-items:center;gap:8px;
-}
-.breadcrumb a{color:var(--ink-600);font-weight:600;}
-.breadcrumb a:hover{color:var(--teal-400);}
-.breadcrumb__sep{color:var(--paper-100);}
-</style>
+    .prog-card:hover,
+    .prog-card.is-active {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 32px rgba(10, 17, 40, .12);
+      border-color: var(--teal-400);
+    }
+
+    .prog-card__head {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+    }
+
+    .prog-card__logo {
+      width: 52px;
+      height: 52px;
+      border-radius: 14px;
+      background: var(--paper-50);
+      border: 1.5px solid var(--paper-100);
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+      overflow: hidden;
+    }
+
+    .prog-card__logo img {
+      width: 36px;
+      height: 36px;
+      object-fit: contain;
+    }
+
+    .prog-card__logo svg {
+      width: 30px;
+      height: 30px;
+    }
+
+    .prog-card__badge {
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .04em;
+      padding: 5px 11px;
+      border-radius: 999px;
+      background: rgba(242, 183, 5, .12);
+      color: #B07D00;
+      border: 1px solid rgba(242, 183, 5, .25);
+      white-space: nowrap;
+    }
+
+    .prog-card h3 {
+      font-size: 1.02rem;
+      color: var(--navy-950);
+      margin: 0;
+      line-height: 1.3;
+    }
+
+    .prog-card p {
+      font-size: .855rem;
+      color: var(--ink-600);
+      line-height: 1.6;
+      margin: 0;
+      flex: 1;
+    }
+
+    .prog-card__link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: .85rem;
+      font-weight: 700;
+      color: var(--teal-400);
+      margin-top: 4px;
+      transition: gap .18s;
+    }
+
+    .prog-card:hover .prog-card__link,
+    .prog-card.is-active .prog-card__link {
+      gap: 10px;
+    }
+
+    /* ===== Detail Panel ===== */
+    .prog-detail-wrap {
+      margin-top: 32px;
+      display: none;
+    }
+
+    .prog-detail-wrap.is-open {
+      display: block;
+    }
+
+    .prog-detail {
+      background: var(--white);
+      border: 1.5px solid var(--paper-100);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 1fr 420px;
+      box-shadow: var(--shadow-lg);
+    }
+
+    @media (max-width:960px) {
+      .prog-detail {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Left: curriculum */
+    .prog-detail__left {
+      padding: 40px 40px 48px;
+      border-right: 1.5px solid var(--paper-100);
+    }
+
+    @media (max-width:960px) {
+      .prog-detail__left {
+        border-right: none;
+        border-bottom: 1.5px solid var(--paper-100);
+      }
+    }
+
+    @media (max-width:600px) {
+      .prog-detail__left {
+        padding: 28px 20px 32px;
+      }
+    }
+
+    .prog-detail__title-row {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 8px;
+    }
+
+    .prog-detail__icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 16px;
+      background: var(--paper-50);
+      border: 1.5px solid var(--paper-100);
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+      overflow: hidden;
+    }
+
+    .prog-detail__icon img {
+      width: 38px;
+      height: 38px;
+      object-fit: contain;
+    }
+
+    .prog-detail__icon svg {
+      width: 32px;
+      height: 32px;
+    }
+
+    .prog-detail__name {
+      font-size: clamp(1.3rem, 2.5vw, 1.75rem);
+      margin: 0;
+      color: var(--navy-950);
+    }
+
+    .prog-detail__tagline {
+      color: var(--ink-600);
+      font-size: .93rem;
+      margin-bottom: 28px;
+      line-height: 1.6;
+    }
+
+    /* Highlights row */
+    .prog-detail__highlights {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 32px;
+    }
+
+    .prog-detail__highlights span {
+      background: var(--paper-50);
+      border: 1.5px solid var(--paper-100);
+      padding: 7px 14px;
+      border-radius: 999px;
+      font-size: .8rem;
+      font-weight: 700;
+      color: var(--navy-950);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .prog-detail__highlights span em {
+      color: var(--teal-400);
+      font-style: normal;
+    }
+
+    /* Curriculum heading */
+    .prog-detail__left h4 {
+      font-size: 1rem;
+      color: var(--navy-950);
+      margin-bottom: 16px;
+      font-family: var(--font-display);
+    }
+
+    /* Accordion */
+    .curriculum-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .acc-item {
+      border: 1.5px solid var(--paper-100);
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      transition: border-color .2s;
+    }
+
+    .acc-item.is-open {
+      border-color: rgba(46, 196, 182, .3);
+    }
+
+    .acc-trigger {
+      width: 100%;
+      background: none;
+      border: none;
+      padding: 16px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: .95rem;
+      color: var(--navy-950);
+      cursor: pointer;
+      transition: background .18s;
+    }
+
+    .acc-trigger:hover {
+      background: var(--paper-50);
+    }
+
+    .acc-item.is-open .acc-trigger {
+      background: var(--paper-50);
+    }
+
+    .acc-trigger__icon {
+      width: 22px;
+      height: 22px;
+      border-radius: 6px;
+      border: 1.5px solid var(--paper-100);
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+      transition: background .18s, border-color .18s;
+      font-size: 1rem;
+      line-height: 1;
+      color: var(--teal-400);
+    }
+
+    .acc-item.is-open .acc-trigger__icon {
+      background: var(--teal-400);
+      border-color: var(--teal-400);
+      color: #fff;
+    }
+
+    .acc-body {
+      display: none;
+      padding: 0 18px 16px;
+    }
+
+    .acc-item.is-open .acc-body {
+      display: block;
+    }
+
+    .acc-body ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .acc-body ul li {
+      font-size: .86rem;
+      color: var(--ink-600);
+      padding-left: 20px;
+      position: relative;
+      line-height: 1.55;
+    }
+
+    .acc-body ul li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: var(--teal-400);
+      font-weight: 700;
+      font-size: .8rem;
+    }
+
+    /* Right: sticky enquiry form */
+    .prog-detail__right {
+      background: var(--navy-950);
+      padding: 40px 32px 48px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    @media (max-width:600px) {
+      .prog-detail__right {
+        padding: 28px 20px 32px;
+      }
+    }
+
+    .prog-detail__right h3 {
+      color: #fff;
+      font-size: 1.25rem;
+      margin-bottom: 6px;
+    }
+
+    .prog-detail__right>p {
+      color: #C9D2E8;
+      font-size: .87rem;
+      margin-bottom: 24px;
+    }
+
+    .enq-form {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .enq-label {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      font-size: .75rem;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: #8A9BC0;
+    }
+
+    .enq-label input,
+    .enq-label select {
+      background: rgba(255, 255, 255, .07);
+      border: 1.5px solid rgba(255, 255, 255, .12);
+      border-radius: 10px;
+      padding: 13px 16px;
+      font-family: var(--font-body);
+      font-size: .9rem;
+      color: #fff;
+      outline: none;
+      transition: border-color .18s, background .18s;
+      appearance: none;
+      -webkit-appearance: none;
+    }
+
+    .enq-label input::placeholder {
+      color: #5C6D8A;
+    }
+
+    .enq-label input:focus,
+    .enq-label select:focus {
+      border-color: var(--teal-400);
+      background: rgba(255, 255, 255, .1);
+    }
+
+    .enq-label select option {
+      background: var(--navy-950);
+      color: #fff;
+    }
+
+    /* Profile toggle */
+    .profile-toggle {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      background: rgba(255, 255, 255, .06);
+      border: 1.5px solid rgba(255, 255, 255, .12);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .profile-toggle button {
+      background: none;
+      border: none;
+      padding: 12px;
+      font-family: var(--font-body);
+      font-size: .88rem;
+      font-weight: 700;
+      color: #8A9BC0;
+      cursor: pointer;
+      transition: background .18s, color .18s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+
+    .profile-toggle button.active {
+      background: var(--teal-400);
+      color: var(--white);
+    }
+
+    .enq-btn {
+      background: var(--teal-400);
+      color: var(--white);
+      border: none;
+      border-radius: 999px;
+      padding: 15px 26px;
+      font-family: var(--font-display);
+      font-size: .97rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: background .18s, transform .15s, box-shadow .15s;
+      margin-top: 4px;
+      box-shadow: 0 6px 24px rgba(46, 196, 182, .3);
+    }
+
+    .enq-btn:hover {
+      background: #26AFA4;
+      transform: translateY(-2px);
+      box-shadow: 0 10px 32px rgba(46, 196, 182, .35);
+    }
+
+    .enq-note {
+      font-size: .74rem;
+      color: #5C6D8A;
+      text-align: center;
+      margin-top: 4px;
+    }
+
+    /* success */
+    .enq-success {
+      text-align: center;
+      padding: 32px 16px;
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .enq-success.is-shown {
+      display: flex;
+    }
+
+    .enq-success__icon {
+      font-size: 2.8rem;
+      line-height: 1;
+    }
+
+    .enq-success h4 {
+      color: #fff;
+      font-size: 1.2rem;
+      margin: 0;
+    }
+
+    .enq-success p {
+      color: #C9D2E8;
+      font-size: .88rem;
+      margin: 0;
+    }
+
+    /* Course pill in form */
+    .enq-course-pill {
+      background: rgba(46, 196, 182, .12);
+      border: 1.5px solid rgba(46, 196, 182, .3);
+      border-radius: 10px;
+      padding: 12px 16px;
+      color: #fff;
+      font-weight: 700;
+      font-size: .9rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .enq-course-pill span {
+      font-size: .8rem;
+      color: var(--teal-400);
+      font-weight: 600;
+    }
+
+    /* ===== Stats Band ===== */
+    .prog-stats {
+      background: var(--white);
+      padding: 52px 0;
+      border-bottom: 1px solid var(--paper-100);
+    }
+
+    .prog-stats__grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      text-align: center;
+    }
+
+    .pstat__num {
+      display: block;
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      color: var(--navy-950);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .pstat:nth-child(1) .pstat__num {
+      color: #E8650A;
+    }
+
+    .pstat:nth-child(2) .pstat__num {
+      color: var(--teal-400);
+    }
+
+    .pstat p {
+      color: var(--ink-600);
+      margin: 0;
+      font-size: .88rem;
+      font-weight: 600;
+    }
+
+    @media (max-width:700px) {
+      .prog-stats__grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 28px;
+      }
+    }
+
+    /* ===== Reveal on scroll ===== */
+    [data-reveal] {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity .65s ease, transform .65s ease;
+    }
+
+    [data-reveal].is-visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    /* ===== Breadcrumb ===== */
+    .breadcrumb {
+      padding: 14px 0;
+      font-size: .82rem;
+      color: var(--ink-400);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .breadcrumb a {
+      color: var(--ink-600);
+      font-weight: 600;
+    }
+
+    .breadcrumb a:hover {
+      color: var(--teal-400);
+    }
+
+    .breadcrumb__sep {
+      color: var(--paper-100);
+    }
+  </style>
 </head>
+
 <body>
 
-<!-- ===== Top utility bar ===== -->
-<div class="topbar">
-  <div class="container topbar__inner">
-    <div class="topbar__contact">
-      <a href="tel:+919876543210"><svg class="icon" viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.2.5 2.5.8 3.8.8.6 0 1 .4 1 1v3.4c0 .6-.4 1-1 1C10.6 21.2 2.8 13.4 2.8 3.8c0-.6.4-1 1-1H7.2c.6 0 1 .4 1 1 0 1.3.3 2.6.8 3.8.2.3.1.7-.2 1l-2.2 2.2z"/></svg><span>+91 98765 43210</span></a>
-      <a href="mailto:hello@yourdomain.com" class="hide-sm"><svg class="icon" viewBox="0 0 24 24"><path d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1zm1.8 2 6.7 5.2a1 1 0 0 0 1 0L19.2 7H4.8zM21 8.4l-7.1 5.5a3 3 0 0 1-3.6 0L3 8.4V18h18V8.4z"/></svg><span>hello@yourdomain.com</span></a>
-      <span class="hide-sm"><svg class="icon" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5.3 6.1 11.7 6.4 12a1 1 0 0 0 1.2 0c.3-.3 6.4-6.7 6.4-12a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>Hyderabad &amp; Bangalore, India</span>
-    </div>
-    <div class="topbar__social">
-      <a href="https://www.linkedin.com/company/acharya-coding-school/" aria-label="LinkedIn"><svg class="icon" viewBox="0 0 24 24"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3V9zm7 0h3.8v1.7h.1c.5-1 1.8-2 3.7-2 4 0 4.4 2.6 4.4 6V21h-4v-5.6c0-1.3 0-3-1.8-3s-2.1 1.4-2.1 2.9V21h-4V9z"/></svg></a>
-      <a href="https://www.instagram.com/acharyacodingschool/" aria-label="Instagram"><svg class="icon" viewBox="0 0 24 24"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7zm5 3.5a4.5 4.5 0 1 1 0 9 4.5 4.5 0 0 1 0-9zm0 2a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zm5.2-3.5a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/></svg></a>
-      <a href="https://wa.me/919133734688" target="_blank" rel="noopener" aria-label="WhatsApp" class="topbar__social-wa">
-        <svg class="icon icon--wa" viewBox="0 0 24 24" fill="none"><path fill="#25D366" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path fill="#25D366" d="M12 0C5.373 0 0 5.373 0 12c0 2.136.564 4.14 1.543 5.877L.057 23.882l6.21-1.63A11.94 11.94 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 0 1-5.006-1.37l-.36-.214-3.686.968.984-3.595-.235-.369A9.818 9.818 0 1 1 12 21.818z"/></svg>
-      </a>
-    </div>
-  </div>
-</div>
-
-<!-- ===== Header / Nav ===== -->
-<header class="site-header" id="siteHeader">
-  <div class="container header__inner">
-    <a href="index.html" class="brand">
-      <img src="acharya.jpeg" alt="Acharya Coding School logo" class="brand__mark">
-      <span class="brand__name">Acharya<small>Coding School</small></span>
-    </a>
-    <nav class="nav" id="primaryNav">
-      <a href="index.html" class="nav__link">Home</a>
-      <a href="about.html" class="nav__link">About</a>
-      <a href="program.html" class="nav__link active">Programs</a>
-      <a href="codelab.html" class="nav__link nav__link--lab">Code Lab</a>
-      <a href="index.html#placements" class="nav__link">Placements</a>
-      <a href="contact.html" class="nav__link">Contact</a>
-    </nav>
-    <div class="header__cta">
-      <button class="btn btn--primary" data-open-modal>Register Now <span aria-hidden="true">→</span></button>
-    </div>
-    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="primaryNav">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-  <div class="nav-backdrop" id="navBackdrop"></div>
-</header>
-
-<main>
-
-  <!-- ===== Hero ===== -->
-  <section class="prog-hero">
-    <div class="prog-hero__bg-dots"></div>
-    <div class="container prog-hero__inner">
-      <p class="prog-eyebrow">PROGRAMS &amp; COURSES</p>
-      <h1 class="prog-hero__title">Choose Your Track.<br><span class="text-accent">Launch Your Career.</span></h1>
-      <p class="prog-hero__sub">8 industry-aligned programs built around real MNC hiring patterns — with live projects, expert mentors and dedicated placement support stitched into every track.</p>
-      <div class="prog-hero__chips">
-        <span>🏭 MNC-Ready Curriculum</span>
-        <span>🧪 Live Project Training</span>
-        <span>📝 Resume + Mock Interviews</span>
-        <span>🤝 100+ Hiring Partners</span>
+  <!-- ===== Top utility bar ===== -->
+  <div class="topbar">
+    <div class="container topbar__inner">
+      <div class="topbar__contact">
+        <a href="tel:+919876543210"><svg class="icon" viewBox="0 0 24 24">
+            <path
+              d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.2.5 2.5.8 3.8.8.6 0 1 .4 1 1v3.4c0 .6-.4 1-1 1C10.6 21.2 2.8 13.4 2.8 3.8c0-.6.4-1 1-1H7.2c.6 0 1 .4 1 1 0 1.3.3 2.6.8 3.8.2.3.1.7-.2 1l-2.2 2.2z" />
+          </svg><span>+91 98765 43210</span></a>
+        <a href="mailto:hello@yourdomain.com" class="hide-sm"><svg class="icon" viewBox="0 0 24 24">
+            <path
+              d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1zm1.8 2 6.7 5.2a1 1 0 0 0 1 0L19.2 7H4.8zM21 8.4l-7.1 5.5a3 3 0 0 1-3.6 0L3 8.4V18h18V8.4z" />
+          </svg><span>hello@yourdomain.com</span></a>
+        <span class="hide-sm"><svg class="icon" viewBox="0 0 24 24">
+            <path
+              d="M12 2a7 7 0 0 0-7 7c0 5.3 6.1 11.7 6.4 12a1 1 0 0 0 1.2 0c.3-.3 6.4-6.7 6.4-12a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z" />
+          </svg>Hyderabad &amp; Bangalore, India</span>
       </div>
-    </div>
-  </section>
-
-  <!-- ===== Stats Band ===== -->
-  <section class="prog-stats">
-    <div class="container prog-stats__grid">
-      <div class="pstat" data-target="4.8" data-decimal="1" data-suffix="★">
-        <span class="pstat__num">4.8★</span><p>Student Rating</p>
-      </div>
-      <div class="pstat" data-target="47" data-suffix=" LPA">
-        <span class="pstat__num">47 LPA</span><p>Highest Package</p>
-      </div>
-      <div class="pstat" data-target="100" data-suffix="+">
-        <span class="pstat__num">100+</span><p>Hiring Partners</p>
-      </div>
-      <div class="pstat" data-target="1500" data-suffix="+">
-        <span class="pstat__num">1500+</span><p>Students Placed</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== Programs Grid ===== -->
-  <section class="programs-section">
-    <div class="container">
-      <div class="programs-section__head" data-reveal>
-        <p class="section-label center">ALL PROGRAMS</p>
-        <h2>Pick a Program — See The Full Curriculum</h2>
-        <p>Click any course card to explore the detailed curriculum and submit your enquiry directly.</p>
-      </div>
-
-      <!-- 8 Course Cards -->
-      <div class="prog-grid" id="progGrid">
-
-        <!-- 1. Java Full Stack -->
-        <div class="prog-card" data-prog="java" data-reveal>
-          <div class="prog-card__head">
-            <div class="prog-card__logo">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java">
-            </div>
-            <span class="prog-card__badge">Enrolling Now</span>
-          </div>
-          <h3>Java Full Stack with DSA</h3>
-          <p>Build enterprise-grade apps with Java end-to-end</p>
-          <span class="prog-card__link">View Curriculum →</span>
-        </div>
-
-        <!-- 2. Python Full Stack -->
-        <div class="prog-card" data-prog="python" data-reveal>
-          <div class="prog-card__head">
-            <div class="prog-card__logo">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">
-            </div>
-            <span class="prog-card__badge">Enrolling Now</span>
-          </div>
-          <h3>Python Full Stack With DSA</h3>
-          <p>From algorithms to full-stack web apps with Python</p>
-          <span class="prog-card__link">View Curriculum →</span>
-        </div>
-
-        <!-- 3. Data Science -->
-        <div class="prog-card" data-prog="datascience" data-reveal>
-          <div class="prog-card__head">
-            <div class="prog-card__logo">
-              <svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="20" fill="#EFF6FF"/><path d="M14 24a10 10 0 1 1 20 0 10 10 0 0 1-20 0z" fill="#DBEAFE"/><circle cx="24" cy="24" r="5" fill="#3B82F6"/><path d="M14 24h4M30 24h4M24 14v4M24 30v4" stroke="#3B82F6" stroke-width="2" stroke-linecap="round"/></svg>
-            </div>
-            <span class="prog-card__badge">Enrolling Now</span>
-          </div>
-          <h3>Data Science</h3>
-          <p>Turn raw data into actionable business intelligence</p>
-          <span class="prog-card__link">View Curriculum →</span>
-        </div>
-
-        <!-- 4. Cybersecurity -->
-        <div class="prog-card" data-prog="cyber" data-reveal>
-          <div class="prog-card__head">
-            <div class="prog-card__logo">
-              <svg viewBox="0 0 48 48" fill="none"><rect width="48" height="48" rx="12" fill="#FFF7ED"/><path d="M24 8l14 6v10c0 8-6 14-14 16-8-2-14-8-14-16V14L24 8z" fill="#FED7AA" stroke="#F97316" stroke-width="2"/><path d="M18 24l4 4 8-8" stroke="#F97316" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </div>
-            <span class="prog-card__badge">Enrolling Now</span>
-          </div>
-          <h3>Cybersecurity</h3>
-          <p>Defend systems, detect threats, secure infrastructure</p>
-          <span class="prog-card__link">View Curriculum →</span>
-        </div>
-
-        <!-- 5. ServiceNow -->
-        <div class="prog-card" data-prog="servicenow" data-reveal>
-          <div class="prog-card__head">
-            <div class="prog-card__logo">
-              <svg viewBox="0 0 48 48" fill="none"><rect width="48" height="48" rx="12" fill="#FFF1F0"/><text x="50%" y="55%" dominant-baseline="middle" text-anchor="middle" font-size="11" font-family="sans-serif" font-weight="700" fill="#CC0000">service</text><text x="50%" y="72%" dominant-baseline="middle" text-anchor="middle" font-size="11" font-family="sans-serif" font-weight="700" fill="#CC0000">now</text></svg>
-            </div>
-            <span class="prog-card__badge">Enrolling Now</span>
-          </div>
-          <h3>Service Now</h3>
-          <p>Automate enterprise workflows on the #1 ITSM platform</p>
-          <span class="prog-card__link">View Curriculum →</span>
-        </div>
-
-        <!-- 6. Dot Net -->
-        <div class="prog-card" data-prog="dotnet" data-reveal>
-          <div class="prog-card__head">
-            <div class="prog-card__logo">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dot-net/dot-net-original.svg" alt=".NET">
-            </div>
-            <span class="prog-card__badge">Enrolling Now</span>
-          </div>
-          <h3>Dot Net</h3>
-          <p>Enterprise application development with Microsoft stack</p>
-          <span class="prog-card__link">View Curriculum →</span>
-        </div>
-
-        <!-- 7. Mulesoft -->
-        <div class="prog-card" data-prog="mulesoft" data-reveal>
-          <div class="prog-card__head">
-            <div class="prog-card__logo">
-              <svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="20" fill="#E8F4FD"/><circle cx="24" cy="24" r="14" fill="none" stroke="#00A1DF" stroke-width="2.5"/><path d="M24 10v6M24 32v6M10 24h6M32 24h6" stroke="#00A1DF" stroke-width="2.5" stroke-linecap="round"/><circle cx="24" cy="24" r="5" fill="#00A1DF"/></svg>
-            </div>
-            <span class="prog-card__badge">Enrolling Now</span>
-          </div>
-          <h3>Mulesoft</h3>
-          <p>Connect everything with the world's #1 integration platform</p>
-          <span class="prog-card__link">View Curriculum →</span>
-        </div>
-
-        <!-- 8. Power BI -->
-        <div class="prog-card" data-prog="powerbi" data-reveal>
-          <div class="prog-card__head">
-            <div class="prog-card__logo">
-              <svg viewBox="0 0 48 48" fill="none"><rect width="48" height="48" rx="12" fill="#FFF8E1"/><rect x="10" y="28" width="6" height="12" rx="2" fill="#F59E0B"/><rect x="20" y="20" width="6" height="20" rx="2" fill="#FBBF24"/><rect x="30" y="14" width="6" height="26" rx="2" fill="#F59E0B"/><rect x="10" y="24" width="6" height="4" rx="1" fill="#D97706"/></svg>
-            </div>
-            <span class="prog-card__badge">Enrolling Now</span>
-          </div>
-          <h3>Power BI</h3>
-          <p>Transform data into stunning visual intelligence</p>
-          <span class="prog-card__link">View Curriculum →</span>
-        </div>
-
-      </div><!-- /prog-grid -->
-
-      <!-- Detail Panel (injected by JS) -->
-      <div class="prog-detail-wrap" id="progDetailWrap">
-        <div class="prog-detail" id="progDetail">
-
-          <!-- LEFT: Curriculum -->
-          <div class="prog-detail__left" id="detailLeft">
-            <!-- Filled by JS -->
-          </div>
-
-          <!-- RIGHT: Enquiry Form -->
-          <div class="prog-detail__right">
-            <h3>Submit Enquiry</h3>
-            <p>Our counsellor will reach out within one business day.</p>
-
-            <div id="enqFormWrap" class="enq-form">
-              <div class="enq-course-pill" id="enqCoursePill">
-                <span>Selected Course:</span>
-                <strong id="enqCourseLabel">—</strong>
-              </div>
-
-              <label class="enq-label">
-                FULL NAME *
-                <input type="text" id="enqName" placeholder="Your full name" required>
-              </label>
-
-              <label class="enq-label">
-                EMAIL *
-                <input type="email" id="enqEmail" placeholder="Enter your email" required>
-              </label>
-
-              <label class="enq-label">
-                PHONE NUMBER *
-                <input type="tel" id="enqPhone" placeholder="Enter your phone number" required>
-              </label>
-
-              <label class="enq-label">
-                PROFILE *
-                <div class="profile-toggle" id="profileToggle">
-                  <button type="button" class="active" data-profile="fresher">🎓 Fresher</button>
-                  <button type="button" data-profile="experienced">💼 Experienced</button>
-                </div>
-              </label>
-
-              <label class="enq-label">
-                YEAR OF PASSOUT *
-                <select id="enqYear" required>
-                  <option value="" disabled selected>Select year</option>
-                  <option>2020</option><option>2021</option><option>2022</option>
-                  <option>2023</option><option>2024</option><option>2025</option><option>2026</option>
-                </select>
-              </label>
-
-              <label class="enq-label">
-                LOOKING FOR *
-                <select id="enqGoal" required>
-                  <option value="" disabled selected>Select an option</option>
-                  <option>Job Placement Support</option>
-                  <option>Skill Upgrade</option>
-                  <option>Career Switch</option>
-                  <option>Certification</option>
-                </select>
-              </label>
-
-              <button class="enq-btn" id="enqSubmitBtn" type="button">
-                Submit Enquiry →
-              </button>
-              <p class="enq-note">Demo form — no data is sent anywhere.</p>
-            </div>
-
-            <div class="enq-success" id="enqSuccess">
-              <div class="enq-success__icon">🎉</div>
-              <h4>Thanks — You're on the list!</h4>
-              <p>Our counsellor will reach out within one business day.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </div><!-- /container -->
-  </section>
-
-</main>
-
-<!-- ===== Footer ===== -->
-<footer class="footer" id="contact">
-  <div class="footer__cta-strip">
-    <div class="container footer__cta-inner">
-      <div class="footer__cta-text">
-        <h3>Ready to launch your tech career?</h3>
-        <p>Join 1200+ students who got placed through Acharya Coding School.</p>
-      </div>
-      <div class="footer__cta-btns">
-        <button class="btn btn--primary btn--lg" data-open-modal>Book Free Demo →</button>
-        <a class="btn footer__wa-btn" href="https://wa.me/919133734688" target="_blank" rel="noopener">
-          <svg viewBox="0 0 24 24" class="wa-icon"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.136.564 4.14 1.543 5.877L.057 23.882l6.21-1.63A11.94 11.94 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 0 1-5.006-1.37l-.36-.214-3.686.968.984-3.595-.235-.369A9.818 9.818 0 1 1 12 21.818z"/></svg>
-          WhatsApp Us
+      <div class="topbar__social">
+        <a href="https://www.linkedin.com/company/acharya-coding-school/" aria-label="LinkedIn"><svg class="icon"
+            viewBox="0 0 24 24">
+            <path
+              d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3V9zm7 0h3.8v1.7h.1c.5-1 1.8-2 3.7-2 4 0 4.4 2.6 4.4 6V21h-4v-5.6c0-1.3 0-3-1.8-3s-2.1 1.4-2.1 2.9V21h-4V9z" />
+          </svg></a>
+        <a href="https://www.instagram.com/acharyacodingschool/" aria-label="Instagram"><svg class="icon"
+            viewBox="0 0 24 24">
+            <path
+              d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7zm5 3.5a4.5 4.5 0 1 1 0 9 4.5 4.5 0 0 1 0-9zm0 2a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zm5.2-3.5a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
+          </svg></a>
+        <a href="https://wa.me/919133734688" target="_blank" rel="noopener" aria-label="WhatsApp"
+          class="topbar__social-wa">
+          <svg class="icon icon--wa" viewBox="0 0 24 24" fill="none">
+            <path fill="#25D366"
+              d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
+            <path fill="#25D366"
+              d="M12 0C5.373 0 0 5.373 0 12c0 2.136.564 4.14 1.543 5.877L.057 23.882l6.21-1.63A11.94 11.94 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 0 1-5.006-1.37l-.36-.214-3.686.968.984-3.595-.235-.369A9.818 9.818 0 1 1 12 21.818z" />
+          </svg>
         </a>
       </div>
     </div>
   </div>
-  <div class="container footer__grid">
-    <div class="footer__brand">
+
+  <!-- ===== Header / Nav ===== -->
+  <header class="site-header" id="siteHeader">
+    <div class="container header__inner">
       <a href="index.html" class="brand">
         <img src="acharya.jpeg" alt="Acharya Coding School logo" class="brand__mark">
         <span class="brand__name">Acharya<small>Coding School</small></span>
       </a>
-      <p>Practical, placement-oriented IT &amp; Non-IT training for freshers, career switchers and working professionals.</p>
-      <div class="footer__socials">
-        <a href="https://www.linkedin.com/company/acharya-coding-school/" aria-label="LinkedIn" class="footer__social-link">
-          <svg viewBox="0 0 24 24"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3V9zm7 0h3.8v1.7h.1c.5-1 1.8-2 3.7-2 4 0 4.4 2.6 4.4 6V21h-4v-5.6c0-1.3 0-3-1.8-3s-2.1 1.4-2.1 2.9V21h-4V9z"/></svg>
-        </a>
-        <a href="https://www.instagram.com/acharyacodingschool/" aria-label="Instagram" class="footer__social-link">
-          <svg viewBox="0 0 24 24"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7zm5 3.5a4.5 4.5 0 1 1 0 9 4.5 4.5 0 0 1 0-9zm0 2a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zm5.2-3.5a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/></svg>
-        </a>
-        <a href="https://wa.me/919133734688" aria-label="WhatsApp" class="footer__social-link footer__social-link--wa">
-          <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.136.564 4.14 1.543 5.877L.057 23.882l6.21-1.63A11.94 11.94 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 0 1-5.006-1.37l-.36-.214-3.686.968.984-3.595-.235-.369A9.818 9.818 0 1 1 12 21.818z"/></svg>
-        </a>
+      <nav class="nav" id="primaryNav">
+        <a href="index.html" class="nav__link">Home</a>
+        <a href="about.html" class="nav__link">About</a>
+        <a href="program.html" class="nav__link active">Programs</a>
+        <a href="codelab.html" class="nav__link nav__link--lab">Code Lab</a>
+        <a href="index.html#placements" class="nav__link">Placements</a>
+        <a href="contact.html" class="nav__link">Contact</a>
+      </nav>
+      <div class="header__cta">
+        <button class="btn btn--primary" data-open-modal>Register Now <span aria-hidden="true">→</span></button>
+      </div>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false"
+        aria-controls="primaryNav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="nav-backdrop" id="navBackdrop"></div>
+  </header>
+
+  <main>
+
+    <!-- ===== Hero ===== -->
+    <section class="prog-hero">
+      <div class="prog-hero__bg-dots"></div>
+      <div class="container prog-hero__inner">
+        <p class="prog-eyebrow">PROGRAMS &amp; COURSES</p>
+        <h1 class="prog-hero__title">Choose Your Track.<br><span class="text-accent">Launch Your Career.</span></h1>
+        <p class="prog-hero__sub">8 industry-aligned programs built around real MNC hiring patterns — with live
+          projects, expert mentors and dedicated placement support stitched into every track.</p>
+        <div class="prog-hero__chips">
+          <span>🏭 MNC-Ready Curriculum</span>
+          <span>🧪 Live Project Training</span>
+          <span>📝 Resume + Mock Interviews</span>
+          <span>🤝 100+ Hiring Partners</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Stats Band ===== -->
+    <section class="prog-stats">
+      <div class="container prog-stats__grid">
+        <div class="pstat" data-target="4.8" data-decimal="1" data-suffix="★">
+          <span class="pstat__num">4.8★</span>
+          <p>Student Rating</p>
+        </div>
+        <div class="pstat" data-target="47" data-suffix=" LPA">
+          <span class="pstat__num">47 LPA</span>
+          <p>Highest Package</p>
+        </div>
+        <div class="pstat" data-target="100" data-suffix="+">
+          <span class="pstat__num">100+</span>
+          <p>Hiring Partners</p>
+        </div>
+        <div class="pstat" data-target="1500" data-suffix="+">
+          <span class="pstat__num">1500+</span>
+          <p>Students Placed</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Programs Grid ===== -->
+    <section class="programs-section">
+      <div class="container">
+        <div class="programs-section__head" data-reveal>
+          <p class="section-label center">ALL PROGRAMS</p>
+          <h2>Pick a Program — See The Full Curriculum</h2>
+          <p>Click any course card to explore the detailed curriculum and submit your enquiry directly.</p>
+        </div>
+
+        <!-- 8 Course Cards -->
+        <div class="prog-grid" id="progGrid">
+
+          <!-- 1. Java Full Stack -->
+          <div class="prog-card" data-prog="java" data-reveal>
+            <div class="prog-card__head">
+              <div class="prog-card__logo">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java">
+              </div>
+              <span class="prog-card__badge">Enrolling Now</span>
+            </div>
+            <h3>Java Full Stack with DSA</h3>
+            <p>Build enterprise-grade apps with Java end-to-end</p>
+            <span class="prog-card__link">View Curriculum →</span>
+          </div>
+
+          <!-- 2. Python Full Stack -->
+          <div class="prog-card" data-prog="python" data-reveal>
+            <div class="prog-card__head">
+              <div class="prog-card__logo">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">
+              </div>
+              <span class="prog-card__badge">Enrolling Now</span>
+            </div>
+            <h3>Python Full Stack With DSA</h3>
+            <p>From algorithms to full-stack web apps with Python</p>
+            <span class="prog-card__link">View Curriculum →</span>
+          </div>
+
+          <!-- 3. Data Science -->
+          <div class="prog-card" data-prog="datascience" data-reveal>
+            <div class="prog-card__head">
+              <div class="prog-card__logo">
+                <svg viewBox="0 0 48 48" fill="none">
+                  <circle cx="24" cy="24" r="20" fill="#EFF6FF" />
+                  <path d="M14 24a10 10 0 1 1 20 0 10 10 0 0 1-20 0z" fill="#DBEAFE" />
+                  <circle cx="24" cy="24" r="5" fill="#3B82F6" />
+                  <path d="M14 24h4M30 24h4M24 14v4M24 30v4" stroke="#3B82F6" stroke-width="2" stroke-linecap="round" />
+                </svg>
+              </div>
+              <span class="prog-card__badge">Enrolling Now</span>
+            </div>
+            <h3>Data Science</h3>
+            <p>Turn raw data into actionable business intelligence</p>
+            <span class="prog-card__link">View Curriculum →</span>
+          </div>
+
+          <!-- 4. Cybersecurity -->
+          <div class="prog-card" data-prog="cyber" data-reveal>
+            <div class="prog-card__head">
+              <div class="prog-card__logo">
+                <svg viewBox="0 0 48 48" fill="none">
+                  <rect width="48" height="48" rx="12" fill="#FFF7ED" />
+                  <path d="M24 8l14 6v10c0 8-6 14-14 16-8-2-14-8-14-16V14L24 8z" fill="#FED7AA" stroke="#F97316"
+                    stroke-width="2" />
+                  <path d="M18 24l4 4 8-8" stroke="#F97316" stroke-width="2.5" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                </svg>
+              </div>
+              <span class="prog-card__badge">Enrolling Now</span>
+            </div>
+            <h3>Cybersecurity</h3>
+            <p>Defend systems, detect threats, secure infrastructure</p>
+            <span class="prog-card__link">View Curriculum →</span>
+          </div>
+
+          <!-- 5. ServiceNow -->
+          <div class="prog-card" data-prog="servicenow" data-reveal>
+            <div class="prog-card__head">
+              <div class="prog-card__logo">
+                <svg viewBox="0 0 48 48" fill="none">
+                  <rect width="48" height="48" rx="12" fill="#FFF1F0" /><text x="50%" y="55%" dominant-baseline="middle"
+                    text-anchor="middle" font-size="11" font-family="sans-serif" font-weight="700"
+                    fill="#CC0000">service</text><text x="50%" y="72%" dominant-baseline="middle" text-anchor="middle"
+                    font-size="11" font-family="sans-serif" font-weight="700" fill="#CC0000">now</text>
+                </svg>
+              </div>
+              <span class="prog-card__badge">Enrolling Now</span>
+            </div>
+            <h3>Service Now</h3>
+            <p>Automate enterprise workflows on the #1 ITSM platform</p>
+            <span class="prog-card__link">View Curriculum →</span>
+          </div>
+
+          <!-- 6. Dot Net -->
+          <div class="prog-card" data-prog="dotnet" data-reveal>
+            <div class="prog-card__head">
+              <div class="prog-card__logo">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dot-net/dot-net-original.svg" alt=".NET">
+              </div>
+              <span class="prog-card__badge">Enrolling Now</span>
+            </div>
+            <h3>Dot Net</h3>
+            <p>Enterprise application development with Microsoft stack</p>
+            <span class="prog-card__link">View Curriculum →</span>
+          </div>
+
+          <!-- 7. Mulesoft -->
+          <div class="prog-card" data-prog="mulesoft" data-reveal>
+            <div class="prog-card__head">
+              <div class="prog-card__logo">
+                <svg viewBox="0 0 48 48" fill="none">
+                  <circle cx="24" cy="24" r="20" fill="#E8F4FD" />
+                  <circle cx="24" cy="24" r="14" fill="none" stroke="#00A1DF" stroke-width="2.5" />
+                  <path d="M24 10v6M24 32v6M10 24h6M32 24h6" stroke="#00A1DF" stroke-width="2.5"
+                    stroke-linecap="round" />
+                  <circle cx="24" cy="24" r="5" fill="#00A1DF" />
+                </svg>
+              </div>
+              <span class="prog-card__badge">Enrolling Now</span>
+            </div>
+            <h3>Mulesoft</h3>
+            <p>Connect everything with the world's #1 integration platform</p>
+            <span class="prog-card__link">View Curriculum →</span>
+          </div>
+
+          <!-- 8. Power BI -->
+          <div class="prog-card" data-prog="powerbi" data-reveal>
+            <div class="prog-card__head">
+              <div class="prog-card__logo">
+                <svg viewBox="0 0 48 48" fill="none">
+                  <rect width="48" height="48" rx="12" fill="#FFF8E1" />
+                  <rect x="10" y="28" width="6" height="12" rx="2" fill="#F59E0B" />
+                  <rect x="20" y="20" width="6" height="20" rx="2" fill="#FBBF24" />
+                  <rect x="30" y="14" width="6" height="26" rx="2" fill="#F59E0B" />
+                  <rect x="10" y="24" width="6" height="4" rx="1" fill="#D97706" />
+                </svg>
+              </div>
+              <span class="prog-card__badge">Enrolling Now</span>
+            </div>
+            <h3>Power BI</h3>
+            <p>Transform data into stunning visual intelligence</p>
+            <span class="prog-card__link">View Curriculum →</span>
+          </div>
+
+        </div><!-- /prog-grid -->
+
+        <!-- Detail Panel (injected by JS) -->
+        <div class="prog-detail-wrap" id="progDetailWrap">
+          <div class="prog-detail" id="progDetail">
+
+            <!-- LEFT: Curriculum -->
+            <div class="prog-detail__left" id="detailLeft">
+              <!-- Filled by JS -->
+            </div>
+
+            <!-- RIGHT: Enquiry Form -->
+            <div class="prog-detail__right">
+              <h3>Submit Enquiry</h3>
+              <p>Our counsellor will reach out within one business day.</p>
+
+              <div id="enqFormWrap" class="enq-form">
+                <div class="enq-course-pill" id="enqCoursePill">
+                  <span>Selected Course:</span>
+                  <strong id="enqCourseLabel">—</strong>
+                </div>
+
+                <label class="enq-label">
+                  FULL NAME *
+                  <input type="text" id="enqName" placeholder="Your full name" required>
+                </label>
+
+                <label class="enq-label">
+                  EMAIL *
+                  <input type="email" id="enqEmail" placeholder="Enter your email" required>
+                </label>
+
+                <label class="enq-label">
+                  PHONE NUMBER *
+                  <input type="tel" id="enqPhone" placeholder="Enter your phone number" required>
+                </label>
+
+                <label class="enq-label">
+                  PROFILE *
+                  <div class="profile-toggle" id="profileToggle">
+                    <button type="button" class="active" data-profile="fresher">🎓 Fresher</button>
+                    <button type="button" data-profile="experienced">💼 Experienced</button>
+                  </div>
+                </label>
+
+                <label class="enq-label">
+                  YEAR OF PASSOUT *
+                  <select id="enqYear" required>
+                    <option value="" disabled selected>Select year</option>
+                    <option>2020</option>
+                    <option>2021</option>
+                    <option>2022</option>
+                    <option>2023</option>
+                    <option>2024</option>
+                    <option>2025</option>
+                    <option>2026</option>
+                  </select>
+                </label>
+
+                <label class="enq-label">
+                  LOOKING FOR *
+                  <select id="enqGoal" required>
+                    <option value="" disabled selected>Select an option</option>
+                    <option>Job Placement Support</option>
+                    <option>Skill Upgrade</option>
+                    <option>Career Switch</option>
+                    <option>Certification</option>
+                  </select>
+                </label>
+
+                <button class="enq-btn" id="enqSubmitBtn" type="button">
+                  Submit Enquiry →
+                </button>
+                <p class="enq-note">Demo form — no data is sent anywhere.</p>
+              </div>
+
+              <div class="enq-success" id="enqSuccess">
+                <div class="enq-success__icon">🎉</div>
+                <h4>Thanks — You're on the list!</h4>
+                <p>Our counsellor will reach out within one business day.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /container -->
+    </section>
+
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer class="footer" id="contact">
+    <div class="footer__cta-strip">
+      <div class="container footer__cta-inner">
+        <div class="footer__cta-text">
+          <h3>Ready to launch your tech career?</h3>
+          <p>Join 1200+ students who got placed through Acharya Coding School.</p>
+        </div>
+        <div class="footer__cta-btns">
+          <button class="btn btn--primary btn--lg" data-open-modal>Book Free Demo →</button>
+          <a class="btn footer__wa-btn" href="https://wa.me/919133734688" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" class="wa-icon">
+              <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
+              <path
+                d="M12 0C5.373 0 0 5.373 0 12c0 2.136.564 4.14 1.543 5.877L.057 23.882l6.21-1.63A11.94 11.94 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 0 1-5.006-1.37l-.36-.214-3.686.968.984-3.595-.235-.369A9.818 9.818 0 1 1 12 21.818z" />
+            </svg>
+            WhatsApp Us
+          </a>
+        </div>
       </div>
     </div>
-    <div class="footer__col">
-      <h4>Quick Links</h4>
-      <a href="index.html">Home</a>
-      <a href="about.html">About Us</a>
-      <a href="program.html">Programs</a>
-      <a href="codelab.html">Code Lab</a>
-      <a href="index.html#placements">Placements</a>
-      <a href="contact.html">Contact</a>
+    <div class="container footer__grid">
+      <div class="footer__brand">
+        <a href="index.html" class="brand">
+          <img src="acharya.jpeg" alt="Acharya Coding School logo" class="brand__mark">
+          <span class="brand__name">Acharya<small>Coding School</small></span>
+        </a>
+        <p>Practical, placement-oriented IT &amp; Non-IT training for freshers, career switchers and working
+          professionals.</p>
+        <div class="footer__socials">
+          <a href="https://www.linkedin.com/company/acharya-coding-school/" aria-label="LinkedIn"
+            class="footer__social-link">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3V9zm7 0h3.8v1.7h.1c.5-1 1.8-2 3.7-2 4 0 4.4 2.6 4.4 6V21h-4v-5.6c0-1.3 0-3-1.8-3s-2.1 1.4-2.1 2.9V21h-4V9z" />
+            </svg>
+          </a>
+          <a href="https://www.instagram.com/acharyacodingschool/" aria-label="Instagram" class="footer__social-link">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7zm5 3.5a4.5 4.5 0 1 1 0 9 4.5 4.5 0 0 1 0-9zm0 2a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zm5.2-3.5a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
+            </svg>
+          </a>
+          <a href="https://wa.me/919133734688" aria-label="WhatsApp"
+            class="footer__social-link footer__social-link--wa">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
+              <path
+                d="M12 0C5.373 0 0 5.373 0 12c0 2.136.564 4.14 1.543 5.877L.057 23.882l6.21-1.63A11.94 11.94 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 0 1-5.006-1.37l-.36-.214-3.686.968.984-3.595-.235-.369A9.818 9.818 0 1 1 12 21.818z" />
+            </svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer__col">
+        <h4>Quick Links</h4>
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="program.html">Programs</a>
+        <a href="codelab.html">Code Lab</a>
+        <a href="index.html#placements">Placements</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="footer__col">
+        <h4>Top Programs</h4>
+        <a href="program.html">Java Full Stack with DSA</a>
+        <a href="program.html">Python Full Stack with DSA</a>
+        <a href="program.html">Data Science</a>
+        <a href="program.html">Cybersecurity</a>
+        <a href="program.html">ServiceNow</a>
+        <a href="program.html">Power BI</a>
+      </div>
+      <div class="footer__col">
+        <h4>Contact Us</h4>
+        <a href="tel:+919876543210" class="footer__contact-item">
+          <svg class="footer__contact-icon" viewBox="0 0 24 24">
+            <path
+              d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.2.5 2.5.8 3.8.8.6 0 1 .4 1 1v3.4c0 .6-.4 1-1 1C10.6 21.2 2.8 13.4 2.8 3.8c0-.6.4-1 1-1H7.2c.6 0 1 .4 1 1 0 1.3.3 2.6.8 3.8.2.3.1.7-.2 1l-2.2 2.2z" />
+          </svg>
+          +91 98765 43210
+        </a>
+        <a href="mailto:hello@yourdomain.com" class="footer__contact-item">
+          <svg class="footer__contact-icon" viewBox="0 0 24 24">
+            <path
+              d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1zm1.8 2 6.7 5.2a1 1 0 0 0 1 0L19.2 7H4.8zM21 8.4l-7.1 5.5a3 3 0 0 1-3.6 0L3 8.4V18h18V8.4z" />
+          </svg>
+          hello@yourdomain.com
+        </a>
+        <div class="footer__contact-item footer__contact-item--addr">
+          <svg class="footer__contact-icon" viewBox="0 0 24 24">
+            <path
+              d="M12 2a7 7 0 0 0-7 7c0 5.3 6.1 11.7 6.4 12a1 1 0 0 0 1.2 0c.3-.3 6.4-6.7 6.4-12a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z" />
+          </svg>
+          <span>Hyderabad &amp; Bangalore,<br>India</span>
+        </div>
+      </div>
     </div>
-    <div class="footer__col">
-      <h4>Top Programs</h4>
-      <a href="program.html">Java Full Stack with DSA</a>
-      <a href="program.html">Python Full Stack with DSA</a>
-      <a href="program.html">Data Science</a>
-      <a href="program.html">Cybersecurity</a>
-      <a href="program.html">ServiceNow</a>
-      <a href="program.html">Power BI</a>
+    <div class="footer__bottom-wrap">
+      <div class="container footer__bottom">
+        <p>© <span id="year"></span> Acharya Coding School. All rights reserved.</p>
+        <div class="footer__bottom-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Use</a>
+        </div>
+      </div>
     </div>
-    <div class="footer__col">
-      <h4>Contact Us</h4>
-      <a href="tel:+919876543210" class="footer__contact-item">
-        <svg class="footer__contact-icon" viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.2.5 2.5.8 3.8.8.6 0 1 .4 1 1v3.4c0 .6-.4 1-1 1C10.6 21.2 2.8 13.4 2.8 3.8c0-.6.4-1 1-1H7.2c.6 0 1 .4 1 1 0 1.3.3 2.6.8 3.8.2.3.1.7-.2 1l-2.2 2.2z"/></svg>
-        +91 98765 43210
-      </a>
-      <a href="mailto:hello@yourdomain.com" class="footer__contact-item">
-        <svg class="footer__contact-icon" viewBox="0 0 24 24"><path d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1zm1.8 2 6.7 5.2a1 1 0 0 0 1 0L19.2 7H4.8zM21 8.4l-7.1 5.5a3 3 0 0 1-3.6 0L3 8.4V18h18V8.4z"/></svg>
-        hello@yourdomain.com
-      </a>
-      <div class="footer__contact-item footer__contact-item--addr">
-        <svg class="footer__contact-icon" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5.3 6.1 11.7 6.4 12a1 1 0 0 0 1.2 0c.3-.3 6.4-6.7 6.4-12a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>
-        <span>Hyderabad &amp; Bangalore,<br>India</span>
+  </footer>
+
+  <!-- Back to top -->
+  <button class="fab fab--top" id="backToTop" aria-label="Back to top">↑</button>
+
+  <!-- ===== Chatbot FAB ===== -->
+  <button class="fab fab--chatbot" id="chatbotFab" aria-label="Chat with us" aria-expanded="false">
+    <img src="https://i.pravatar.cc/80?img=47" alt="Course Advisor">
+    <span class="chatbot-online-dot"></span>
+  </button>
+
+  <!-- ===== Chatbot Window ===== -->
+  <div class="chatbot-window" id="chatbotWindow" role="dialog" aria-label="Chat with Acharya Coding School">
+    <div class="chatbot-header">
+      <img class="chatbot-header__avatar" src="https://i.pravatar.cc/80?img=47" alt="Priya">
+      <div class="chatbot-header__info">
+        <div class="chatbot-header__name">Priya &mdash; Course Advisor</div>
+        <div class="chatbot-header__status">
+          <span class="dot"></span> Online &bull; Typically replies instantly
+        </div>
+      </div>
+      <div class="chatbot-header__actions">
+        <button class="chatbot-header__btn" id="chatbotReset" aria-label="Restart chat" title="Restart">&#8635;</button>
+        <button class="chatbot-header__btn" id="chatbotClose" aria-label="Close chat">&#10005;</button>
+      </div>
+    </div>
+    <div class="chatbot-messages" id="chatbotMessages"></div>
+    <div class="chatbot-input-area" id="chatbotInputArea" style="display:none;">
+      <div class="chatbot-flag">
+        <img src="https://flagcdn.com/w40/in.png" alt="India"> +91
+      </div>
+      <input class="chatbot-input" id="chatbotInput" type="text" placeholder="Type your name…" autocomplete="off">
+      <button class="chatbot-send" id="chatbotSend" aria-label="Send">
+        <svg viewBox="0 0 24 24">
+          <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z" />
+        </svg>
+      </button>
+    </div>
+    <a class="chatbot-banner" href="program.html">View Course Details &rarr;</a>
+  </div>
+  <button class="fab fab--top" id="backToTop" aria-label="Back to top">↑</button>
+
+  <!-- ===== Register Modal ===== -->
+  <div class="modal" id="registerModal" aria-hidden="true">
+    <div class="modal__overlay" data-close-modal></div>
+    <div class="modal__panel" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="modal__close" data-close-modal aria-label="Close">✕</button>
+      <div id="modalFormView">
+        <h3 id="modalTitle">Book Your Free Demo Class</h3>
+        <p class="modal__sub">Fill this in and our counsellor will reach out within one business day.</p>
+        <form id="registerForm" novalidate>
+          <label>Full Name<input type="text" name="name" required placeholder="Your full name"></label>
+          <label>Phone Number<input type="tel" name="phone" required placeholder="10-digit mobile number"
+              pattern="[0-9]{10}"></label>
+          <label>Email<input type="email" name="email" required placeholder="you@example.com"></label>
+          <label>Program Interested In
+            <select name="program" required>
+              <option value="" disabled selected>Select a program</option>
+              <option>Java Full Stack with DSA</option>
+              <option>Python Full Stack with DSA</option>
+              <option>Data Science</option>
+              <option>Cybersecurity</option>
+              <option>ServiceNow</option>
+              <option>Dot Net</option>
+              <option>Mulesoft</option>
+              <option>Power BI</option>
+            </select>
+          </label>
+          <button type="submit" class="btn btn--primary btn--block">Submit Request</button>
+          <p class="modal__note">Demo form only — no data is sent anywhere.</p>
+        </form>
+      </div>
+      <div id="modalSuccessView" class="modal__success" hidden>
+        <span class="modal__success-icon">🎉</span>
+        <h3>Thanks — you're on the list!</h3>
+        <p>Our counsellor will reach out within one business day.</p>
+        <button class="btn btn--primary" data-close-modal>Close</button>
       </div>
     </div>
   </div>
-  <div class="footer__bottom-wrap">
-    <div class="container footer__bottom">
-      <p>© <span id="year"></span> Acharya Coding School. All rights reserved.</p>
-      <div class="footer__bottom-links">
-        <a href="#">Privacy Policy</a>
-        <a href="#">Terms of Use</a>
-      </div>
-    </div>
-  </div>
-</footer>
 
-<!-- Floating WhatsApp -->
-<a href="https://wa.me/919133734688" target="_blank" rel="noopener" class="fab fab--whatsapp" aria-label="Chat on WhatsApp">
-  <svg viewBox="0 0 24 24" width="28" height="28"><path fill="#fff" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path fill="#fff" d="M12 0C5.373 0 0 5.373 0 12c0 2.136.564 4.14 1.543 5.877L.057 23.882l6.21-1.63A11.94 11.94 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 0 1-5.006-1.37l-.36-.214-3.686.968.984-3.595-.235-.369A9.818 9.818 0 1 1 12 21.818z"/></svg>
-</a>
-<button class="fab fab--top" id="backToTop" aria-label="Back to top">↑</button>
+  <script>
+    /* =========================================================
+       program.js — inline
+       ========================================================= */
+    document.addEventListener('DOMContentLoaded', () => {
 
-<!-- ===== Register Modal ===== -->
-<div class="modal" id="registerModal" aria-hidden="true">
-  <div class="modal__overlay" data-close-modal></div>
-  <div class="modal__panel" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-    <button class="modal__close" data-close-modal aria-label="Close">✕</button>
-    <div id="modalFormView">
-      <h3 id="modalTitle">Book Your Free Demo Class</h3>
-      <p class="modal__sub">Fill this in and our counsellor will reach out within one business day.</p>
-      <form id="registerForm" novalidate>
-        <label>Full Name<input type="text" name="name" required placeholder="Your full name"></label>
-        <label>Phone Number<input type="tel" name="phone" required placeholder="10-digit mobile number" pattern="[0-9]{10}"></label>
-        <label>Email<input type="email" name="email" required placeholder="you@example.com"></label>
-        <label>Program Interested In
-          <select name="program" required>
-            <option value="" disabled selected>Select a program</option>
-            <option>Java Full Stack with DSA</option>
-            <option>Python Full Stack with DSA</option>
-            <option>Data Science</option>
-            <option>Cybersecurity</option>
-            <option>ServiceNow</option>
-            <option>Dot Net</option>
-            <option>Mulesoft</option>
-            <option>Power BI</option>
-          </select>
-        </label>
-        <button type="submit" class="btn btn--primary btn--block">Submit Request</button>
-        <p class="modal__note">Demo form only — no data is sent anywhere.</p>
-      </form>
-    </div>
-    <div id="modalSuccessView" class="modal__success" hidden>
-      <span class="modal__success-icon">🎉</span>
-      <h3>Thanks — you're on the list!</h3>
-      <p>Our counsellor will reach out within one business day.</p>
-      <button class="btn btn--primary" data-close-modal>Close</button>
-    </div>
-  </div>
-</div>
+      /* --- footer year --- */
+      const yr = document.getElementById('year');
+      if (yr) yr.textContent = new Date().getFullYear();
 
-<script>
-/* =========================================================
-   program.js — inline
-   ========================================================= */
-document.addEventListener('DOMContentLoaded', () => {
+      /* --- sticky header --- */
+      const header = document.getElementById('siteHeader');
+      const backToTop = document.getElementById('backToTop');
+      const onScroll = () => {
+        if (header) header.classList.toggle('is-scrolled', window.scrollY > 10);
+        if (backToTop) backToTop.classList.toggle('is-visible', window.scrollY > 500);
+      };
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
 
-  /* --- footer year --- */
-  const yr = document.getElementById('year');
-  if (yr) yr.textContent = new Date().getFullYear();
+      /* --- mobile nav --- */
+      const navToggle = document.getElementById('navToggle');
+      const primaryNav = document.getElementById('primaryNav');
+      const navBackdrop = document.getElementById('navBackdrop');
+      const openNav = () => { primaryNav.classList.add('is-open'); navToggle.classList.add('is-open'); navToggle.setAttribute('aria-expanded', true); document.body.classList.add('nav-open'); };
+      const closeNav = () => { primaryNav.classList.remove('is-open'); navToggle.classList.remove('is-open'); navToggle.setAttribute('aria-expanded', false); document.body.classList.remove('nav-open'); };
+      if (navToggle) navToggle.addEventListener('click', () => primaryNav.classList.contains('is-open') ? closeNav() : openNav());
+      if (navBackdrop) navBackdrop.addEventListener('click', closeNav);
+      primaryNav?.querySelectorAll('.nav__link').forEach(l => l.addEventListener('click', closeNav));
+      document.addEventListener('keydown', e => { if (e.key === 'Escape' && primaryNav?.classList.contains('is-open')) closeNav(); });
 
-  /* --- sticky header --- */
-  const header = document.getElementById('siteHeader');
-  const backToTop = document.getElementById('backToTop');
-  const onScroll = () => {
-    if (header) header.classList.toggle('is-scrolled', window.scrollY > 10);
-    if (backToTop) backToTop.classList.toggle('is-visible', window.scrollY > 500);
-  };
-  window.addEventListener('scroll', onScroll, { passive: true });
-  onScroll();
+      /* --- back to top --- */
+      backToTop?.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
-  /* --- mobile nav --- */
-  const navToggle = document.getElementById('navToggle');
-  const primaryNav = document.getElementById('primaryNav');
-  const navBackdrop = document.getElementById('navBackdrop');
-  const openNav = () => { primaryNav.classList.add('is-open'); navToggle.classList.add('is-open'); navToggle.setAttribute('aria-expanded', true); document.body.classList.add('nav-open'); };
-  const closeNav = () => { primaryNav.classList.remove('is-open'); navToggle.classList.remove('is-open'); navToggle.setAttribute('aria-expanded', false); document.body.classList.remove('nav-open'); };
-  if (navToggle) navToggle.addEventListener('click', () => primaryNav.classList.contains('is-open') ? closeNav() : openNav());
-  if (navBackdrop) navBackdrop.addEventListener('click', closeNav);
-  primaryNav?.querySelectorAll('.nav__link').forEach(l => l.addEventListener('click', closeNav));
-  document.addEventListener('keydown', e => { if (e.key === 'Escape' && primaryNav?.classList.contains('is-open')) closeNav(); });
+      /* --- scroll reveal --- */
+      const revEls = document.querySelectorAll('[data-reveal]');
+      const revObs = new IntersectionObserver((entries, obs) => {
+        entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('is-visible'); obs.unobserve(e.target); } });
+      }, { threshold: 0.12 });
+      revEls.forEach(el => revObs.observe(el));
 
-  /* --- back to top --- */
-  backToTop?.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+      /* --- stats counter --- */
+      const pstats = document.querySelectorAll('.pstat');
+      const animPstat = (el) => {
+        const target = parseFloat(el.dataset.target);
+        const decimals = parseInt(el.dataset.decimal || '0', 10);
+        const suffix = el.dataset.suffix || '';
+        const numEl = el.querySelector('.pstat__num');
+        const duration = 1600, start = performance.now();
+        const tick = (now) => {
+          const p = Math.min((now - start) / duration, 1);
+          const e2 = 1 - Math.pow(1 - p, 3);
+          numEl.textContent = (target * e2).toFixed(decimals) + suffix;
+          if (p < 1) requestAnimationFrame(tick);
+          else numEl.textContent = target.toFixed(decimals) + suffix;
+        };
+        requestAnimationFrame(tick);
+      };
+      const sObs = new IntersectionObserver((entries, obs) => {
+        entries.forEach(e => { if (e.isIntersecting) { animPstat(e.target); obs.unobserve(e.target); } });
+      }, { threshold: 0.4 });
+      pstats.forEach(s => sObs.observe(s));
 
-  /* --- scroll reveal --- */
-  const revEls = document.querySelectorAll('[data-reveal]');
-  const revObs = new IntersectionObserver((entries, obs) => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('is-visible'); obs.unobserve(e.target); } });
-  }, { threshold: 0.12 });
-  revEls.forEach(el => revObs.observe(el));
+      /* --- modal --- */
+      const modal = document.getElementById('registerModal');
+      const openTriggers = document.querySelectorAll('[data-open-modal]');
+      const closeTriggers = document.querySelectorAll('[data-close-modal]');
+      const formView = document.getElementById('modalFormView');
+      const successView = document.getElementById('modalSuccessView');
+      const form = document.getElementById('registerForm');
+      let lastFocused = null;
+      const openModal = () => { lastFocused = document.activeElement; modal.classList.add('is-open'); modal.setAttribute('aria-hidden', 'false'); document.body.style.overflow = 'hidden'; if (formView) formView.hidden = false; if (successView) successView.hidden = true; form?.reset(); setTimeout(() => modal.querySelector('input,button')?.focus(), 50); };
+      const closeModal = () => { modal.classList.remove('is-open'); modal.setAttribute('aria-hidden', 'true'); document.body.style.overflow = ''; lastFocused?.focus(); };
+      openTriggers.forEach(btn => btn.addEventListener('click', openModal));
+      closeTriggers.forEach(btn => btn.addEventListener('click', closeModal));
+      document.addEventListener('keydown', e => { if (e.key === 'Escape' && modal?.classList.contains('is-open')) closeModal(); });
+      form?.addEventListener('submit', e => { e.preventDefault(); if (!form.checkValidity()) { form.reportValidity(); return; } if (formView) formView.hidden = true; if (successView) successView.hidden = false; });
 
-  /* --- stats counter --- */
-  const pstats = document.querySelectorAll('.pstat');
-  const animPstat = (el) => {
-    const target = parseFloat(el.dataset.target);
-    const decimals = parseInt(el.dataset.decimal || '0', 10);
-    const suffix = el.dataset.suffix || '';
-    const numEl = el.querySelector('.pstat__num');
-    const duration = 1600, start = performance.now();
-    const tick = (now) => {
-      const p = Math.min((now - start) / duration, 1);
-      const e2 = 1 - Math.pow(1 - p, 3);
-      numEl.textContent = (target * e2).toFixed(decimals) + suffix;
-      if (p < 1) requestAnimationFrame(tick);
-      else numEl.textContent = target.toFixed(decimals) + suffix;
-    };
-    requestAnimationFrame(tick);
-  };
-  const sObs = new IntersectionObserver((entries, obs) => {
-    entries.forEach(e => { if (e.isIntersecting) { animPstat(e.target); obs.unobserve(e.target); } });
-  }, { threshold: 0.4 });
-  pstats.forEach(s => sObs.observe(s));
+      /* =========================================================
+         PROGRAM DATA
+         ========================================================= */
+      const programs = {
+        java: {
+          name: 'Java Full Stack with DSA',
+          tagline: 'Build enterprise-grade applications end-to-end using Java — from DSA fundamentals to production-ready full-stack systems.',
+          duration: '6 Months', mode: 'Live Online + Offline', projects: '8+', cert: 'Industry Certificate',
+          logoHtml: `<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java" style="width:38px;height:38px;object-fit:contain">`,
+          curriculum: [
+            { title: 'Core Java & OOPs', items: ['Java Fundamentals & Syntax', 'Object-Oriented Programming', 'Exception Handling', 'Collections Framework', 'Multithreading & Concurrency'] },
+            { title: 'Data Structures & Algorithms', items: ['Arrays, Strings & Hashing', 'Linked Lists & Trees', 'Graphs & Dynamic Programming', 'Sorting & Searching', 'Problem Solving (LeetCode Pattern)'] },
+            { title: 'Backend with Spring Boot', items: ['Spring Core & Dependency Injection', 'Spring MVC & REST APIs', 'Spring Boot Auto-Configuration', 'Spring Security & JWT', 'Microservices Architecture'] },
+            { title: 'Frontend with React', items: ['HTML5, CSS3 & JavaScript ES6+', 'React Components & Hooks', 'Redux State Management', 'API Integration with Axios', 'Responsive UI Design'] },
+            { title: 'Database & Cloud', items: ['MySQL & Hibernate ORM', 'MongoDB Basics', 'AWS EC2 & S3 Deployment', 'Docker & CI/CD Basics', 'GitHub & Version Control'] },
+          ]
+        },
+        python: {
+          name: 'Python Full Stack with DSA',
+          tagline: 'From algorithms to full-stack web applications — master Python end-to-end and become job-ready for top MNCs.',
+          duration: '6 Months', mode: 'Live Online + Offline', projects: '7+', cert: 'Industry Certificate',
+          logoHtml: `<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" style="width:38px;height:38px;object-fit:contain">`,
+          curriculum: [
+            { title: 'Python & DSA', items: ['Python Fundamentals & OOPs', 'Data Structures in Python', 'Algorithms & Complexity', 'Problem Solving Patterns', 'File Handling & Modules'] },
+            { title: 'Backend Frameworks', items: ['Django Framework (MVT)', 'Django REST Framework', 'Flask for Microservices', 'Authentication & Authorization', 'Celery & Redis'] },
+            { title: 'Frontend with React', items: ['HTML5, CSS3 & JavaScript', 'React Components & JSX', 'State Management with Redux', 'API Integration', 'Responsive Design'] },
+            { title: 'Database & Cloud', items: ['PostgreSQL & ORM (SQLAlchemy)', 'MongoDB & PyMongo', 'AWS Lambda & S3', 'Docker Basics', 'Deployment & CI/CD'] },
+            { title: 'Projects & Placement Prep', items: ['3 Capstone Projects', 'GitHub Portfolio Setup', 'Resume Building Workshop', 'Mock Technical Interviews', 'Aptitude & Communication'] },
+          ]
+        },
+        datascience: {
+          name: 'Data Science',
+          tagline: 'Turn raw data into actionable business intelligence — master the complete data science pipeline from collection to deployment.',
+          duration: '5 Months', mode: 'Live Online + Offline', projects: '6+', cert: 'Industry Certificate',
+          logoHtml: `<svg viewBox="0 0 48 48" fill="none" style="width:38px;height:38px"><circle cx="24" cy="24" r="20" fill="#EFF6FF"/><path d="M14 24a10 10 0 1 1 20 0 10 10 0 0 1-20 0z" fill="#DBEAFE"/><circle cx="24" cy="24" r="5" fill="#3B82F6"/><path d="M14 24h4M30 24h4M24 14v4M24 30v4" stroke="#3B82F6" stroke-width="2" stroke-linecap="round"/></svg>`,
+          curriculum: [
+            { title: 'Python for Data Science', items: ['Python Basics & NumPy', 'Pandas & Data Manipulation', 'Data Cleaning & EDA', 'Matplotlib & Seaborn Visualization', 'Statistics & Probability'] },
+            { title: 'Machine Learning', items: ['Supervised Learning (Regression, Classification)', 'Unsupervised Learning (Clustering)', 'Decision Trees & Random Forests', 'XGBoost & Ensemble Methods', 'Model Evaluation & Tuning'] },
+            { title: 'Deep Learning & NLP', items: ['Neural Networks & Backpropagation', 'TensorFlow & Keras', 'CNNs & RNNs', 'Natural Language Processing', 'Transformers & BERT Basics'] },
+            { title: 'SQL & Big Data', items: ['SQL for Data Analysis', 'Advanced Queries & Window Functions', 'Apache Spark Basics', 'Hadoop Ecosystem Overview', 'Data Warehousing Concepts'] },
+            { title: 'Tools & Deployment', items: ['Jupyter Notebook & Colab', 'Power BI & Tableau Basics', 'Flask API for ML Models', 'AWS SageMaker Intro', 'Capstone Project Presentation'] },
+          ]
+        },
+        cyber: {
+          name: 'Cybersecurity',
+          tagline: 'Defend systems, detect threats and secure enterprise infrastructure — build skills that every MNC is urgently hiring for.',
+          duration: '4 Months', mode: 'Live Online + Offline', projects: '5+', cert: 'CEH-Aligned Certificate',
+          logoHtml: `<svg viewBox="0 0 48 48" fill="none" style="width:38px;height:38px"><rect width="48" height="48" rx="12" fill="#FFF7ED"/><path d="M24 8l14 6v10c0 8-6 14-14 16-8-2-14-8-14-16V14L24 8z" fill="#FED7AA" stroke="#F97316" stroke-width="2"/><path d="M18 24l4 4 8-8" stroke="#F97316" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
+          curriculum: [
+            { title: 'Networking & OS Fundamentals', items: ['OSI & TCP/IP Model', 'DNS, HTTP, HTTPS, FTP', 'Linux Command Line Essentials', 'Windows Security Hardening', 'Firewalls & VPNs'] },
+            { title: 'Ethical Hacking', items: ['Footprinting & Reconnaissance', 'Scanning & Enumeration', 'Vulnerability Assessment', 'Exploitation with Metasploit', 'Social Engineering Attacks'] },
+            { title: 'Web Application Security', items: ['OWASP Top 10 Vulnerabilities', 'SQL Injection & XSS', 'CSRF & IDOR Attacks', 'Burp Suite Practicals', 'Secure Coding Practices'] },
+            { title: 'SOC & Incident Response', items: ['SIEM Tools (Splunk)', 'Log Analysis & Threat Hunting', 'Incident Response Lifecycle', 'Digital Forensics Basics', 'Malware Analysis Fundamentals'] },
+            { title: 'Certifications & Career Prep', items: ['CEH Exam Preparation', 'CompTIA Security+ Overview', 'Resume for Cybersecurity Roles', 'Mock Interviews', 'Capture the Flag (CTF) Practice'] },
+          ]
+        },
+        servicenow: {
+          name: 'ServiceNow',
+          tagline: 'Master the world\'s #1 ITSM platform and become a certified ServiceNow administrator or developer ready for enterprise roles.',
+          duration: '3 Months', mode: 'Live Online + Offline', projects: '4+', cert: 'CSA-Aligned Certificate',
+          logoHtml: `<svg viewBox="0 0 48 48" fill="none" style="width:38px;height:38px"><rect width="48" height="48" rx="12" fill="#FFF1F0"/><text x="50%" y="52%" dominant-baseline="middle" text-anchor="middle" font-size="10" font-family="Arial,sans-serif" font-weight="800" fill="#CC0000">service</text><text x="50%" y="70%" dominant-baseline="middle" text-anchor="middle" font-size="10" font-family="Arial,sans-serif" font-weight="800" fill="#CC0000">now</text></svg>`,
+          curriculum: [
+            { title: 'ServiceNow Platform Basics', items: ['Platform Overview & Navigation', 'Tables, Forms & Lists', 'User Administration', 'Groups & Roles', 'UI Policies & Actions'] },
+            { title: 'ITSM Modules', items: ['Incident Management', 'Problem & Change Management', 'Service Catalog Configuration', 'CMDB & Asset Management', 'Knowledge Management'] },
+            { title: 'Development Fundamentals', items: ['Client Scripts & Business Rules', 'Glide Scripting (GlideRecord)', 'Script Includes & REST APIs', 'Workflow & Flow Designer', 'ServiceNow Studio'] },
+            { title: 'Integration & Automation', items: ['REST & SOAP Integrations', 'MID Server Configuration', 'IntegrationHub Spokes', 'Event Management Basics', 'Orchestration Workflows'] },
+            { title: 'CSA Certification Prep', items: ['CSA Exam Blueprint', 'Practice Tests & Mock Exams', 'Interview Prep for ServiceNow Roles', 'Portfolio Projects', 'Resume & LinkedIn Review'] },
+          ]
+        },
+        dotnet: {
+          name: 'Dot Net',
+          tagline: 'Enterprise application development with the full Microsoft stack — from C# fundamentals to cloud-ready .NET applications.',
+          duration: '5 Months', mode: 'Live Online + Offline', projects: '6+', cert: 'Industry Certificate',
+          logoHtml: `<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dot-net/dot-net-original.svg" alt=".NET" style="width:38px;height:38px;object-fit:contain">`,
+          curriculum: [
+            { title: 'C# & OOP Fundamentals', items: ['C# Syntax & Data Types', 'Object-Oriented Programming', 'LINQ & Lambda Expressions', 'Exception Handling', 'Asynchronous Programming (async/await)'] },
+            { title: 'ASP.NET Core', items: ['MVC Architecture', 'Web API Development', 'Middleware & Routing', 'Authentication & Identity', 'Entity Framework Core'] },
+            { title: 'Frontend with Angular', items: ['TypeScript Basics', 'Angular Components & Modules', 'Services & Dependency Injection', 'RxJS & Observables', 'HTTP Client Integration'] },
+            { title: 'Database & ORM', items: ['SQL Server & T-SQL', 'Entity Framework Code First', 'LINQ to SQL', 'Stored Procedures & Views', 'Database Migration'] },
+            { title: 'Azure & DevOps', items: ['Azure App Service Deployment', 'Azure SQL Database', 'Azure Blob Storage', 'CI/CD with Azure DevOps', 'Docker & Containerisation'] },
+          ]
+        },
+        mulesoft: {
+          name: 'Mulesoft',
+          tagline: 'Connect everything — master the world\'s #1 integration platform and unlock high-paying MNC integration architect roles.',
+          duration: '3 Months', mode: 'Live Online + Offline', projects: '4+', cert: 'MCA-Aligned Certificate',
+          logoHtml: `<svg viewBox="0 0 48 48" fill="none" style="width:38px;height:38px"><circle cx="24" cy="24" r="20" fill="#E8F4FD"/><circle cx="24" cy="24" r="14" fill="none" stroke="#00A1DF" stroke-width="2.5"/><path d="M24 10v6M24 32v6M10 24h6M32 24h6" stroke="#00A1DF" stroke-width="2.5" stroke-linecap="round"/><circle cx="24" cy="24" r="5" fill="#00A1DF"/></svg>`,
+          curriculum: [
+            { title: 'Anypoint Platform Basics', items: ['Anypoint Platform Overview', 'Anypoint Studio IDE', 'API Designer & RAML', 'Mule 4 Runtime Basics', 'Deployment Models (Cloud/On-Prem)'] },
+            { title: 'Core Integration', items: ['Flows, Sub-flows & Error Handling', 'DataWeave 2.0 Transformation', 'Connectors (HTTP, Database, File)', 'Batch Processing', 'Scatter-Gather & Parallel Processing'] },
+            { title: 'API-Led Connectivity', items: ['System, Process & Experience Layers', 'API Manager & Policies', 'Client Credentials & OAuth', 'API Analytics & Monitoring', 'Reusable API Fragments'] },
+            { title: 'Advanced Topics', items: ['Salesforce & SAP Connectors', 'JMS & Message Queuing', 'CloudHub 2.0 Deployment', 'CI/CD with MuleSoft', 'Secure Properties & Vault'] },
+            { title: 'MCA Certification Prep', items: ['MCA Exam Guide & Blueprint', 'Mock Examinations', 'Integration Project Portfolio', 'Interview Q&A for MuleSoft Roles', 'Resume Review'] },
+          ]
+        },
+        powerbi: {
+          name: 'Power BI',
+          tagline: 'Transform raw data into stunning visual intelligence — become a Power BI analyst and land roles at top analytics-driven MNCs.',
+          duration: '3 Months', mode: 'Live Online + Offline', projects: '5+', cert: 'PL-300 Aligned Certificate',
+          logoHtml: `<svg viewBox="0 0 48 48" fill="none" style="width:38px;height:38px"><rect width="48" height="48" rx="12" fill="#FFF8E1"/><rect x="10" y="28" width="6" height="12" rx="2" fill="#F59E0B"/><rect x="20" y="20" width="6" height="20" rx="2" fill="#FBBF24"/><rect x="30" y="14" width="6" height="26" rx="2" fill="#F59E0B"/><rect x="10" y="24" width="6" height="4" rx="1" fill="#D97706"/></svg>`,
+          curriculum: [
+            { title: 'Power BI Fundamentals', items: ['Power BI Desktop Overview', 'Connecting to Data Sources', 'Power Query Editor', 'Data Cleaning & Transformation', 'Data Types & Relationships'] },
+            { title: 'DAX & Data Modelling', items: ['DAX Basics (Calculated Columns & Measures)', 'CALCULATE, FILTER & RELATED', 'Time Intelligence Functions', 'Star Schema & Snowflake Schema', 'Row-Level Security (RLS)'] },
+            { title: 'Visualisations & Reports', items: ['Bar, Line, Pie & KPI Visuals', 'Maps & Custom Visuals', 'Slicers, Filters & Drill-Throughs', 'Conditional Formatting', 'Report Themes & Bookmarks'] },
+            { title: 'Power BI Service & Sharing', items: ['Publishing Reports to Service', 'Workspaces & Dashboards', 'Scheduled Refresh & Gateway', 'Row-Level Security in Service', 'Power BI Embedded Basics'] },
+            { title: 'PL-300 Certification Prep', items: ['PL-300 Exam Objectives', 'Practice Datasets & Projects', 'Mock Examinations', 'Interview Prep for BI Analyst Roles', 'Resume & LinkedIn Optimisation'] },
+          ]
+        },
+      };
 
-  /* --- modal --- */
-  const modal = document.getElementById('registerModal');
-  const openTriggers = document.querySelectorAll('[data-open-modal]');
-  const closeTriggers = document.querySelectorAll('[data-close-modal]');
-  const formView = document.getElementById('modalFormView');
-  const successView = document.getElementById('modalSuccessView');
-  const form = document.getElementById('registerForm');
-  let lastFocused = null;
-  const openModal = () => { lastFocused = document.activeElement; modal.classList.add('is-open'); modal.setAttribute('aria-hidden','false'); document.body.style.overflow='hidden'; if(formView) formView.hidden=false; if(successView) successView.hidden=true; form?.reset(); setTimeout(() => modal.querySelector('input,button')?.focus(), 50); };
-  const closeModal = () => { modal.classList.remove('is-open'); modal.setAttribute('aria-hidden','true'); document.body.style.overflow=''; lastFocused?.focus(); };
-  openTriggers.forEach(btn => btn.addEventListener('click', openModal));
-  closeTriggers.forEach(btn => btn.addEventListener('click', closeModal));
-  document.addEventListener('keydown', e => { if (e.key === 'Escape' && modal?.classList.contains('is-open')) closeModal(); });
-  form?.addEventListener('submit', e => { e.preventDefault(); if (!form.checkValidity()) { form.reportValidity(); return; } if(formView) formView.hidden=true; if(successView) successView.hidden=false; });
+      /* =========================================================
+         RENDER DETAIL PANEL
+         ========================================================= */
+      let activeProgKey = null;
 
-  /* =========================================================
-     PROGRAM DATA
-     ========================================================= */
-  const programs = {
-    java: {
-      name: 'Java Full Stack with DSA',
-      tagline: 'Build enterprise-grade applications end-to-end using Java — from DSA fundamentals to production-ready full-stack systems.',
-      duration: '6 Months', mode: 'Live Online + Offline', projects: '8+', cert: 'Industry Certificate',
-      logoHtml: `<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java" style="width:38px;height:38px;object-fit:contain">`,
-      curriculum: [
-        { title: 'Core Java & OOPs', items: ['Java Fundamentals & Syntax','Object-Oriented Programming','Exception Handling','Collections Framework','Multithreading & Concurrency'] },
-        { title: 'Data Structures & Algorithms', items: ['Arrays, Strings & Hashing','Linked Lists & Trees','Graphs & Dynamic Programming','Sorting & Searching','Problem Solving (LeetCode Pattern)'] },
-        { title: 'Backend with Spring Boot', items: ['Spring Core & Dependency Injection','Spring MVC & REST APIs','Spring Boot Auto-Configuration','Spring Security & JWT','Microservices Architecture'] },
-        { title: 'Frontend with React', items: ['HTML5, CSS3 & JavaScript ES6+','React Components & Hooks','Redux State Management','API Integration with Axios','Responsive UI Design'] },
-        { title: 'Database & Cloud', items: ['MySQL & Hibernate ORM','MongoDB Basics','AWS EC2 & S3 Deployment','Docker & CI/CD Basics','GitHub & Version Control'] },
-      ]
-    },
-    python: {
-      name: 'Python Full Stack with DSA',
-      tagline: 'From algorithms to full-stack web applications — master Python end-to-end and become job-ready for top MNCs.',
-      duration: '6 Months', mode: 'Live Online + Offline', projects: '7+', cert: 'Industry Certificate',
-      logoHtml: `<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" style="width:38px;height:38px;object-fit:contain">`,
-      curriculum: [
-        { title: 'Python & DSA', items: ['Python Fundamentals & OOPs','Data Structures in Python','Algorithms & Complexity','Problem Solving Patterns','File Handling & Modules'] },
-        { title: 'Backend Frameworks', items: ['Django Framework (MVT)','Django REST Framework','Flask for Microservices','Authentication & Authorization','Celery & Redis'] },
-        { title: 'Frontend with React', items: ['HTML5, CSS3 & JavaScript','React Components & JSX','State Management with Redux','API Integration','Responsive Design'] },
-        { title: 'Database & Cloud', items: ['PostgreSQL & ORM (SQLAlchemy)','MongoDB & PyMongo','AWS Lambda & S3','Docker Basics','Deployment & CI/CD'] },
-        { title: 'Projects & Placement Prep', items: ['3 Capstone Projects','GitHub Portfolio Setup','Resume Building Workshop','Mock Technical Interviews','Aptitude & Communication'] },
-      ]
-    },
-    datascience: {
-      name: 'Data Science',
-      tagline: 'Turn raw data into actionable business intelligence — master the complete data science pipeline from collection to deployment.',
-      duration: '5 Months', mode: 'Live Online + Offline', projects: '6+', cert: 'Industry Certificate',
-      logoHtml: `<svg viewBox="0 0 48 48" fill="none" style="width:38px;height:38px"><circle cx="24" cy="24" r="20" fill="#EFF6FF"/><path d="M14 24a10 10 0 1 1 20 0 10 10 0 0 1-20 0z" fill="#DBEAFE"/><circle cx="24" cy="24" r="5" fill="#3B82F6"/><path d="M14 24h4M30 24h4M24 14v4M24 30v4" stroke="#3B82F6" stroke-width="2" stroke-linecap="round"/></svg>`,
-      curriculum: [
-        { title: 'Python for Data Science', items: ['Python Basics & NumPy','Pandas & Data Manipulation','Data Cleaning & EDA','Matplotlib & Seaborn Visualization','Statistics & Probability'] },
-        { title: 'Machine Learning', items: ['Supervised Learning (Regression, Classification)','Unsupervised Learning (Clustering)','Decision Trees & Random Forests','XGBoost & Ensemble Methods','Model Evaluation & Tuning'] },
-        { title: 'Deep Learning & NLP', items: ['Neural Networks & Backpropagation','TensorFlow & Keras','CNNs & RNNs','Natural Language Processing','Transformers & BERT Basics'] },
-        { title: 'SQL & Big Data', items: ['SQL for Data Analysis','Advanced Queries & Window Functions','Apache Spark Basics','Hadoop Ecosystem Overview','Data Warehousing Concepts'] },
-        { title: 'Tools & Deployment', items: ['Jupyter Notebook & Colab','Power BI & Tableau Basics','Flask API for ML Models','AWS SageMaker Intro','Capstone Project Presentation'] },
-      ]
-    },
-    cyber: {
-      name: 'Cybersecurity',
-      tagline: 'Defend systems, detect threats and secure enterprise infrastructure — build skills that every MNC is urgently hiring for.',
-      duration: '4 Months', mode: 'Live Online + Offline', projects: '5+', cert: 'CEH-Aligned Certificate',
-      logoHtml: `<svg viewBox="0 0 48 48" fill="none" style="width:38px;height:38px"><rect width="48" height="48" rx="12" fill="#FFF7ED"/><path d="M24 8l14 6v10c0 8-6 14-14 16-8-2-14-8-14-16V14L24 8z" fill="#FED7AA" stroke="#F97316" stroke-width="2"/><path d="M18 24l4 4 8-8" stroke="#F97316" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
-      curriculum: [
-        { title: 'Networking & OS Fundamentals', items: ['OSI & TCP/IP Model','DNS, HTTP, HTTPS, FTP','Linux Command Line Essentials','Windows Security Hardening','Firewalls & VPNs'] },
-        { title: 'Ethical Hacking', items: ['Footprinting & Reconnaissance','Scanning & Enumeration','Vulnerability Assessment','Exploitation with Metasploit','Social Engineering Attacks'] },
-        { title: 'Web Application Security', items: ['OWASP Top 10 Vulnerabilities','SQL Injection & XSS','CSRF & IDOR Attacks','Burp Suite Practicals','Secure Coding Practices'] },
-        { title: 'SOC & Incident Response', items: ['SIEM Tools (Splunk)','Log Analysis & Threat Hunting','Incident Response Lifecycle','Digital Forensics Basics','Malware Analysis Fundamentals'] },
-        { title: 'Certifications & Career Prep', items: ['CEH Exam Preparation','CompTIA Security+ Overview','Resume for Cybersecurity Roles','Mock Interviews','Capture the Flag (CTF) Practice'] },
-      ]
-    },
-    servicenow: {
-      name: 'ServiceNow',
-      tagline: 'Master the world\'s #1 ITSM platform and become a certified ServiceNow administrator or developer ready for enterprise roles.',
-      duration: '3 Months', mode: 'Live Online + Offline', projects: '4+', cert: 'CSA-Aligned Certificate',
-      logoHtml: `<svg viewBox="0 0 48 48" fill="none" style="width:38px;height:38px"><rect width="48" height="48" rx="12" fill="#FFF1F0"/><text x="50%" y="52%" dominant-baseline="middle" text-anchor="middle" font-size="10" font-family="Arial,sans-serif" font-weight="800" fill="#CC0000">service</text><text x="50%" y="70%" dominant-baseline="middle" text-anchor="middle" font-size="10" font-family="Arial,sans-serif" font-weight="800" fill="#CC0000">now</text></svg>`,
-      curriculum: [
-        { title: 'ServiceNow Platform Basics', items: ['Platform Overview & Navigation','Tables, Forms & Lists','User Administration','Groups & Roles','UI Policies & Actions'] },
-        { title: 'ITSM Modules', items: ['Incident Management','Problem & Change Management','Service Catalog Configuration','CMDB & Asset Management','Knowledge Management'] },
-        { title: 'Development Fundamentals', items: ['Client Scripts & Business Rules','Glide Scripting (GlideRecord)','Script Includes & REST APIs','Workflow & Flow Designer','ServiceNow Studio'] },
-        { title: 'Integration & Automation', items: ['REST & SOAP Integrations','MID Server Configuration','IntegrationHub Spokes','Event Management Basics','Orchestration Workflows'] },
-        { title: 'CSA Certification Prep', items: ['CSA Exam Blueprint','Practice Tests & Mock Exams','Interview Prep for ServiceNow Roles','Portfolio Projects','Resume & LinkedIn Review'] },
-      ]
-    },
-    dotnet: {
-      name: 'Dot Net',
-      tagline: 'Enterprise application development with the full Microsoft stack — from C# fundamentals to cloud-ready .NET applications.',
-      duration: '5 Months', mode: 'Live Online + Offline', projects: '6+', cert: 'Industry Certificate',
-      logoHtml: `<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dot-net/dot-net-original.svg" alt=".NET" style="width:38px;height:38px;object-fit:contain">`,
-      curriculum: [
-        { title: 'C# & OOP Fundamentals', items: ['C# Syntax & Data Types','Object-Oriented Programming','LINQ & Lambda Expressions','Exception Handling','Asynchronous Programming (async/await)'] },
-        { title: 'ASP.NET Core', items: ['MVC Architecture','Web API Development','Middleware & Routing','Authentication & Identity','Entity Framework Core'] },
-        { title: 'Frontend with Angular', items: ['TypeScript Basics','Angular Components & Modules','Services & Dependency Injection','RxJS & Observables','HTTP Client Integration'] },
-        { title: 'Database & ORM', items: ['SQL Server & T-SQL','Entity Framework Code First','LINQ to SQL','Stored Procedures & Views','Database Migration'] },
-        { title: 'Azure & DevOps', items: ['Azure App Service Deployment','Azure SQL Database','Azure Blob Storage','CI/CD with Azure DevOps','Docker & Containerisation'] },
-      ]
-    },
-    mulesoft: {
-      name: 'Mulesoft',
-      tagline: 'Connect everything — master the world\'s #1 integration platform and unlock high-paying MNC integration architect roles.',
-      duration: '3 Months', mode: 'Live Online + Offline', projects: '4+', cert: 'MCA-Aligned Certificate',
-      logoHtml: `<svg viewBox="0 0 48 48" fill="none" style="width:38px;height:38px"><circle cx="24" cy="24" r="20" fill="#E8F4FD"/><circle cx="24" cy="24" r="14" fill="none" stroke="#00A1DF" stroke-width="2.5"/><path d="M24 10v6M24 32v6M10 24h6M32 24h6" stroke="#00A1DF" stroke-width="2.5" stroke-linecap="round"/><circle cx="24" cy="24" r="5" fill="#00A1DF"/></svg>`,
-      curriculum: [
-        { title: 'Anypoint Platform Basics', items: ['Anypoint Platform Overview','Anypoint Studio IDE','API Designer & RAML','Mule 4 Runtime Basics','Deployment Models (Cloud/On-Prem)'] },
-        { title: 'Core Integration', items: ['Flows, Sub-flows & Error Handling','DataWeave 2.0 Transformation','Connectors (HTTP, Database, File)','Batch Processing','Scatter-Gather & Parallel Processing'] },
-        { title: 'API-Led Connectivity', items: ['System, Process & Experience Layers','API Manager & Policies','Client Credentials & OAuth','API Analytics & Monitoring','Reusable API Fragments'] },
-        { title: 'Advanced Topics', items: ['Salesforce & SAP Connectors','JMS & Message Queuing','CloudHub 2.0 Deployment','CI/CD with MuleSoft','Secure Properties & Vault'] },
-        { title: 'MCA Certification Prep', items: ['MCA Exam Guide & Blueprint','Mock Examinations','Integration Project Portfolio','Interview Q&A for MuleSoft Roles','Resume Review'] },
-      ]
-    },
-    powerbi: {
-      name: 'Power BI',
-      tagline: 'Transform raw data into stunning visual intelligence — become a Power BI analyst and land roles at top analytics-driven MNCs.',
-      duration: '3 Months', mode: 'Live Online + Offline', projects: '5+', cert: 'PL-300 Aligned Certificate',
-      logoHtml: `<svg viewBox="0 0 48 48" fill="none" style="width:38px;height:38px"><rect width="48" height="48" rx="12" fill="#FFF8E1"/><rect x="10" y="28" width="6" height="12" rx="2" fill="#F59E0B"/><rect x="20" y="20" width="6" height="20" rx="2" fill="#FBBF24"/><rect x="30" y="14" width="6" height="26" rx="2" fill="#F59E0B"/><rect x="10" y="24" width="6" height="4" rx="1" fill="#D97706"/></svg>`,
-      curriculum: [
-        { title: 'Power BI Fundamentals', items: ['Power BI Desktop Overview','Connecting to Data Sources','Power Query Editor','Data Cleaning & Transformation','Data Types & Relationships'] },
-        { title: 'DAX & Data Modelling', items: ['DAX Basics (Calculated Columns & Measures)','CALCULATE, FILTER & RELATED','Time Intelligence Functions','Star Schema & Snowflake Schema','Row-Level Security (RLS)'] },
-        { title: 'Visualisations & Reports', items: ['Bar, Line, Pie & KPI Visuals','Maps & Custom Visuals','Slicers, Filters & Drill-Throughs','Conditional Formatting','Report Themes & Bookmarks'] },
-        { title: 'Power BI Service & Sharing', items: ['Publishing Reports to Service','Workspaces & Dashboards','Scheduled Refresh & Gateway','Row-Level Security in Service','Power BI Embedded Basics'] },
-        { title: 'PL-300 Certification Prep', items: ['PL-300 Exam Objectives','Practice Datasets & Projects','Mock Examinations','Interview Prep for BI Analyst Roles','Resume & LinkedIn Optimisation'] },
-      ]
-    },
-  };
+      function renderDetail(key) {
+        const p = programs[key];
+        if (!p) return;
 
-  /* =========================================================
-     RENDER DETAIL PANEL
-     ========================================================= */
-  let activeProgKey = null;
-
-  function renderDetail(key) {
-    const p = programs[key];
-    if (!p) return;
-
-    const left = document.getElementById('detailLeft');
-    left.innerHTML = `
+        const left = document.getElementById('detailLeft');
+        left.innerHTML = `
       <div class="prog-detail__title-row">
         <div class="prog-detail__icon">${p.logoHtml}</div>
         <h2 class="prog-detail__name">${p.name}</h2>
@@ -1022,93 +1484,95 @@ document.addEventListener('DOMContentLoaded', () => {
       </div>
     `;
 
-    // Accordion interaction
-    left.querySelectorAll('.acc-trigger').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const item = btn.closest('.acc-item');
-        const isOpen = item.classList.contains('is-open');
-        // Close all
-        left.querySelectorAll('.acc-item').forEach(it => {
-          it.classList.remove('is-open');
-          it.querySelector('.acc-trigger__icon').textContent = '+';
+        // Accordion interaction
+        left.querySelectorAll('.acc-trigger').forEach(btn => {
+          btn.addEventListener('click', () => {
+            const item = btn.closest('.acc-item');
+            const isOpen = item.classList.contains('is-open');
+            // Close all
+            left.querySelectorAll('.acc-item').forEach(it => {
+              it.classList.remove('is-open');
+              it.querySelector('.acc-trigger__icon').textContent = '+';
+            });
+            if (!isOpen) {
+              item.classList.add('is-open');
+              btn.querySelector('.acc-trigger__icon').textContent = '−';
+            }
+          });
         });
-        if (!isOpen) {
-          item.classList.add('is-open');
-          btn.querySelector('.acc-trigger__icon').textContent = '−';
-        }
-      });
-    });
 
-    // Update course pill in form
-    document.getElementById('enqCourseLabel').textContent = p.name;
+        // Update course pill in form
+        document.getElementById('enqCourseLabel').textContent = p.name;
 
-    // Reset form success state
-    document.getElementById('enqFormWrap').style.display = 'flex';
-    document.getElementById('enqSuccess').classList.remove('is-shown');
-  }
-
-  /* =========================================================
-     CARD CLICK
-     ========================================================= */
-  const cards = document.querySelectorAll('.prog-card');
-  const detailWrap = document.getElementById('progDetailWrap');
-
-  cards.forEach(card => {
-    card.addEventListener('click', () => {
-      const key = card.dataset.prog;
-
-      if (activeProgKey === key) {
-        // Toggle off
-        card.classList.remove('is-active');
-        detailWrap.classList.remove('is-open');
-        activeProgKey = null;
-        return;
+        // Reset form success state
+        document.getElementById('enqFormWrap').style.display = 'flex';
+        document.getElementById('enqSuccess').classList.remove('is-shown');
       }
 
-      // Activate new card
-      cards.forEach(c => c.classList.remove('is-active'));
-      card.classList.add('is-active');
-      activeProgKey = key;
+      /* =========================================================
+         CARD CLICK
+         ========================================================= */
+      const cards = document.querySelectorAll('.prog-card');
+      const detailWrap = document.getElementById('progDetailWrap');
 
-      renderDetail(key);
-      detailWrap.classList.add('is-open');
+      cards.forEach(card => {
+        card.addEventListener('click', () => {
+          const key = card.dataset.prog;
 
-      // Smooth scroll into view
-      setTimeout(() => {
-        detailWrap.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }, 80);
+          if (activeProgKey === key) {
+            // Toggle off
+            card.classList.remove('is-active');
+            detailWrap.classList.remove('is-open');
+            activeProgKey = null;
+            return;
+          }
+
+          // Activate new card
+          cards.forEach(c => c.classList.remove('is-active'));
+          card.classList.add('is-active');
+          activeProgKey = key;
+
+          renderDetail(key);
+          detailWrap.classList.add('is-open');
+
+          // Smooth scroll into view
+          setTimeout(() => {
+            detailWrap.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }, 80);
+        });
+      });
+
+      /* =========================================================
+         ENQUIRY FORM INTERACTIONS
+         ========================================================= */
+      // Profile toggle
+      const profileBtns = document.querySelectorAll('#profileToggle button');
+      profileBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          profileBtns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+        });
+      });
+
+      // Submit
+      document.getElementById('enqSubmitBtn').addEventListener('click', () => {
+        const name = document.getElementById('enqName').value.trim();
+        const email = document.getElementById('enqEmail').value.trim();
+        const phone = document.getElementById('enqPhone').value.trim();
+        const year = document.getElementById('enqYear').value;
+        const goal = document.getElementById('enqGoal').value;
+
+        if (!name || !email || !phone || !year || !goal) {
+          alert('Please fill in all required fields.');
+          return;
+        }
+        document.getElementById('enqFormWrap').style.display = 'none';
+        document.getElementById('enqSuccess').classList.add('is-shown');
+      });
+
     });
-  });
-
-  /* =========================================================
-     ENQUIRY FORM INTERACTIONS
-     ========================================================= */
-  // Profile toggle
-  const profileBtns = document.querySelectorAll('#profileToggle button');
-  profileBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      profileBtns.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-    });
-  });
-
-  // Submit
-  document.getElementById('enqSubmitBtn').addEventListener('click', () => {
-    const name = document.getElementById('enqName').value.trim();
-    const email = document.getElementById('enqEmail').value.trim();
-    const phone = document.getElementById('enqPhone').value.trim();
-    const year = document.getElementById('enqYear').value;
-    const goal = document.getElementById('enqGoal').value;
-
-    if (!name || !email || !phone || !year || !goal) {
-      alert('Please fill in all required fields.');
-      return;
-    }
-    document.getElementById('enqFormWrap').style.display = 'none';
-    document.getElementById('enqSuccess').classList.add('is-shown');
-  });
-
-});
-</script>
+  </script>
+  <script src="chatbot.js"></script>
 </body>
+
 </html>
